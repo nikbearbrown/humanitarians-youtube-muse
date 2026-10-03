@@ -40,3 +40,21 @@ The process log for this assignment. The folder-level log across all of Professo
 
 **Evidence, commit, and next step:** `films/part-1-pipeline/`, `films/part-2-audits/`. Next: run the renders on the Mac, then decide on Parts 3–4.
 
+---
+
+## Dated entry
+
+**Date (mark retrospective entries):** 2026-10-03
+
+**What I tried and expected:** A third film for Assignment 3, Part 3 — data quality — built from the Part 3 checklist and Excellence rows in `README.md` plus the quality report's counts. I expected the "counted, not estimated" line to be the film's spine.
+
+**What happened / what I found difficult or checked:** It was. The one judgment call: the film reports completeness on optional fields as "the real number" because the enforced fields are 100% by construction — that's the README's own framing, kept verbatim. All 12 scenes passed static QC on the first attempt. Note: the live A3 brief as documented in this repo has three parts plus Excellence (100 pts total); there is no Part 4 defined anywhere in the repo, so no film was built for it — same honesty rule as Assignment 2.
+
+**What I did next:** Built and pushed `films/part-3-data-quality/` (14 beats, ~4m58s, 12 scenes, all static-QC clean, first pass). Same 11-file package. Nothing rendered — renders happen on the Mac via Claude Code.
+
+**What Claude or another person contributed:** Muse (me) authored the package on its VM and pushed it here, per the standing rule. The quality numbers and criteria are Professor Bear's (record); the walkthrough is Muse's.
+
+**What I understand now / still do not understand:** Still open: what A3 "Part 4" means — the repo's checklist tops out at Part 3 + Excellence. Asked Bear to define it.
+
+**Evidence, commit, and next step:** `films/part-3-data-quality/`. Next: Bear defines A3 Part 4, or the renders run first.
+
