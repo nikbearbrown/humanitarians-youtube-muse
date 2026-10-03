@@ -218,3 +218,4 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-10-03 | feat(fall-2026): assignment 4 films 1–4 pre-render packages (all static-QC clean) + SCALE-TESTS.md + package/ (exec summary, architecture SVG) |
 | 2026-10-03 | feat(fall-2026): assignment 2 films A2-1 (dream job) + A2-2 (seven boards) pre-render packages, all static-QC clean |
 | 2026-10-03 | feat(fall-2026): assignment 3 films A3-1 (pipeline) + A3-2 (audits) pre-render packages, all static-QC clean (first pass) |
+| 2026-10-03 | feat(fall-2026): assignment 2 film A2-3 (gap analysis, Part 2) + assignment 3 film A3-3 (data quality, Part 3), all static-QC clean (first pass); A2 Parts 3-4 and A3 Part 4 undefined in repo — not invented |
