@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+"""make_sheet.py — Muse audits itself (Assignment 3, Part 2 film).
+
+14 beats, four acts. Run: python3 make_sheet.py
+"""
+import json
+
+BS = {
+    "title": "Muse audits itself",
+    "film": "A3-2",
+    "series": "Branding and AI — how Muse would do the assignments",
+    "beats": [
+        {
+            "id": "BIDEA", "scene": "M01", "dur_s": 18, "act": "hook",
+            "voice": "Muse",
+            "line": "Every accuracy number so far describes what the filter kept. Nothing has measured what it threw away. Until someone reads the rejects, a filter that quietly drops the right jobs looks identical to one that works.",
+            "screen": "Kept pile measured; reject pile dark and unmeasured."
+        },
+        {
+            "id": "BDEFS", "scene": "M02", "dur_s": 22, "act": "hook",
+            "voice": "Muse",
+            "line": "Four terms. Family: postings grouped by what the title names — sales, teaching, training. False positive: kept, but the family says reject. False negative: rejected, but the family says keep. Judge: the word means two different jobs, and only a person can split them.",
+            "screen": "Four terms: family / false positive / false negative / judge."
+        },
+        {
+            "id": "B01", "scene": "M03", "dur_s": 24, "act": "1",
+            "voice": "Muse",
+            "line": "The title audit. Three thousand four hundred forty-six postings, twenty-one job families, three thousand eighty-two distinct titles. You don't read three thousand postings — you judge twenty family rules, then read only the disagreements. That is the whole trick, and it scales.",
+            "screen": "3,446 -> 21 families -> 20 rules; disagreements highlighted."
+        },
+        {
+            "id": "B02", "scene": "M04", "dur_s": 22, "act": "1",
+            "voice": "Muse",
+            "line": "What it found: twenty-three postings kept from families that should never produce a keep — the false positives. One rejected from a family that should always keep. And five hundred fifty-five sitting in judge families, where the word genuinely means two jobs.",
+            "screen": "23 false positives listed by family."
+        },
+        {
+            "id": "B03", "scene": "M05", "dur_s": 24, "act": "2",
+            "voice": "Muse",
+            "line": "Now the best part: the audit caught itself. Its first version treated 'training' as a teaching word and reported twenty-seven rejected education jobs — a serious false-negative problem. They were Pre-training, Post-Training, Training Runtime, and Researcher, Training. Machine-learning jobs. At an AI company, training means training a model.",
+            "screen": "The word 'training' splits: teaching vs ML training."
+        },
+        {
+            "id": "B04", "scene": "M06", "dur_s": 22, "act": "2",
+            "voice": "Muse",
+            "line": "The filter had been right about all of them, and the audit was wrong. That is why ML_TRAINING is the first family rule, and why every false-friend family now carries a note explaining what the word actually means here. The audit audits itself — or it's theater.",
+            "screen": "Audit stamped WRONG; filter stamped RIGHT."
+        },
+        {
+            "id": "B05", "scene": "M07", "dur_s": 22, "act": "3",
+            "voice": "Muse",
+            "line": "The reject audit, in two parts. Part one: a uniform random sample of one hundred rejects, seed twenty-twenty-six-oh-nine-twenty-six — rerun the script, get exactly this list. Part two: all sixty-three closest calls, the rejects that mentioned two teaching words without clearing the bar of three. Part one gives the rate; part two is where a miss would hide.",
+            "screen": "Two samples: 100 random dice; 63 closest calls."
+        },
+        {
+            "id": "B06", "scene": "M08", "dur_s": 24, "act": "3",
+            "voice": "Muse",
+            "line": "Finding one, visible before anyone read a row: the word 'education' appears in six hundred eighteen of six hundred eighteen Anthropic postings. Every ad ends with the same logistics footer — 'Minimum education: Bachelor's degree.' It carries no information on that board. Boilerplate, like the three words already ignored at Writer.",
+            "screen": "618/618; footer text highlighted as boilerplate."
+        },
+        {
+            "id": "B07", "scene": "M09", "dur_s": 24, "act": "3",
+            "voice": "Muse",
+            "line": "Finding two: the topic words are keeping recruiters, not teachers. Stripe's University Recruiter, three of them. Notion's Head of Early Career Recruiting. OpenAI's Youth Culture marketing manager. University, campus, student — recruiting vocabulary as much as teaching vocabulary, and on this evidence they pull in more recruiters than teachers.",
+            "screen": "Recruiter cards, not teacher cards."
+        },
+        {
+            "id": "B08", "scene": "M10", "dur_s": 22, "act": "4",
+            "voice": "Muse",
+            "line": "And the reversal. The earlier pass called thirteen sales-enablement postings errors. Bear ruled: developing materials to train their own people would be a great fit. Building curriculum and running training for a company's own staff is the work — an internal audience doesn't change that. Thirteen kept, not errors.",
+            "screen": "Sales enablement: 13 kept; Bear's ruling quoted."
+        },
+        {
+            "id": "B09", "scene": "M11", "dur_s": 22, "act": "4",
+            "voice": "Muse",
+            "line": "The lesson. Nine hundred fifty rejects matched exactly one teaching word — counted, not read, because the count said enough. The audits didn't prove the filter works. They proved where it breaks, where the audit breaks, and who gets to rule on the ambiguous ones. That's what an audit is for.",
+            "screen": "Lesson card: the audit audits itself."
+        },
+        {
+            "id": "BVDT", "scene": "M12", "dur_s": 26, "act": "recap",
+            "voice": "Muse",
+            "line": "So: act one, the title audit — twenty rules instead of three thousand readings, twenty-three false positives. Act two, the audit's own bug — training means ML, the filter was right. Act three, the reject audit — education in six-eighteen of six-eighteen, and recruiters instead of teachers. Act four, the reversal — thirteen kept by ruling, and the lesson written down.",
+            "screen": "Four recap lines, one per act."
+        },
+        {
+            "id": "BHTF", "scene": "M12", "dur_s": 20, "act": "do_today",
+            "voice": "Muse",
+            "line": "Your turn. Take your filter's rejects — a random hundred and the closest calls. Read them. Then ask which of your audit's rules is wrong.",
+            "screen": "Do-today card: read the rejects; question the audit."
+        },
+        {
+            "id": "BOUT", "scene": "M12", "dur_s": 14, "act": "outro",
+            "voice": "Muse",
+            "line": "Muse, in for Bear. Thanks for watching.",
+            "screen": "Nik Bear Brown watermark card."
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    assert len(BS["beats"]) == 14, len(BS["beats"])
+    acts = [b["id"] for b in BS["beats"] if b["act"] in ("1", "2", "3", "4")]
+    assert len(acts) == 9, len(acts)
+    total = sum(b["dur_s"] for b in BS["beats"])
+    print(f"beats={len(BS['beats'])} body={len(acts)} total={total}s (~{total//60}m{total%60:02d}s)")
+    with open("beat_sheet.json", "w") as f:
+        json.dump(BS, f, indent=2)
+    print("beat_sheet.json written")
