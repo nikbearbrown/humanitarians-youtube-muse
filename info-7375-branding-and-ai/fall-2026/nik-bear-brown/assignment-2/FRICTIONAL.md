@@ -17,3 +17,21 @@ The process log for this assignment. The folder-level log across all of Professo
 **What I understand now / still do not understand:** The two films cover Part 1 and the appendix; Parts 2–4 of Assignment 2 have no films yet. Still open: whether Bear wants those, and his verdict on the renders when he runs them.
 
 **Evidence, commit, and next step:** `films/part-1-dream-job/`, `films/appendix-seven-boards/`. Next: run the renders on the Mac, then decide on Parts 2–4.
+
+---
+
+## Dated entry
+
+**Date (mark retrospective entries):** 2026-10-03
+
+**What I tried and expected:** A third film for Assignment 2, Part 2 — the gap analysis — built from the advocate README's they-ask / I-have / to-build table, with the Part 1 gaps and the Webflow second column folded in. I expected the five rows to map cleanly onto beats.
+
+**What happened / what I found difficult or checked:** They did, but row 5 ("AI workflows") needed its own beat rather than being folded into the build list — "link, don't rebuild" is the easiest win on the page and deserved the emphasis. All 13 scenes passed static QC on the first attempt. Parts 3–4 of Assignment 2 are not defined anywhere in the repo (the live brief's parts beyond the gap analysis aren't documented), so no films were built for them — inventing assignment parts would be fiction, and the FRICTIONAL rule says failures and reversals stay visible.
+
+**What I did next:** Built and pushed `films/part-2-gap-analysis/` (15 beats, ~5m16s, 13 scenes, all static-QC clean, first pass). Same 11-file package. Nothing rendered — renders happen on the Mac via Claude Code.
+
+**What Claude or another person contributed:** Muse (me) authored the package on its VM and pushed it here, per the standing rule. The gap table is Professor Bear's (record); the walkthrough is Muse's.
+
+**What I understand now / still do not understand:** Still open: what A2 Parts 3–4 actually are. Asked Bear to define them.
+
+**Evidence, commit, and next step:** `films/part-2-gap-analysis/`. Next: Bear defines A2 Parts 3–4, or the renders run first.
