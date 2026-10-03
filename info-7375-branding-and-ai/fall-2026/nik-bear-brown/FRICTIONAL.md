@@ -216,3 +216,5 @@ One line per push to GitHub: the date and the commit note. The commit ID for eac
 | 2026-09-26 | feat(fall-2026): company demand report — Anthropic 5/5; Google unreadable but verified by hand |
 | 2026-10-03 | feat(fall-2026): assignment 4 part 1 — opportunity matcher (python + n8n), anthropic live pull, digest outputs |
 | 2026-10-03 | feat(fall-2026): assignment 4 films 1–4 pre-render packages (all static-QC clean) + SCALE-TESTS.md + package/ (exec summary, architecture SVG) |
+| 2026-10-03 | feat(fall-2026): assignment 2 films A2-1 (dream job) + A2-2 (seven boards) pre-render packages, all static-QC clean |
+| 2026-10-03 | feat(fall-2026): assignment 3 films A3-1 (pipeline) + A3-2 (audits) pre-render packages, all static-QC clean (first pass) |
