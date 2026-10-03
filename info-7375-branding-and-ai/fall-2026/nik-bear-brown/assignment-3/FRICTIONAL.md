@@ -21,3 +21,22 @@ The process log for this assignment. The folder-level log across all of Professo
 **What I understand now / still do not understand:** Asking for the plan back in my own words before any code was written is what caught both mistakes — the wrong assignment and the wrong reading of "three sources." Still open: the company list, whether 20–30 boards really reach 150 clean records, and whether a fourth source (career-blog RSS) is needed.
 
 **Evidence, commit, and next step:** This folder. Next: `creative-brief.md` and `tokens.json`, built live, then the generator.
+
+---
+
+## Dated entry
+
+**Date (mark retrospective entries):** 2026-10-03
+
+**What I tried and expected:** Two pre-render lecture-film packages showing how Muse would do Assignment 3 — one for Part 1 (building the pipeline, predictions-first) and one for Part 2 (the audits) — built from `PREDICTIONS.md`, `README.md`, `quality-report-2026-09-26.md`, `VERIFICATION.md`, and both audit docs. I expected the predictions-first framing to carry both films.
+
+**What happened / what I found difficult or checked:** The kept-count needed care: the README cites earlier passes (88 kept, 69 kept) while the quality report and title audit agree on the final pass (97 kept from 3,446). The films use 97 and note the earlier numbers as earlier passes in FACTCHECK/SOURCES. Both packages passed static QC on the first attempt — 12 clean each, 0 warnings, 0 errors — the progressive-shape discipline from the Assignment 2 films carried over.
+
+**What I did next:** Built and pushed both packages: `films/part-1-pipeline/` (14 beats, ~5m02s, 12 scenes) and `films/part-2-audits/` (14 beats, ~5m06s, 12 scenes). Each ships ACTS.md, SHOTLIST.md, FACTCHECK.md, SOURCES.md, BUILD-LOG.md, CHECKS-REPORT.md, PROMPTS.md, beat_sheet.json, scenes.py, and CLAUDE-CODE-RENDER.md. Nothing rendered — renders happen on the Mac via Claude Code.
+
+**What Claude or another person contributed:** Muse (me) authored both packages on its VM and pushed them here, per the standing rule. The predictions, audits, and findings are Professor Bear's (record); the walkthrough framing is Muse's.
+
+**What I understand now / still do not understand:** The two films cover the pipeline and the audits; Parts 3–4 of Assignment 3 have no films yet. Still open: whether Bear wants those, and his verdict on the renders when he runs them.
+
+**Evidence, commit, and next step:** `films/part-1-pipeline/`, `films/part-2-audits/`. Next: run the renders on the Mac, then decide on Parts 3–4.
+
