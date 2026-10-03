@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+"""make_sheet.py — Muse measures quality (Assignment 3, Part 3 film).
+
+14 beats, four acts. Run: python3 make_sheet.py
+"""
+import json
+
+BS = {
+    "title": "Muse measures quality",
+    "film": "A3-3",
+    "series": "Branding and AI — how Muse would do the assignments",
+    "beats": [
+        {
+            "id": "BIDEA", "scene": "M01", "dur_s": 18, "act": "hook",
+            "voice": "Muse",
+            "line": "Every dataset claims to be high quality. Almost none of them say what that means. Quality isn't a claim — it's a number the script writes, about itself, where you can check it.",
+            "screen": "Claim card stamped UNMEASURED."
+        },
+        {
+            "id": "BDEFS", "scene": "M02", "dur_s": 22, "act": "hook",
+            "voice": "Muse",
+            "line": "Four terms. Completeness: every record has the essential fields. Reject reason: why each thrown-away posting was thrown away. Duplicate: the same job seen twice, counted once. Validator: a check that catches mistakes before they ship.",
+            "screen": "Four terms: completeness / reject reason / duplicate / validator."
+        },
+        {
+            "id": "B01", "scene": "M03", "dur_s": 22, "act": "1",
+            "voice": "Muse",
+            "line": "Completeness, by construction. A record without a title, a link, or a date is never written — those three fields are what make a record usable. So completeness on those three is one hundred percent, not by luck, but because the writer refuses anything less.",
+            "screen": "Gate: title/link/date required; 100% by construction."
+        },
+        {
+            "id": "B02", "scene": "M04", "dur_s": 20, "act": "1",
+            "voice": "Muse",
+            "line": "Which means the real number to report is completeness on the optional fields — the ones the writer doesn't enforce. A quality report that only quotes the enforced number is measuring its own gate, not its data.",
+            "screen": "Optional-fields completeness: the real number."
+        },
+        {
+            "id": "B03", "scene": "M05", "dur_s": 24, "act": "2",
+            "voice": "Muse",
+            "line": "The rejects, by reason. Two thousand three hundred forty-one with no keyword match. Nine hundred forty-five with only one topic word. Sixty-three with two. Every rejected posting carries its reason — so the three thousand three hundred forty-nine rejects are a table, not a shrug.",
+            "screen": "Three reject-reason bars: 2341 / 945 / 63."
+        },
+        {
+            "id": "B04", "scene": "M06", "dur_s": 20, "act": "2",
+            "voice": "Muse",
+            "line": "Duplicates: the same job posted to two boards, or the same board fetched twice in a day, collapses on source plus posting id. This run: zero collapsed — reported, not assumed.",
+            "screen": "Dedup key: source + id; 0 collapsed."
+        },
+        {
+            "id": "B05", "scene": "M07", "dur_s": 22, "act": "2",
+            "voice": "Muse",
+            "line": "Dates: every record's date normalized to year-month-day, with the source's original date string kept beside it. Three systems, three date shapes, one column — and the evidence of what it used to say.",
+            "screen": "Three date shapes -> YYYY-MM-DD; original kept."
+        },
+        {
+            "id": "B06", "scene": "M08", "dur_s": 22, "act": "3",
+            "voice": "Muse",
+            "line": "The validators — checks that catch mistakes. Non-empty title. Parseable date. Well-formed URL. And the expected record count asserted against what the API said it had. Four small checks, each one a mistake that already happened once.",
+            "screen": "Four validator checkboxes."
+        },
+        {
+            "id": "B07", "scene": "M09", "dur_s": 22, "act": "3",
+            "voice": "Muse",
+            "line": "Counted, not estimated. The quality report's numbers come from the script — fetched, kept, rejected by reason, duplicates — including a counts table the script itself writes. Nobody typed these numbers; that's the point.",
+            "screen": "The script writing its own counts table."
+        },
+        {
+            "id": "B08", "scene": "M10", "dur_s": 22, "act": "4",
+            "voice": "Muse",
+            "line": "Handles problems without crashing. Each source runs inside its own try-except; an unavailable source is logged and skipped while the others keep going. And the state file is never written on a failed run — so a half-finished run can never be mistaken for a complete one.",
+            "screen": "Dead source isolated; state file never written."
+        },
+        {
+            "id": "B09", "scene": "M11", "dur_s": 24, "act": "4",
+            "voice": "Muse",
+            "line": "And a peer could replicate it. No keys, public endpoints, one command — and the dated raw responses ship with the repo, so anyone can re-derive the filtered file and check every number in this film. That's what the excellence points are actually buying.",
+            "screen": "One command, no keys, raw shipped -> peer replicates."
+        },
+        {
+            "id": "BVDT", "scene": "M12", "dur_s": 26, "act": "recap",
+            "voice": "Muse",
+            "line": "So: act one, completeness — enforced at write time, reported on the optional fields. Act two, the counts — rejects by reason, zero duplicates, dates normalized. Act three, the validators — four checks, and every number counted by the script. Act four, excellence — problems handled, and a peer can redo all of it.",
+            "screen": "Four recap lines, one per act."
+        },
+        {
+            "id": "BHTF", "scene": "M12", "dur_s": 20, "act": "do_today",
+            "voice": "Muse",
+            "line": "Your turn. Pick one quality claim in your project and replace it with a number your script writes. Then write the number down where someone else can check it.",
+            "screen": "Do-today card: replace one claim with a scripted number."
+        },
+        {
+            "id": "BOUT", "scene": "M12", "dur_s": 14, "act": "outro",
+            "voice": "Muse",
+            "line": "Muse, in for Bear. Thanks for watching.",
+            "screen": "Nik Bear Brown watermark card."
+        }
+    ]
+}
+
+if __name__ == "__main__":
+    assert len(BS["beats"]) == 14, len(BS["beats"])
+    acts = [b["id"] for b in BS["beats"] if b["act"] in ("1", "2", "3", "4")]
+    assert len(acts) == 9, len(acts)
+    total = sum(b["dur_s"] for b in BS["beats"])
+    print(f"beats={len(BS['beats'])} body={len(acts)} total={total}s (~{total//60}m{total%60:02d}s)")
+    with open("beat_sheet.json", "w") as f:
+        json.dump(BS, f, indent=2)
+    print("beat_sheet.json written")
