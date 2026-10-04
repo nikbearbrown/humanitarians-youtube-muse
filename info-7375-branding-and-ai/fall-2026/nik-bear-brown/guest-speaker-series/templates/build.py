@@ -287,7 +287,7 @@ class IDMLDoc:
             f'<!-- {tag} -->'
             f'<TextFrame Self="{tf}" ParentStory="{sid}" PreviousTextFrame="n" '
             f'NextTextFrame="n" Layer="Layer/layer1" ItemTransform="{tr}">'
-            f'{_rect_geom(*fbox)}<TextFramePreference/></TextFrame>')
+            f'{_rect_geom(fbox[2], fbox[3])}<TextFramePreference/></TextFrame>')
 
     def add_rect(self, x, y, w, h, fill="none", stroke="none", sw=0):
         rid = self.uid("r")
@@ -297,7 +297,7 @@ class IDMLDoc:
         self.items.append(
             f'<Rectangle Self="{rid}" FillColor="{f}" StrokeColor="{s}"{swa} '
             f'Layer="Layer/layer1" ItemTransform="1 0 0 1 {_pt(x)} {_pt(y)}">'
-            f'{_rect_geom(_pt(x), _pt(y), _pt(w), _pt(h))}</Rectangle>')
+            f'{_rect_geom(_pt(w), _pt(h))}</Rectangle>')
 
     def add_photo(self, x, y, w, h):
         rid = self.uid("photo")
@@ -306,7 +306,7 @@ class IDMLDoc:
         self.items.append(
             f'<Rectangle Self="{rid}" FillColor="Swatch/None" StrokeColor="Swatch/None" '
             f'Layer="Layer/layer1" ItemTransform="1 0 0 1 {_pt(x)} {_pt(y)}">'
-            f'{_rect_geom(_pt(x), _pt(y), _pt(w), _pt(h))}'
+            f'{_rect_geom(_pt(w), _pt(h))}'
             f'<Image Self="{iid}" Layer="Layer/layer1"><Properties>'
             f'<Profile type="string">$ID/</Profile>'
             f'<GraphicBounds Left="0" Top="0" Right="{_pt(w)}" Bottom="{_pt(h)}"/>'
@@ -315,10 +315,10 @@ class IDMLDoc:
             f'</Image></Rectangle>')
 
 
-def _rect_geom(x, y, w, h):
-    pts = [(x, y), (f"{float(x)+float(w):.2f}".rstrip("0").rstrip("."), y),
-           (f"{float(x)+float(w):.2f}".rstrip("0").rstrip("."), f"{float(y)+float(h):.2f}".rstrip("0").rstrip(".")),
-           (x, f"{float(y)+float(h):.2f}".rstrip("0").rstrip("."))]
+def _rect_geom(w, h):
+    """PathGeometry uses the item's LOCAL coordinates: (0,0) to (w,h).
+    ItemTransform carries the translation to spread space."""
+    pts = [("0", "0"), (w, "0"), (w, h), ("0", h)]
     inner = "".join(
         f'<PathPointType Anchor="{a} {b}" LeftDirection="{a} {b}" RightDirection="{a} {b}"/>'
         for a, b in pts)
@@ -363,7 +363,7 @@ def render_idml(layout):
                 f'<TextFrame Self="{tf}" ParentStory="{sid}" PreviousTextFrame="n" '
                 f'NextTextFrame="n" Layer="Layer/layer1" '
                 f'ItemTransform="0 -1 1 0 {_pt(tx)} {_pt(ty)}">'
-                f'{_rect_geom("0", "0", _pt(textlen), _pt(size*1.8))}'
+                f'{_rect_geom(_pt(textlen), _pt(size*1.8))}'
                 f'<TextFramePreference/></TextFrame>')
         elif k == "photo":
             _, x, y, w_, h_ = el
@@ -408,7 +408,7 @@ def render_idml(layout):
         '<Swatch Self="Swatch/nuBlack" Name="NU Black" Color="Color/nuBlack"/>'
         '<Swatch Self="Swatch/Paper" Name="Paper" Color="Color/Paper"/>'
         '<Layer Self="Layer/layer1" Name="Layer 1" Visible="true" Locked="false"/>'
-        '<Section Self="Section/1" Name="" Length="1" PageStart="n"/>'
+        '<Section Self="Section/1" Length="1"/>'
         f'<DocumentPreference PageWidth="{d.pw}" PageHeight="{d.ph}" '
         'FacingPages="false" PageBinding="LeftToRight"/>'
         '<idPkg:Spread src="Spreads/Spread_1.xml"/>\n'
@@ -457,6 +457,11 @@ def render_idml(layout):
         f'<idPkg:BackingStory xmlns:idPkg="{IDPKG}" DOMVersion="13.0">'
         '<BackingStory Self="$ID/BackingStory" AppliedTOCStyle="n" '
         'TrackChanges="false" StoryTitle="$ID/"/></idPkg:BackingStory>')
+
+    DECL = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+    for path in files:
+        if path.endswith(".xml") and not files[path].startswith("<?xml"):
+            files[path] = DECL + files[path]
 
     for path, content in files.items():
         try:
