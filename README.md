@@ -4,7 +4,7 @@ This repository contains educational and public-interest YouTube production mate
 
 ## Films built by Muse
 
-Muse's pre-render film packages are listed in **[FILMS.md](FILMS.md)** — every film, with the full local path on Bear's Mac so Claude Code knows where to render it. In short: the two films in `muse/youtube/`, `films/muse-account-registration/`, and the `films/` folders under `info-7375-branding-and-ai/fall-2026/nik-bear-brown/assignment-{2,3,4}/`. Each film folder carries its own `CLAUDE-CODE-RENDER.md` with the exact render prompt.
+Muse's pre-render film packages are listed in **[muse/README.md](muse/README.md)** — every film, each linked directly to its Claude Code render prompt, with the full local path on Bear's Mac so Claude Code knows where to render it. In short: the two films in `muse/youtube/`, `films/muse-account-registration/`, and the `films/` folders under `info-7375-branding-and-ai/fall-2026/nik-bear-brown/assignment-{2,3,4}/`.
 
 ## Organization
 
