@@ -13,16 +13,16 @@ built from the *Fearless Genius* (Doug Menuez, Oct 10 2026) poster.
 | `poster-4x5` | 1080 × 1350 | Instagram / Facebook portrait post |
 | `poster-1x1` | 1080 × 1080 | Instagram / Facebook / LinkedIn square post |
 
-## Formats
+## Formats (all five sizes in each)
 
 - **`template-*.html`** — editable web templates. Open in a browser, edit the
   text, print to PDF for the flyer.
 - **`poster-*.svg`** — XML vector templates. Open directly in **Adobe
-  Illustrator** — all text stays live and editable, grouped in labeled layers
-  (`editable-*` vs `fixed-*`).
-- **`poster-letter.idml`** — InDesign package (zipped XML) for the print
-  flyer. Open directly in **Adobe InDesign** CS4+. Includes paragraph styles,
-  Northeastern swatches, and the photo placed from `Links/`.
+  Illustrator** — all text stays live and editable, grouped in labeled
+  `fixed-*` / `editable-*` layers.
+- **`poster-*.idml`** — InDesign packages (zipped XML). Open directly in
+  **Adobe InDesign** CS4+. Paragraph styles, Northeastern swatches, photo
+  placed from `Links/`, text frames marked `EDIT` / `FIXED`.
 - **`doug-menuez.png`** — sample speaker photo referenced by the templates.
 
 ## What stays vs. what changes
@@ -30,7 +30,7 @@ built from the *Fearless Genius* (Doug Menuez, Oct 10 2026) poster.
 **LOCKED — Northeastern / series branding (do not change):**
 Northeastern red `#C12925` + black, the `N` lockup,
 "Guest Speaker Series", "LIVE ON MICROSOFT TEAMS", "Open to the SEIS community",
-red frame.
+red frame. Marked `FIXED` in every file.
 
 **EDITABLE — per event (marked `EDIT` in every file):**
 photo, event title, description, date/time, speaker name + role,
@@ -38,11 +38,11 @@ QR code (link to Teams/registration), course/host line.
 
 ## Regenerating
 
-Edit the `EDIT:` values at the top of `build_svg.py` / `build_idml.py` and run:
+One source of truth: edit the `EDIT:` values and element coordinates in
+`layouts.py`, then run:
 
 ```bash
-python3 build_svg.py    # rebuilds all 5 SVGs
-python3 build_idml.py   # rebuilds poster-letter.idml
+python3 build.py    # rebuilds all 5 HTML + 5 SVG + 5 IDML, with bounds checks
 ```
 
-The HTML templates are edited by hand — search for `EDIT:`.
+The builder verifies every element fits inside its page before writing.
