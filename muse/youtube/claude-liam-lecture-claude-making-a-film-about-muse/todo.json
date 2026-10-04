@@ -33,10 +33,10 @@
       "Nik Bear Brown"
     ],
     "build": {
-      "at": "2026-10-03T21:35:15",
+      "at": "2026-10-04T12:55:50",
       "cut": "review",
-      "filled": 28,
-      "of": 28,
+      "filled": 36,
+      "of": 36,
       "slates": [],
       "skin_warnings": [
         "BIDEA: palette=claude but the cold open is 'BrutalistHesitantWriter' \u2014 COLD OPEN LAW wants ClaudeComposerAsk"
@@ -44,7 +44,7 @@
     }
   },
   "source_of_truth": "beat_sheet.json \u2014 edit the sheet, not this file",
-  "beats_total": 28,
+  "beats_total": 36,
   "beats_open": 0,
   "beats": [
     {
@@ -67,7 +67,7 @@
       "scene_hint": null,
       "prompt": null,
       "slot": "media/BDEFS.mp4",
-      "label": "Five terms. Agent: a program that works for you on its own. Connector: a plug-in to an outside servi"
+      "label": "Six terms. Agent: a program that works for you on its own. Connector: a plug-in to an outside servic"
     },
     {
       "beat_id": "B01",
@@ -158,6 +158,17 @@
       "label": "The API is priced separately: a dollar twenty-five per million input tokens, four twenty-five per mi"
     },
     {
+      "beat_id": "B24",
+      "status": "filled",
+      "on_disk": "manim/B24.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B24.mp4",
+      "label": "Bear and Claude's read: that gap isn't a discount \u2014 it's a bid. More than ninety percent off, and in"
+    },
+    {
       "beat_id": "B09",
       "status": "filled",
       "on_disk": "manim/B09.mp4",
@@ -191,6 +202,61 @@
       "label": "Their read of the goal: own the intent layer \u2014 shoppers one side, merchants the other, Meta in the m"
     },
     {
+      "beat_id": "B25",
+      "status": "filled",
+      "on_disk": "manim/B25.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B25.mp4",
+      "label": "Now, a hundred million tokens as real work. Nik says he's eighteen percent through this week's free "
+    },
+    {
+      "beat_id": "B26",
+      "status": "filled",
+      "on_disk": "manim/B26.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B26.mp4",
+      "label": "At that pace, the full hundred million is about seventy-two film packages a week \u2014 nearly six hours "
+    },
+    {
+      "beat_id": "B27",
+      "status": "filled",
+      "on_disk": "manim/B27.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B27.mp4",
+      "label": "If Muse tokens count like ordinary ones, those eight thousand words are about eleven thousand tokens"
+    },
+    {
+      "beat_id": "B28",
+      "status": "filled",
+      "on_disk": "manim/B28.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B28.mp4",
+      "label": "Price it the way Meta prices its API: a hundred million tokens is a hundred twenty-five to four hund"
+    },
+    {
+      "beat_id": "B29",
+      "status": "filled",
+      "on_disk": "manim/B29.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B29.mp4",
+      "label": "Their read: the free tier is a subsidy. Meta is buying a user base \u2014 and your data: what you do, wha"
+    },
+    {
       "beat_id": "B12",
       "status": "filled",
       "on_disk": "manim/B12.mp4",
@@ -210,7 +276,18 @@
       "scene_hint": "animated_graphics",
       "prompt": null,
       "slot": "manim/B13.mp4",
-      "label": "Concern two: a deny-list, not an allow-list. Block folders one by one \u2014 every forgotten folder, new "
+      "label": "Concern two: a deny-list, not an allow-list. Nik can't grant one folder \u2014 he'd have to block every o"
+    },
+    {
+      "beat_id": "B30",
+      "status": "filled",
+      "on_disk": "manim/B30.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B30.mp4",
+      "label": "Muse told Nik it would only touch one folder. That's a language model's promise \u2014 and language model"
     },
     {
       "beat_id": "B14",
@@ -287,7 +364,18 @@
       "scene_hint": "animated_graphics",
       "prompt": null,
       "slot": "manim/B20.mp4",
-      "label": "How did Bear resolve it? First: the Mac app is gone. Signed out, deleted, revoked, login items clear"
+      "label": "How did Bear resolve it? First: nothing runs locally. The Mac app is gone \u2014 signed out, deleted, rev"
+    },
+    {
+      "beat_id": "B31",
+      "status": "filled",
+      "on_disk": "manim/B31.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B31.mp4",
+      "label": "That's the rule that matters most. Muse never runs on Nik's computer. It runs in the cloud, and it o"
     },
     {
       "beat_id": "B21",

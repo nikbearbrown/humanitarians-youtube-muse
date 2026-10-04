@@ -157,3 +157,21 @@ guarantees; how long the free tier stays generous; whether ads come to Muse.
 
 23 body beats, ~444 s estimated (~7.4 min).
 Length is an output; no target.
+
+---
+
+## UPDATE 2026-10-04 — additions (Bear's requests, same day)
+
+All additions stay inside the existing acts; beat ids B24–B31 are appended, order is the sheet's list order.
+
+**ACT III — Money** now runs: B07 tiers → B08 API price (revised: "12.5x / 21x cheaper") → **B24 the discount is a bid** (more than 90% off; Meta gets what runs through it) → B09 transaction fees → B10 secondary streams → B11 intent layer → **B25 a hundred million tokens as real work** (Nik: 18% used; what's in his folder: 13 film packages, 212 beats, 8,149 words, about an hour) → **B26 at that pace** (about 72 packages, nearly six hours) → **B27 tokens measure effort** (the script is under 0.1% of the tokens) → **B28 priced like the API** ($125–$425 vs $10–$20) → **B29 the subsidy is the tell** (free tier buys a user base and your data; be careful what goes through it).
+
+**ACT IV — Security** gains **B30 a promise is not a permission**: Muse told Nik it would only touch one folder; that is a language model's promise; Nik can't set a one-folder limit (whole disk or nothing). Placed after B13 (deny-list).
+
+**ACT V — How Bear resolved it**: B20 reworded to lead with "nothing runs locally"; **B31 nothing runs locally**: Muse never runs on Nik's computer, only in the cloud, seeing only what he puts there (a Google Drive folder, a sandbox repo); the wall is where the files live, not what Muse promises. Placed after B20.
+
+**Bookends**: BDEFS adds `token` (six terms); BVDT line 2 ("the cheapest tokens cost your data") and line 5 ("nothing local — cloud only, Drive and sandbox repos").
+
+Cast: money act reuses the Meta dot and the ACC bar from B08; B24 and B29 both end on "your data" in terracotta.
+
+New runtime: 36 beats, estimate in BUILD-LOG after the build.

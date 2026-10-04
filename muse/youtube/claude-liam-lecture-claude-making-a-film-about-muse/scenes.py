@@ -396,6 +396,14 @@ class M08_APIPricing(Scene):
         b3, l3 = bar(-1.7, 0.16, "$0.10", color=ACC)
         b4, l4 = bar(-2.35, 0.32, "$0.20", color=ACC)
         self.play(FadeIn(b3), FadeIn(l3), FadeIn(b4), FadeIn(l4), run_time=0.6)
+
+        at(self, 0.8)
+        g1 = _label("12.5×  cheaper", size=34, color=ACC, weight="BOLD"
+                    ).next_to(l3, RIGHT, buff=0.6)
+        g2 = _label("21×  cheaper", size=34, color=ACC, weight="BOLD"
+                    ).next_to(l4, RIGHT, buff=0.6)
+        self.play(FadeIn(g1), run_time=0.4)
+        self.play(FadeIn(g2), run_time=0.4)
         finish(self)
 
 
@@ -950,4 +958,409 @@ class M23_OpenQuestions(Scene):
         at(self, 0.8)
         self.play(*[qm.animate.set_color(ACC) for _, qm, _ in marks],
                   run_time=0.4)
+        finish(self)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  ADDED 2026-10-04 — "what a hundred million tokens is, in real work" and
+#  "the discount is a bid". Class M<nn> -> beat B<nn>.
+# ═════════════════════════════════════════════════════════════════════════════
+def _count_to(self, mob_factory, values, run_time=0.3):
+    """Tick a hero number through `values` (Text swaps, no LaTeX)."""
+    cur = mob_factory(values[0])
+    self.add(cur)
+    for v in values[1:]:
+        nxt = mob_factory(v)
+        self.play(Transform(cur, nxt), run_time=run_time)
+    return cur
+
+
+def _card(text, w=2.9, h=0.8, size=28):
+    box = RoundedRectangle(corner_radius=0.18, width=w, height=h, color=INK,
+                           stroke_width=2.5, fill_color=CARD, fill_opacity=1)
+    lab = _label(text, size=size)
+    lab.move_to(box)
+    return VGroup(box, lab)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M24 — B24: the discount is a bid — price drops, data moves to Meta
+# ─────────────────────────────────────────────────────────────────────────────
+class M24_TheDiscountIsABid(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("The discount is a bid")
+        self.play(Write(title), run_time=0.6)
+
+        # price chip: $1.25 -> $0.10
+        was = _label("$1.25", size=64, color=SOFT, weight="BOLD").move_to([-3.8, 1.5, 0])
+        per = _label("per million input tokens", size=28, color=SOFT).move_to([-3.8, 0.7, 0])
+        self.play(FadeIn(was), FadeIn(per), run_time=0.5)
+        at(self, 0.3)
+        now = _label("$0.10", size=64, color=ACC, weight="BOLD").move_to([-3.8, 1.5, 0])
+        off = _label("92% off", size=36, color=ACC, weight="BOLD").move_to([-3.8, -0.1, 0])
+        self.play(was.animate.set_color(GHOST).scale(0.6).move_to([-3.8, 2.45, 0]),
+                  run_time=0.4)
+        pbar = Rectangle(width=3.0, height=0.3, color=INK, stroke_width=0,
+                         fill_color=INK, fill_opacity=1).move_to([-3.8, -0.65, 0])
+        pbar_small = Rectangle(width=0.24, height=0.3, color=ACC, stroke_width=0,
+                               fill_color=ACC, fill_opacity=1
+                               ).move_to([-5.3 + 0.12, -0.65, 0])
+        self.play(FadeIn(now), FadeIn(off), FadeIn(pbar), run_time=0.5)
+        self.play(Transform(pbar, pbar_small), run_time=0.5)
+
+        # what goes the other way
+        meta = Dot([4.9, -0.9, 0], radius=0.55, color=INK)
+        metal = _label("Meta", size=32).move_to([4.9, -1.8, 0])
+        you = Dot([-3.8, -1.5, 0], radius=0.35, color=INK)
+        youl = _label("you", size=28, color=SOFT).move_to([-3.8, -2.15, 0])
+        self.play(FadeIn(meta), FadeIn(metal), FadeIn(you), FadeIn(youl), run_time=0.5)
+
+        at(self, 0.55)
+        names = ["your usage", "your appointments", "your purchases", "the tickets you pick"]
+        cards = VGroup(*[_card(n, w=4.0, h=0.7, size=28) for n in names])
+        cards.arrange(DOWN, buff=0.22).move_to([0.2, 0.0, 0])
+        for c in cards:
+            c.move_to(you.get_center() + RIGHT * 0.3)
+            c.set_opacity(0)
+        spots = [[0.2, 1.05 - i * 0.9, 0] for i in range(4)]
+        for c, sp in zip(cards, spots):
+            self.play(c.animate.set_opacity(1).move_to(sp), run_time=0.3)
+        at(self, 0.8)
+        self.play(*[c.animate.move_to(meta.get_center()).scale(0.3).set_opacity(0)
+                    for c in cards],
+                  meta.animate.scale(1.45).set_color(ACC),
+                  metal.animate.shift(DOWN * 0.45), run_time=0.8)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M25 — B25: the allowance gauge and what Nik's folder holds
+# ─────────────────────────────────────────────────────────────────────────────
+class M25_WhatTheAllowanceBought(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("A hundred million tokens, in work")
+        self.play(Write(title), run_time=0.6)
+
+        W = 10.0
+        x0 = -W / 2
+        frame = Rectangle(width=W, height=0.7, color=INK, stroke_width=3
+                          ).move_to([0, 1.7, 0])
+        cap = _label("this week's free allowance: 100M", size=28, color=SOFT
+                     ).next_to(frame, UP, buff=0.25)
+        self.play(Create(frame), FadeIn(cap), run_time=0.5)
+        fill = Rectangle(width=0.001, height=0.7, color="#A64A24", stroke_width=0,
+                         fill_color="#A64A24", fill_opacity=1)
+        fill.move_to([x0 + 0.0005, 1.7, 0])
+        self.add(fill)
+        at(self, 0.2)
+        target = Rectangle(width=W * 0.18, height=0.7, color="#A64A24", stroke_width=0,
+                           fill_color="#A64A24", fill_opacity=1
+                           ).move_to([x0 + W * 0.09, 1.7, 0])
+        used = _label("18% used  ·  Nik's count, Oct 4", size=30, color=INK,
+                      weight="BOLD").next_to(frame, DOWN, buff=0.25, aligned_edge=LEFT)
+        self.play(Transform(fill, target), run_time=0.9)
+        self.play(FadeIn(used), run_time=0.4)
+
+        at(self, 0.45)
+        specs = [("13", "film packages"), ("212", "beats"),
+                 ("8,149", "words of narration"), ("≈ 62 min", "of film")]
+        xs = [-5.0, -2.0, 1.2, 4.4]
+        outs = []
+        for (val, lab), x in zip(specs, xs):
+            n = _label(val, size=60, weight="BOLD").move_to([x, -1.0, 0])
+            l = _label(lab, size=28, color=SOFT).move_to([x, -1.85, 0])
+            outs.append((n, l))
+            self.play(FadeIn(n, shift=UP * 0.2), FadeIn(l), run_time=0.45)
+            at(self, 0.45 + 0.1 * (len(outs)))
+        foot = _label("what's in Nik's folder", size=28, color=SOFT
+                      ).to_edge(DOWN, buff=0.6)
+        at(self, 0.85)
+        self.play(FadeIn(foot), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M26 — B26: at that pace — the full allowance in film
+# ─────────────────────────────────────────────────────────────────────────────
+class M26_AtThatPace(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("At that pace")
+        self.play(Write(title), run_time=0.6)
+
+        W = 10.0
+        x0 = -W / 2
+        lab = _label("the whole 100M", size=28, color=SOFT).move_to([0, 2.15, 0])
+        self.play(FadeIn(lab), run_time=0.5)
+
+        seg_w = W * 0.18
+        blocks = []
+        full, frac = 5, 100 / 18 - 5  # 5 full blocks + 0.56 of one
+        for i in range(6):
+            w = seg_w if i < full else seg_w * frac
+            col = "#A64A24" if i == 0 else INK
+            b = Rectangle(width=w - 0.06, height=0.8, color=col, stroke_width=0,
+                          fill_color=col, fill_opacity=0.9 if i else 1)
+            b.move_to([x0 + i * seg_w + w / 2, 1.3, 0])
+            blocks.append(b)
+        at(self, 0.25)
+        for b in blocks:
+            self.play(FadeIn(b, shift=RIGHT * 0.3), run_time=0.3)
+
+        at(self, 0.55)
+        n1 = _label("≈ 72", size=84, weight="BOLD", color=INK).move_to([-3.4, -1.1, 0])
+        l1 = _label("film packages a week", size=30, color=SOFT).move_to([-3.4, -2.0, 0])
+        n2 = _label("≈ 5.7", size=84, weight="BOLD", color=INK).move_to([3.4, -1.1, 0])
+        l2 = _label("hours of film", size=30, color=SOFT).move_to([3.4, -2.0, 0])
+        self.play(FadeIn(n1, shift=UP * 0.2), FadeIn(l1), run_time=0.5)
+        at(self, 0.72)
+        self.play(FadeIn(n2, shift=UP * 0.2), FadeIn(l2), run_time=0.5)
+        foot = _label("straight-line math from one week's folder", size=28,
+                      color=SOFT).to_edge(DOWN, buff=0.6)
+        at(self, 0.88)
+        self.play(FadeIn(foot), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M27 — B27: the words are a sliver; tokens measure effort
+# ─────────────────────────────────────────────────────────────────────────────
+class M27_TokensAreEffort(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("Tokens measure effort")
+        self.play(Write(title), run_time=0.6)
+
+        W = 10.0
+        bar = Rectangle(width=W, height=0.8, color=INK, stroke_width=3,
+                        fill_color=INK, fill_opacity=1).move_to([0, 1.2, 0])
+        cap = _label("18M tokens used", size=30, color=SOFT).next_to(bar, UP, buff=0.25)
+        self.play(FadeIn(bar), FadeIn(cap), run_time=0.5)
+
+        at(self, 0.25)
+        tick = Rectangle(width=0.05, height=0.8, color=ACC, stroke_width=0,
+                         fill_color=ACC, fill_opacity=1
+                         ).move_to([-W / 2 + 0.025, 1.2, 0])
+        self.play(FadeIn(tick), Flash(tick.get_center(), color=ACC, flash_radius=0.45),
+                  run_time=0.5)
+
+        # zoom callout
+        lines = VGroup(
+            Line(tick.get_bottom(), [-5.6, -0.35, 0], color=ACC, stroke_width=3),
+            Line(tick.get_bottom(), [-1.6, -0.35, 0], color=ACC, stroke_width=3))
+        big = Rectangle(width=4.0, height=0.9, color=ACC, stroke_width=0,
+                        fill_color=ACC, fill_opacity=1).move_to([-3.6, -0.8, 0])
+        words = _label("the script:  ≈ 11,000", size=30, color=CARD, weight="BOLD"
+                       ).move_to(big)
+        pct = _label("under 0.1% of the tokens", size=32, color=ACC, weight="BOLD"
+                     ).next_to(big, RIGHT, buff=0.5)
+        self.play(Create(lines), run_time=0.4)
+        self.play(FadeIn(big, scale=0.4), FadeIn(words), run_time=0.5)
+        self.play(FadeIn(pct), run_time=0.4)
+
+        at(self, 0.7)
+        rest = _label("the rest: re-reading its own work, tools, code", size=30,
+                      color=INK).move_to([0, -1.75, 0])
+        who = _label("Claude's  read", size=28, color=SOFT).next_to(rest, DOWN, buff=0.2)
+        self.play(FadeIn(rest), FadeIn(who), run_time=0.5)
+        note = _label("if  Muse  tokens  count  like  ordinary  ones", size=28, color=SOFT
+                      ).move_to([0, -3.0, 0])
+        at(self, 0.9)
+        self.play(FadeIn(note), run_time=0.3)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M28 — B28: the same allowance, priced like the API
+# ─────────────────────────────────────────────────────────────────────────────
+class M28_PriceItLikeTheAPI(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("A hundred million, at API prices")
+        self.play(Write(title), run_time=0.6)
+
+        x0, W = -5.5, 9.0
+        scale = W / 425.0
+        axis = Line([x0, 1.7, 0], [x0, -1.9, 0], color=INK, stroke_width=3)
+        self.play(Create(axis), run_time=0.4)
+
+        def row(y, lo, hi, color, text):
+            solid = Rectangle(width=lo * scale, height=0.55, color=color,
+                              stroke_width=0, fill_color=color, fill_opacity=1
+                              ).move_to([x0 + lo * scale / 2, y, 0])
+            ext = Rectangle(width=(hi - lo) * scale, height=0.55, color=color,
+                            stroke_width=0, fill_color=color, fill_opacity=0.35
+                            ).move_to([x0 + lo * scale + (hi - lo) * scale / 2, y, 0])
+            t = _label(text, size=34, color=color, weight="BOLD")
+            return solid, ext, t
+
+        s1, e1, t1 = row(0.9, 125, 425, INK, "$125 – $425")
+        t1.next_to(e1, RIGHT, buff=0.3)
+        l1 = _label("standard rate", size=28, color=SOFT).move_to([x0 + 1.5, 1.55, 0])
+        at(self, 0.25)
+        self.play(FadeIn(s1), FadeIn(e1), FadeIn(l1), run_time=0.6)
+        self.play(FadeIn(t1), run_time=0.3)
+
+        s2, e2, t2 = row(-0.8, 10, 20, ACC, "$10 – $20")
+        t2.next_to(e2, RIGHT, buff=0.3)
+        l2 = _label("if you let them train on your data", size=28, color=SOFT
+                    ).move_to([x0 + 3.2, -0.15, 0])
+        at(self, 0.55)
+        self.play(FadeIn(s2), FadeIn(e2), FadeIn(l2), run_time=0.6)
+        self.play(FadeIn(t2), run_time=0.3)
+
+        note = _label("if Muse tokens compare to API tokens  —  nobody can confirm",
+                      size=28, color=SOFT).to_edge(DOWN, buff=0.6)
+        at(self, 0.85)
+        self.play(FadeIn(note), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M29 — B29: the balance — free tokens vs your data
+# ─────────────────────────────────────────────────────────────────────────────
+class M29_TheSubsidyTell(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("The subsidy is the tell")
+        self.play(Write(title), run_time=0.6)
+
+        pivot = Triangle(color=INK, stroke_width=0, fill_color=INK, fill_opacity=1
+                         ).scale(0.35).move_to([0, -1.0, 0])
+        post = Line([0, -0.8, 0], [0, 0.9, 0], color=INK, stroke_width=5)
+        beam_len = 4.6
+        beam = Line([-beam_len / 2, 0.9, 0], [beam_len / 2, 0.9, 0], color=INK, stroke_width=6)
+        self.play(FadeIn(pivot), Create(post), Create(beam), run_time=0.6)
+
+        def pan(cx, text, color):
+            string = Line([cx, 0.9, 0], [cx, 0.0, 0], color=SOFT, stroke_width=3)
+            dish = Rectangle(width=3.4, height=0.18, color=color, stroke_width=0,
+                             fill_color=color, fill_opacity=1).move_to([cx, 0.0, 0])
+            lab = _label(text, size=30, color=INK, weight="BOLD"
+                         ).move_to([cx, 2.15, 0])
+            return VGroup(string, dish), lab
+
+        left, left_lab = pan(-beam_len / 2, "free tokens", INK)
+        right, right_lab = pan(beam_len / 2, "your data", ACC)
+        at(self, 0.25)
+        self.play(FadeIn(left), FadeIn(right), FadeIn(left_lab), FadeIn(right_lab),
+                  run_time=0.5)
+
+        # what's in the data pan
+        items = VGroup(*[_label(t, size=28, color=SOFT) for t in
+                         ["what you do", "what you book", "what you buy"]])
+        items.arrange(DOWN, buff=0.12).move_to([beam_len / 2, -2.0, 0])
+        at(self, 0.45)
+        self.play(*[FadeIn(i, shift=UP * 0.15) for i in items], run_time=0.6)
+
+        # tip toward the data side
+        at(self, 0.65)
+        dy = (beam_len / 2) * 0.1593   # sin(0.16)
+        self.play(Rotate(beam, angle=-0.16, about_point=[0, 0.9, 0]),
+                  left.animate.shift(UP * dy),
+                  right.animate.shift(DOWN * dy), run_time=0.9)
+
+        ask = _label("cheap?  ask what the discount buys", size=32, color=INK,
+                     weight="BOLD").move_to([0, -3.1, 0])
+        at(self, 0.85)
+        self.play(FadeIn(ask), run_time=0.5)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M30 — B30: a language model's promise is not a permission
+# ─────────────────────────────────────────────────────────────────────────────
+class M30_PromiseNotPermission(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("A promise is not a permission")
+        self.play(Write(title), run_time=0.6)
+
+        disk = RoundedRectangle(corner_radius=0.3, width=9.0, height=3.6,
+                                color=INK, stroke_width=3,
+                                fill_color=CARD, fill_opacity=1
+                                ).move_to([0, -0.4, 0])
+        dl = _label("your whole disk", size=30, color=SOFT).move_to([0, -2.65, 0])
+        folder = RoundedRectangle(corner_radius=0.12, width=1.8, height=1.2,
+                                  color=INK, stroke_width=2.5,
+                                  fill_color=GHOST, fill_opacity=1
+                                  ).move_to([-3.2, -0.4, 0])
+        fl = _label("one folder", size=28).next_to(folder, DOWN, buff=0.15)
+        self.play(FadeIn(disk), FadeIn(dl), FadeIn(folder), FadeIn(fl), run_time=0.7)
+
+        at(self, 0.35)
+        ring = RoundedRectangle(corner_radius=0.2, width=2.8, height=2.2,
+                                color=ACC, stroke_width=4
+                                ).move_to(folder.get_center() + DOWN * 0.15)
+        said = _label("Muse: only this folder", size=30, color=ACC, weight="BOLD"
+                      ).move_to([-1.4, 1.75, 0])
+        self.play(Create(ring), FadeIn(said), run_time=0.6)
+
+        at(self, 0.6)
+        wide = RoundedRectangle(corner_radius=0.3, width=9.0, height=3.6,
+                                color=ACC, stroke_width=4
+                                ).move_to(disk)
+        self.play(Transform(ring, wide), run_time=0.9)
+
+        note = _label("a promise, not a lock", size=36, color=INK, weight="BOLD"
+                      ).to_edge(DOWN, buff=0.6)
+        at(self, 0.85)
+        self.play(FadeIn(note), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M31 — B31: nothing runs locally — the wall is where the files live
+# ─────────────────────────────────────────────────────────────────────────────
+class M31_NothingRunsLocally(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("Nothing runs locally")
+        self.play(Write(title), run_time=0.6)
+
+        screen = RoundedRectangle(corner_radius=0.15, width=2.6, height=1.7,
+                                  color=INK, stroke_width=2.5,
+                                  fill_color=CARD, fill_opacity=1
+                                  ).move_to([-4.6, 0.6, 0])
+        base = Line([-6.0, -0.45, 0], [-3.2, -0.45, 0], color=INK, stroke_width=4)
+        ll = _label("Nik's computer", size=28, color=SOFT).move_to([-4.6, -1.05, 0])
+        wall = Line([-2.2, 1.9, 0], [-2.2, -2.1, 0], color=INK, stroke_width=9)
+        self.play(FadeIn(screen), Create(base), FadeIn(ll), Create(wall), run_time=0.7)
+
+        at(self, 0.35)
+        x1 = Line([-5.5, 1.3, 0], [-3.7, -0.1, 0], color=ACC, stroke_width=7)
+        x2 = Line([-5.5, -0.1, 0], [-3.7, 1.3, 0], color=ACC, stroke_width=7)
+        no = _label("never runs here", size=30, color=INK, weight="BOLD"
+                    ).move_to([-4.6, -1.7, 0])
+        self.play(Create(x1), Create(x2), FadeIn(no), run_time=0.5)
+
+        at(self, 0.55)
+        cloud = RoundedRectangle(corner_radius=0.95, width=4.4, height=2.0, color=INK,
+                                 stroke_width=2.5, fill_color=CARD, fill_opacity=1
+                                 ).move_to([2.9, 1.2, 0])
+        muse = _label("Muse", size=44, weight="BOLD").move_to([2.9, 1.2, 0])
+        cl = _label("the cloud", size=28, color=SOFT).move_to([2.9, 2.65, 0])
+        self.play(FadeIn(cloud), FadeIn(muse), FadeIn(cl), run_time=0.6)
+
+        at(self, 0.75)
+        t1 = _card("Google Drive folder", w=3.5, h=0.8, size=28).move_to([0.8, -1.6, 0])
+        t2 = _card("sandbox repo", w=3.0, h=0.8, size=28).move_to([4.3, -1.6, 0])
+        a1 = Arrow([0.8, -1.15, 0], [2.1, 0.0, 0], color=ACC, buff=0.05, stroke_width=5)
+        a2 = Arrow([4.3, -1.15, 0], [3.7, 0.0, 0], color=ACC, buff=0.05, stroke_width=5)
+        self.play(FadeIn(t1), FadeIn(t2), run_time=0.4)
+        self.play(Create(a1), Create(a2), run_time=0.4)
+        note = _label("the wall is where the files live", size=30, color=INK,
+                      weight="BOLD").to_edge(DOWN, buff=0.6)
+        at(self, 0.88)
+        self.play(FadeIn(note), run_time=0.4)
         finish(self)

@@ -20,7 +20,7 @@ Call the reel path `$REEL` below.
 
 ## Film facts (do not invent more)
 
-- 28 beats: BIDEA, BDEFS, B01–B23 (Manim, classes M01–M23 in `scenes.py`),
+- 36 beats: BIDEA, BDEFS, B01–B31 (Manim, classes M01–M31 in `scenes.py`; updated 2026-10-04),
   BVDT, BHTF, BOUT. Channel claude-liam, voice Kokoro `am_onyx`.
 - The narration text per beat is in `beat_sheet.json`.
 - This film presents Bear and Claude's opinion. Every claim is attributed in
@@ -30,7 +30,7 @@ Call the reel path `$REEL` below.
 
 ## Steps
 
-1. **Sanity check.** Confirm `$REEL/beat_sheet.json` exists with 28 beats and
+1. **Sanity check.** Confirm `$REEL/beat_sheet.json` exists with 36 beats and
    `$REEL/scenes.py` compiles: `python3 -m py_compile $REEL/scenes.py`.
 
 2. **Narration audio** (Kokoro — free, local):

@@ -60,3 +60,25 @@ on motion-carries-the-claim.
 ## Estimated runtime (information)
 
 23 body beats, ~444 s estimated (~7.4 min).
+
+---
+
+## Added 2026-10-04 (tokens in real work, the data discount, cloud-only)
+
+Classes M24–M31 map to beats B24–B31 (ids are not in play order: they sit inside the money, security and resolution acts; order is the sheet's list order).
+
+| beat | about | lane picked | runner-up | why this one wins |
+|---|---|---|---|---|
+| B08 (revised) | API price vs the data-sharing price | Manim chart (M08): the existing bars, now with "12.5x cheaper / 21x cheaper" tags | Text card | The multipliers name the gap the bar lengths already show |
+| B24 | The data discount is a bid | Manim (M24): $1.25 struck to $0.10 "92% off"; four data cards slide from "you" into Meta, which grows | Isometric coins | The price falls while the data moves the other way: the discount IS the payment |
+| B25 | 100M tokens in real work: 18% used, what's in the folder | Manim chart (M25): gauge fills to 18%, four measured numbers land | ShowTellCard dashboard | The numbers are real and measured; a gauge filling while they land pairs spend with output |
+| B26 | The full allowance at that pace | Manim (M26): the 18% block repeats until the 100M bar is full; 72 and 5.7 land | Chart | Repeating the block IS the extrapolation |
+| B27 | The words are a sliver of the tokens | Manim (M27): hairline sliver zooms into a block; the rest is named | Pie chart | The invisible sliver, magnified, is the point |
+| B28 | The allowance priced like the API | Manim chart (M28): two range bars, $125–$425 vs $10–$20 | Text card | The tiny second bar is the price of letting them keep your data |
+| B29 | The subsidy is the tell | Manim (M29): balance, free tokens vs your data, beam tips to the data | Flow diagram | The tipping beam is the argument |
+| B30 | A language model's promise is not a permission | Manim (M30): disk with one folder; the promise ring stretches across the whole disk | Text card | The ring failing to hold is the claim |
+| B31 | Nothing runs locally; the wall is where the files live | Manim diagram (M31): laptop crossed out behind a wall; cloud with Muse fed by a Drive folder and a sandbox repo | Isometric | The crossed-out laptop behind the wall IS the boundary |
+
+Bookends changed: BDEFS now six terms (adds `token`); BVDT recap line 2 and line 5 reworded.
+
+Lane histogram after update: Manim ×31 body beats, all picked on motion-carries-the-claim. Estimated runtime now ~9.7 min (36 beats; measured after build).

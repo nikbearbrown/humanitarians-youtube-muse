@@ -28,3 +28,15 @@ Run on Muse's Linux VM, 2026-10-03.
 - `bookend_check.py` — Claude Code step 6.
 
 MP3s and MP4s are git-ignored and never committed.
+
+---
+
+## Update 2026-10-04 (run on Bear's Mac)
+
+| Check | Result |
+|---|---|
+| `python3 -m py_compile scenes.py make_sheet.py` | pass |
+| Low-res last-frame stills of M08, M24–M31 looked at on a contact sheet | layout fixes made (callout box overflow, label collisions, tilted balance pans, cloud label); re-rendered and re-looked |
+| Teaching arc | each new beat SHOW; none HOLD or CARD |
+| Narration audio | 13 beats (re)voiced with Kokoro am_onyx, 10.3–14.7 s each (BVDT 34.6 s, BDEFS 16.3 s) |
+| Gate F | FACTCHECK.md rows 23–38 |
