@@ -507,10 +507,10 @@ class M15_FreeTier(Scene):
         title = _title("Free")
         self.play(Write(title), run_time=0.6)
 
-        track = Rectangle(width=8.0, height=0.7, color=INK, stroke_width=2.5,
+        track = Rectangle(width=8.0, height=0.7, color=GHOST, stroke_width=2.5,
                           fill_color=CARD, fill_opacity=1).move_to([0, -0.5, 0])
-        fill = Rectangle(width=0.1, height=0.5, color=ACC, stroke_width=0,
-                         fill_color=ACC, fill_opacity=1
+        fill = Rectangle(width=0.1, height=0.5, color=INK, stroke_width=0,
+                         fill_color=INK, fill_opacity=1
                          ).move_to([-3.9, -0.5, 0])
         limit = Line([1.0, -1.0, 0], [1.0, 0.0, 0], color=INK, stroke_width=5)
         llim = _label("usage limit", size=30, color=SOFT).move_to([1.0, 0.55, 0])
@@ -519,8 +519,8 @@ class M15_FreeTier(Scene):
                   FadeIn(fill), run_time=0.7)
 
         at(self, 0.35)
-        fill_big = Rectangle(width=4.9, height=0.5, color=ACC, stroke_width=0,
-                             fill_color=ACC, fill_opacity=1).move_to([-1.5, -0.5, 0])
+        fill_big = Rectangle(width=4.5, height=0.5, color=INK, stroke_width=0,
+                             fill_color=INK, fill_opacity=1).move_to([-1.5, -0.5, 0])
         self.play(Transform(fill, fill_big),
                   run_time=1.0, rate_func=rate_functions.smooth)
         at(self, 0.8)
@@ -537,10 +537,10 @@ class M16_Subscription(Scene):
         title = _title("Subscription")
         self.play(Write(title), run_time=0.6)
 
-        track = Rectangle(width=8.0, height=0.7, color=INK, stroke_width=2.5,
+        track = Rectangle(width=8.0, height=0.7, color=GHOST, stroke_width=2.5,
                           fill_color=CARD, fill_opacity=1).move_to([0, -0.5, 0])
-        fill = Rectangle(width=4.9, height=0.5, color=ACC, stroke_width=0,
-                         fill_color=ACC, fill_opacity=1).move_to([-1.5, -0.5, 0])
+        fill = Rectangle(width=4.5, height=0.5, color=INK, stroke_width=0,
+                         fill_color=INK, fill_opacity=1).move_to([-1.5, -0.5, 0])
         limit = Line([1.0, -1.0, 0], [1.0, 0.0, 0], color=INK, stroke_width=5)
         llim = _label("old limit", size=30, color=SOFT).move_to([1.0, 0.55, 0])
         self.play(FadeIn(track), FadeIn(fill), FadeIn(limit), FadeIn(llim),
@@ -549,8 +549,8 @@ class M16_Subscription(Scene):
         at(self, 0.4)
         limit2 = Line([3.2, -1.0, 0], [3.2, 0.0, 0], color=INK, stroke_width=5)
         llim2 = _label("new limit", size=30, color=SOFT).move_to([3.2, 0.55, 0])
-        fill2 = Rectangle(width=7.1, height=0.5, color=ACC, stroke_width=0,
-                          fill_color=ACC, fill_opacity=1).move_to([-0.4, -0.5, 0])
+        fill2 = Rectangle(width=6.5, height=0.5, color=INK, stroke_width=0,
+                          fill_color=INK, fill_opacity=1).move_to([-0.4, -0.5, 0])
         self.play(Transform(limit, limit2), Transform(llim, llim2), run_time=0.6)
         self.play(Transform(fill, fill2),
                   run_time=0.8, rate_func=rate_functions.smooth)

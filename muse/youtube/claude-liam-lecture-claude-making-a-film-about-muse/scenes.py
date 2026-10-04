@@ -144,7 +144,7 @@ class M02_LaunchNumbers(Scene):
             self.play(Transform(counter, nxt), run_time=0.3)
 
         take = _label("Nik's take: less capable than its rivals", size=28,
-                      color=SOFT).to_edge(DOWN, buff=0.5)
+                      color=SOFT).to_edge(DOWN, buff=0.65)
         at(self, 0.8)
         self.play(FadeIn(take), run_time=0.5)
         finish(self)
@@ -161,22 +161,28 @@ class M03_VMStack(Scene):
         self.play(Write(title), run_time=0.6)
 
         names = ["model", "sandboxed computer", "connectors"]
+        final_ys = [0.5, -0.65, -1.8]
         blocks = []
+        labels = []
         for i, name in enumerate(names):
+            # Start stacked but below title (title bottom ≈ 2.81); no labels yet
             b = Rectangle(width=4.6, height=1.0, color=INK, stroke_width=2.5,
                           fill_color=CARD, fill_opacity=1
-                          ).move_to([0, 2.6 - i * 0.2, 0])
-            l = _label(name, size=30).move_to(b.get_center())
-            blocks.append((b, l))
-        for b, l in blocks:
-            self.play(FadeIn(b), FadeIn(l), run_time=0.35)
+                          ).move_to([0, 1.8 - i * 0.2, 0])
+            l = _label(name, size=30)
+            blocks.append(b)
+            labels.append(l)
+        self.play(*[FadeIn(b) for b in blocks], run_time=0.6)
 
         at(self, 0.4)
-        self.play(*[b.animate.move_to([0, 0.5 - i * 1.15, 0])
-                     for i, (b, l) in enumerate(blocks)],
-                  *[l.animate.move_to([0, 0.5 - i * 1.15, 0])
-                    for i, (b, l) in enumerate(blocks)],
-                  run_time=0.8)
+        self.play(*[b.animate.move_to([0, fy, 0])
+                    for b, fy in zip(blocks, final_ys)], run_time=0.8)
+        # Labels to the RIGHT of settled blocks — outside block borders so GATE T
+        # §8.6b does not detect a block-rect blob overlapping the text blob.
+        for l, b in zip(labels, blocks):
+            l.next_to(b, RIGHT, buff=0.3)
+        self.play(*[FadeIn(l) for l in labels], run_time=0.4)
+
         at(self, 0.7)
         frame = Rectangle(width=5.0, height=3.6, color=ACC, stroke_width=4
                           ).move_to([0, -0.65, 0])
@@ -241,7 +247,9 @@ class M05_Connectors(Scene):
         smarks = []
         for name, x in surfs:
             m = Circle(radius=0.3, color=SOFT, stroke_width=2.5).move_to([x, 1.9, 0])
-            l = _label(name, size=26, color=SOFT).move_to([x, 1.9 - 0.62, 0])
+            # Labels above circles — connector lines run downward from y=1.6, so
+            # placing labels above y=2.2 keeps them clear of all crossing lines.
+            l = _label(name, size=28, color=SOFT).next_to(m, UP, buff=0.1)
             smarks.append((m, l, x))
         conns = ["Shopify", "OpenTable", "Ticketmaster",
                  "Instacart", "Expedia", "Stripe"]
@@ -252,14 +260,15 @@ class M05_Connectors(Scene):
                                  color=INK, stroke_width=2,
                                  fill_color=CARD, fill_opacity=1
                                  ).move_to([x, -1.3, 0])
-            l = _label(name, size=22).move_to([x, -1.3, 0])
-            pills.append((p, l, x))
+            # No text inside pills — pill-border detected as a text blob by GATE T §8.6b;
+            # connector names go in the bottom note instead.
+            pills.append((p, x))
         self.play(*[FadeIn(m) for tup in smarks for m in tup[:2]],
-                  *[FadeIn(m) for tup in pills for m in tup[:2]], run_time=0.8)
+                  *[FadeIn(p) for p, _ in pills], run_time=0.8)
 
         links = []
         for _, _, sx in smarks:
-            for _, _, px in pills:
+            for _, px in pills:
                 links.append(Line([sx, 1.6, 0], [px, -0.99, 0],
                                   color=GHOST, stroke_width=2))
         at(self, 0.4)
@@ -269,12 +278,18 @@ class M05_Connectors(Scene):
                               color=SOFT, stroke_width=2,
                               fill_color=CARD, fill_opacity=1
                               ).move_to([0, -2.35, 0])
-        azl = _label("Amazon", size=22, color=SOFT).move_to([0, -2.35, 0])
+        # Label LEFT of box — clear of X marks (x=-0.55 to 0.55) and bottom note.
+        # Size=28 clears the 41px GATE T floor (size=26 renders at 39px, just under).
+        azl = _label("Amazon", size=28, color=SOFT).next_to(az, LEFT, buff=0.2)
         x1 = Line([-0.55, -2.1, 0], [0.55, -2.6, 0], color=ACC, stroke_width=7)
         x2 = Line([-0.55, -2.6, 0], [0.55, -2.1, 0], color=ACC, stroke_width=7)
         at(self, 0.75)
         self.play(FadeIn(az), FadeIn(azl), run_time=0.4)
         self.play(Create(x1), Create(x2), run_time=0.35)
+        # Connector names at bottom — size=28 clears the 41px GATE T floor
+        note = _label("Shopify · OpenTable · Ticketmaster · Instacart · Expedia · Stripe",
+                       size=28, color=SOFT).to_edge(DOWN, buff=0.65)
+        self.play(FadeIn(note), run_time=0.4)
         finish(self)
 
 
@@ -508,14 +523,12 @@ class M12_FullDisk(Scene):
         dl = _label("your disk", size=32, color=SOFT).move_to([0, -2.4, 0])
         self.play(FadeIn(disk), FadeIn(dl), run_time=0.6)
 
-        wash = RoundedRectangle(corner_radius=0.3, width=7.5, height=3.6,
-                                color=ACC, stroke_width=0,
-                                fill_color=ACC, fill_opacity=0.55
-                                ).move_to([0, -0.2, 0])
+        # Border pulses to dark accent — whole-disk access without a fill
+        # overlay that contaminates GATE V luminance separation.
         at(self, 0.45)
-        self.play(FadeIn(wash), run_time=0.9)
+        self.play(disk.animate.set_stroke(color="#A64A24", width=7), run_time=0.6)
         note = _label("not folder-level — the whole disk", size=30,
-                      color=ACC).to_edge(DOWN, buff=0.6)
+                      color=INK).to_edge(DOWN, buff=0.6)
         at(self, 0.75)
         self.play(FadeIn(note), run_time=0.4)
         finish(self)
@@ -535,11 +548,13 @@ class M13_DenyList(Scene):
         items = []
         for i, f in enumerate(folders):
             y = 1.7 - i * 0.62
-            lbl = _label(f, size=28).move_to([-4.9, y, 0])
+            # Labels at x=-2.5 keep them to the right of the X sweep (x=-5.6 to -4.0)
+            lbl = _label(f, size=28).move_to([-2.5, y, 0])
+            # INK on cream gives 10.5:1 contrast — ACC (#D97757) only 2.74:1 (GATE T §8.3)
             x1 = Line([-5.6, y + 0.18, 0], [-4.0, y - 0.18, 0],
-                      color=ACC, stroke_width=5)
+                      color=INK, stroke_width=5)
             x2 = Line([-5.6, y - 0.18, 0], [-4.0, y + 0.18, 0],
-                      color=ACC, stroke_width=5)
+                      color=INK, stroke_width=5)
             items.append((lbl, x1, x2))
         self.play(*[FadeIn(lbl) for lbl, _, _ in items], run_time=0.6)
 
@@ -549,12 +564,15 @@ class M13_DenyList(Scene):
 
         folder = Rectangle(width=1.6, height=1.2, color=INK, stroke_width=2.5,
                            fill_color=CARD, fill_opacity=1).move_to([3.6, 0.6, 0])
-        fl = _label("one folder", size=28, color=SOFT).move_to([3.6, -0.5, 0])
-        self.play(FadeIn(folder), FadeIn(fl), run_time=0.4)
+        self.play(FadeIn(folder), run_time=0.4)
         at(self, 0.75)
-        ring = Circle(radius=1.25, color=ACC, stroke_width=5
+        # #A64A24 = darker terracotta, 5.1:1 contrast on cream (GATE T §8.3 passes)
+        ring = Circle(radius=1.25, color="#A64A24", stroke_width=5
                       ).move_to([3.6, 0.6, 0])
         self.play(Create(ring), run_time=0.4)
+        # Label below the ring so it isn't crossed by the ring stroke
+        fl = _label("one folder", size=28, color=SOFT).next_to(ring, DOWN, buff=0.15)
+        self.play(FadeIn(fl), run_time=0.3)
         finish(self)
 
 
@@ -682,25 +700,25 @@ class M17_TrustByDesign(Scene):
         self.play(FadeIn(face), FadeIn(e1), FadeIn(e2), FadeIn(smile),
                   run_time=0.7)
 
+        # y capped at 2.25 — title bottom sits at ≈2.79; hearts must not overlap it
         hearts = VGroup(*[Dot([np.random.uniform(-0.8, 0.8),
-                               1.9 + i * 0.3, 0], radius=0.09, color=ACC)
+                               1.5 + i * 0.15, 0], radius=0.09, color=ACC)
                           for i in range(6)])
         at(self, 0.4)
         self.play(*[FadeIn(h) for h in hearts], run_time=0.5)
         self.play(*[h.animate.shift(UP * 0.8).set_opacity(0) for h in hearts],
                   run_time=0.6)
 
+        # Tag starts at y=2.0 (top at y=2.45) — title bottom is at y≈2.79, so no overlap
         tag = RoundedRectangle(corner_radius=0.15, width=1.9, height=0.9,
                                color=INK, stroke_width=2.5,
                                fill_color=CARD, fill_opacity=1
-                               ).move_to([0, 2.5, 0])
-        tagl = _label("$", size=44, weight="BOLD", color=ACC).move_to([0, 2.5, 0])
-        string = Line([0, 2.95, 0], [0, 3.35, 0], color=SOFT, stroke_width=3)
+                               ).move_to([0, 2.0, 0])
+        tagl = _label("$", size=44, weight="BOLD", color=ACC).move_to([0, 2.0, 0])
         at(self, 0.7)
-        self.play(FadeIn(tag), FadeIn(tagl), FadeIn(string), run_time=0.4)
+        self.play(FadeIn(tag), FadeIn(tagl), run_time=0.4)
         self.play(tag.animate.move_to([0, 0.5, 0]),
                   tagl.animate.move_to([0, 0.5, 0]),
-                  string.animate.move_to([0, 1.4, 0]),
                   run_time=0.6, rate_func=rate_functions.rush_into)
         finish(self)
 
@@ -771,8 +789,9 @@ class M19_Phone(Scene):
                                      ).move_to([3.9, y, 0])
             knob = Dot([3.65, y, 0], radius=0.18, color=SOFT)
             self.play(FadeIn(lbl), FadeIn(track), FadeIn(knob), run_time=0.35)
-            self.play(knob.animate.move_to([4.15, y, 0]).set_color(ACC),
-                      track.animate.set_stroke(ACC),
+            # #A64A24 = darker terracotta, 5.1:1 contrast on cream (GATE T §8.3)
+            self.play(knob.animate.move_to([4.15, y, 0]).set_color("#A64A24"),
+                      track.animate.set_stroke("#A64A24"),
                       run_time=0.35)
         at(self, 0.85)
         finish(self)
@@ -800,8 +819,9 @@ class M20_MacAppGone(Scene):
                   run_time=0.7)
 
         at(self, 0.35)
-        self.play(icon.animate.move_to([1.8, 0.6, 0]).scale(0.6),
-                  im.animate.move_to([1.8, 0.6, 0]).scale(0.6),
+        # Land inside the trash body (y=0.2) not on the rim line (y=0.6)
+        self.play(icon.animate.move_to([1.8, 0.2, 0]).scale(0.6),
+                  im.animate.move_to([1.8, 0.2, 0]).scale(0.6),
                   run_time=0.8, rate_func=rate_functions.rush_into)
         self.play(FadeOut(icon), FadeOut(im), run_time=0.3)
 
@@ -838,7 +858,10 @@ class M21_Pipeline(Scene):
                                  color=INK, stroke_width=2.5,
                                  fill_color=CARD, fill_opacity=1
                                  ).move_to([x, 0.4, 0])
-            l = _label(name, size=28).move_to([x, 0.4, 0])
+            # Labels BELOW node (next_to DOWN) — node-border blob and label-text blob
+            # are then fully separated in y; GATE T §8.6b no longer flags overlap.
+            l = _label(name, size=28)
+            l.next_to(n, DOWN, buff=0.15)
             nodes.append((n, l, x))
         self.play(*[FadeIn(m) for tup in nodes for m in tup[:2]], run_time=0.7)
 
@@ -847,11 +870,11 @@ class M21_Pipeline(Scene):
                  for i in range(4)]
         self.play(*[Create(ln) for ln in links], run_time=0.5)
 
-        dot = Dot([xs[0], 0.4, 0], radius=0.2, color=ACC)
+        dot = Dot([xs[0], 0.65, 0], radius=0.2, color=ACC)
         self.play(FadeIn(dot), run_time=0.3)
         at(self, 0.45)
         for x in xs[1:]:
-            self.play(dot.animate.move_to([x, 0.4, 0]), run_time=0.45,
+            self.play(dot.animate.move_to([x, 0.65, 0]), run_time=0.45,
                       rate_func=rate_functions.smooth)
         note = _label("public repos only — no tokens pasted", size=28,
                       color=SOFT).to_edge(DOWN, buff=0.6)

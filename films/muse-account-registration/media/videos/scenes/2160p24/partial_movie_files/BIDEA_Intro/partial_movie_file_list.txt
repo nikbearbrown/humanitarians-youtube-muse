@@ -1,0 +1,7 @@
+# This file is used internally by FFMPEG.
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1888071356_2594102910_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1495308177_2989983678_3247147850.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1495308177_3748410964_3376753034.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1495308177_3632069575_2992268259.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1495308177_3313773600_1240371070.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/BIDEA_Intro/1495308177_816073434_2224401581.mp4'

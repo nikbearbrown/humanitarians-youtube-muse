@@ -1,0 +1,1365 @@
+{
+  "metadata": {
+    "slug": "claude-liam-lecture-claude-making-a-film-about-muse",
+    "title": "Claude making a film about Muse",
+    "topic": "MUSE · CLAUDE'S TAKE",
+    "skill": "lecture",
+    "style_preset": "lecture",
+    "channel": "claude-liam",
+    "persona": "Liam (in for Bear)",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "engine": "kokoro",
+    "clock": "narration",
+    "palette": "claude",
+    "register": "Teardown",
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "width": 3840,
+    "height": 2160,
+    "caption_policy": "none",
+    "greeting_language": "German/Dutch (Hallo)",
+    "audience": "anyone who heard Meta's Muse pitch and wants Bear and Claude's read",
+    "source_doc": "Bear's pasted doc (2026-10-03): 'Meta Muse: What It Does, Security Concerns, and Business Model'",
+    "playlist": "Muse",
+    "chapter_number": 0,
+    "tags": [
+      "Muse",
+      "Meta",
+      "AI agents",
+      "security",
+      "business model",
+      "Nik Bear Brown"
+    ],
+    "build": {
+      "at": "2026-10-03T21:35:15",
+      "cut": "review",
+      "filled": 28,
+      "of": 28,
+      "slates": [],
+      "skin_warnings": [
+        "BIDEA: palette=claude but the cold open is 'BrutalistHesitantWriter' — COLD OPEN LAW wants ClaudeComposerAsk"
+      ]
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "BIDEA",
+      "act": "the question",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Hallo. This is Liam, in for Bear. You've heard what Meta tells you about Muse. Now here's what Bear and Claude think — their read on what it does, what it costs, and where the risks are.",
+      "estimated_duration_s": 14.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "types 'What is Muse —'"
+          },
+          {
+            "at": 0.5,
+            "event": "backspaces 'what Meta tells you' → 'what Bear and Claude think' on the spoken correction"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "What is Muse —\nwhat Meta tells you?",
+            "triggerWords": "what Meta tells you",
+            "replacementWords": "what Bear and Claude think",
+            "fontSize": 70,
+            "charMs": 22,
+            "hesitateBetween": 6,
+            "hesitateWithin": 1,
+            "mistakeRate": 2,
+            "jitter": 20,
+            "seed": "claude-liam-lecture-claude-making-a-film-about-muse",
+            "banner": ""
+          },
+          "rendered": {
+            "out": "media/BIDEA.mp4",
+            "at": "2026-10-04T00:35:52.372693+00:00"
+          }
+        }
+      },
+      "lead_silence_s": 0.8,
+      "motion_claim": "The writer types the launch-hype framing and corrects it to the opinion framing: Bear and Claude's read.",
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend: the correction is the motion."
+      },
+      "actual_duration_s": 9.3,
+      "audio_file": "mp3/beat-BIDEA.mp3",
+      "render_duration_s": 9.333333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BIDEA.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "BDEFS",
+      "act": "terms",
+      "lane": "bookend",
+      "proof_gate": "CARD",
+      "narration_text": "Five terms. Agent: a program that works for you on its own. Connector: a plug-in to an outside service. Allow-list: only named things get access. Prompt injection: hidden instructions steer it. Intent layer: where you say what you want.",
+      "estimated_duration_s": 15.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.12,
+            "event": "'agent' lands"
+          },
+          {
+            "at": 0.32,
+            "event": "'connector' lands"
+          },
+          {
+            "at": 0.52,
+            "event": "'allow-list' lands"
+          },
+          {
+            "at": 0.68,
+            "event": "'prompt injection' lands"
+          },
+          {
+            "at": 0.84,
+            "event": "'intent layer' lands"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeDefinitions",
+          "props": {
+            "title": "Terms In This Lecture",
+            "terms": [
+              {
+                "term": "agent",
+                "meaning": "a program that works for you on its own"
+              },
+              {
+                "term": "connector",
+                "meaning": "a plug-in to an outside service"
+              },
+              {
+                "term": "allow-list",
+                "meaning": "only named things get access"
+              },
+              {
+                "term": "prompt injection",
+                "meaning": "hidden instructions steer it"
+              },
+              {
+                "term": "intent layer",
+                "meaning": "where you say what you want"
+              }
+            ],
+            "folderLabel": "@NikBearBrown"
+          },
+          "rendered": {
+            "out": "media/BDEFS.mp4",
+            "at": "2026-10-04T00:36:24.132012+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "TERMS card: five prerequisites, one line each."
+      },
+      "actual_duration_s": 13.33,
+      "audio_file": "mp3/beat-BDEFS.mp3",
+      "render_duration_s": 13.333333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BDEFS.mp4",
+        "filled_by": "remotion:ClaudeDefinitions",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Bear and Claude start with Meta's pitch: 'personal superintelligence,' 'AI That Hustles for You.' Unlike a chatbot, it acts — you set a goal; it plans, works the steps, and checks in before anything consequential.",
+      "estimated_duration_s": 14.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A static speech bubble labeled 'chatbot'; beside it a goal mark, a plan mark, and step marks that build into a flow.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "chatbot bubble, static"
+          },
+          {
+            "at": 0.4,
+            "event": "goal → plan → steps builds"
+          }
+        ],
+        "manim": {
+          "class": "M01_ActsNotChats"
+        },
+        "motion_claim": "The building flow IS the difference between chatting and acting."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 11.54,
+      "audio_file": "mp3/beat-B01.mp3",
+      "render_duration_s": 11.541666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B01.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Meta says: launched in the US September 8th, 2026, on Muse Spark, two and a half million downloads in two weeks. In Nik's experience, the model is noticeably less capable than GPT-6 Astra, Claude Fable, or Claude Opus.",
+      "estimated_duration_s": 15.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A timeline tick lands on September 8, 2026; a counter climbs to 2.5M; a small label marks the capability take as Nik's.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "tick lands on the date"
+          },
+          {
+            "at": 0.45,
+            "event": "counter climbs to 2.5M"
+          },
+          {
+            "at": 0.75,
+            "event": "Nik's take labeled"
+          }
+        ],
+        "manim": {
+          "class": "M02_LaunchNumbers"
+        },
+        "motion_claim": "The climbing counter is the adoption story; the label keeps the take attributed."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 14.19,
+      "audio_file": "mp3/beat-B02.mp3",
+      "render_duration_s": 14.208333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B02.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Underneath, their read of the machinery: every user gets a persistent Linux computer in Meta's cloud — browser, filesystem, terminal. Same architecture as Claude Cowork and OpenAI Codex; they differ in audience and default permissions.",
+      "estimated_duration_s": 14.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Three blocks — model, sandboxed computer, connectors — drop in and stack into one machine.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "three blocks"
+          },
+          {
+            "at": 0.4,
+            "event": "blocks stack"
+          },
+          {
+            "at": 0.7,
+            "event": "stack pulses as one machine"
+          }
+        ],
+        "manim": {
+          "class": "M03_VMStack"
+        },
+        "motion_claim": "The stacking blocks are the architecture."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.85,
+      "audio_file": "mp3/beat-B03.mp3",
+      "render_duration_s": 13.875,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B03.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "For consumers it's errands: travel, restaurants, appointments, shopping, forms, negotiating, subscriptions, tickets — Ticketmaster was a launch partner. Their point: its strength is endurance, not intelligence. It keeps going; it isn't especially clever.",
+      "estimated_duration_s": 13.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A checklist ticks through task after task while a clock spins — relentless, not clever.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "checklist starts ticking"
+          },
+          {
+            "at": 0.35,
+            "event": "clock spins"
+          },
+          {
+            "at": 0.7,
+            "event": "ticks accelerate"
+          }
+        ],
+        "manim": {
+          "class": "M04_Endurance"
+        },
+        "motion_claim": "Speed plus repetition is the claim; only motion shows it."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.8,
+      "audio_file": "mp3/beat-B04.mp3",
+      "render_duration_s": 13.833333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B04.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "You reach it on web, iPhone, Android, WhatsApp — glasses announced. Connectors skew commerce: Shopify, OpenTable, Ticketmaster, Instacart, Expedia, Stripe. CNBC reported Amazon blocked Muse over its terms. Custom connectors need no Meta review.",
+      "estimated_duration_s": 13.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Surface marks on top; connector pills below; links draw between them — one pill, marked 'Amazon', is crossed out.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "surfaces and pills"
+          },
+          {
+            "at": 0.4,
+            "event": "links draw"
+          },
+          {
+            "at": 0.75,
+            "event": "Amazon pill crossed out"
+          }
+        ],
+        "manim": {
+          "class": "M05_Connectors"
+        },
+        "motion_claim": "The drawn web is the connector story; the crossed pill is the block."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 15.27,
+      "audio_file": "mp3/beat-B05.mp3",
+      "render_duration_s": 15.291666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B05.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "For small business — September 29th — it drafts posts and campaigns, reads QuickBooks, works Klaviyo and Shopify. Meta says nothing publishes, sends, or spends without approval. Developers get the Muse Spark API — not the consumer agent.",
+      "estimated_duration_s": 15.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A split screen: a storefront with an ad draft on the left, a terminal with code on the right.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "storefront side"
+          },
+          {
+            "at": 0.5,
+            "event": "terminal side"
+          }
+        ],
+        "manim": {
+          "class": "M06_BusinessDev"
+        },
+        "motion_claim": "The split screen holds both audiences at once."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 14.59,
+      "audio_file": "mp3/beat-B06.mp3",
+      "render_duration_s": 14.625,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B06.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "money",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Three tiers, per the document. Free: zero dollars, a hundred million Muse tokens a week. Power: twenty a month, five hundred million. Maximum: a hundred a month, three billion. Same features — you pay for volume. Card required even for free.",
+      "estimated_duration_s": 16.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A three-column table builds cell by cell: Free $0 / 100M, Power $20 / 500M, Maximum $100 / 3B.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "column headers"
+          },
+          {
+            "at": 0.35,
+            "event": "prices land"
+          },
+          {
+            "at": 0.6,
+            "event": "allowances land"
+          }
+        ],
+        "manim": {
+          "class": "M07_Tiers"
+        },
+        "motion_claim": "The table IS the content; building it cell by cell paces the numbers."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.46,
+      "audio_file": "mp3/beat-B07.mp3",
+      "render_duration_s": 13.5,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B07.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "money",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "The API is priced separately: a dollar twenty-five per million input tokens, four twenty-five per million output. Or ten and twenty cents — if you let your data train the models.",
+      "estimated_duration_s": 12.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "An input/output bar pair; then a much smaller pair beside it, labeled 'with data sharing'.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "standard bars"
+          },
+          {
+            "at": 0.55,
+            "event": "smaller sharing pair"
+          }
+        ],
+        "manim": {
+          "class": "M08_APIPricing"
+        },
+        "motion_claim": "Bar lengths make the price gap visible."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 10.58,
+      "audio_file": "mp3/beat-B08.mp3",
+      "render_duration_s": 10.583333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B08.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "money",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "The business model — their core claim. Primary revenue: transaction fees. A small merchant-paid cut of every purchase Muse brokers, like an affiliate commission. The generous free tier is a bet those fees pay off. You never see a charge.",
+      "estimated_duration_s": 16.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A shopper mark → Muse → merchant mark flow; a small coin siphons off to Meta.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "purchase flow draws"
+          },
+          {
+            "at": 0.5,
+            "event": "coin siphons to Meta"
+          }
+        ],
+        "manim": {
+          "class": "M09_TransactionFees"
+        },
+        "motion_claim": "The siphoning coin is the business model in one motion."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.44,
+      "audio_file": "mp3/beat-B09.mp3",
+      "render_duration_s": 13.458333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B09.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "money",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Secondary streams: subscriptions, API sales — and two quieter ones. The ads angle: Meta says no ads inside Muse, but it funnels businesses toward Meta's ad machine, and your browsing shapes ads elsewhere. Plus training data — on by default.",
+      "estimated_duration_s": 16.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Four small streams — subs, API, ads angle, training — converge into Meta.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "four streams"
+          },
+          {
+            "at": 0.55,
+            "event": "streams converge"
+          }
+        ],
+        "manim": {
+          "class": "M10_SecondaryStreams"
+        },
+        "motion_claim": "Convergence shows many streams, one destination."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 14.31,
+      "audio_file": "mp3/beat-B10.mp3",
+      "render_duration_s": 14.333333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B10.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "money",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Their read of the goal: own the intent layer — shoppers one side, merchants the other, Meta in the middle. The skepticism: one analysis says only eleven of forty-seven payments are automatable. The fees may not carry it — and ads may come.",
+      "estimated_duration_s": 17.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A funnel: 'I want…' in at the top, Meta in the middle, money out the bottom; then forty-seven coins appear and eleven light up.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "funnel"
+          },
+          {
+            "at": 0.5,
+            "event": "forty-seven coins"
+          },
+          {
+            "at": 0.8,
+            "event": "eleven light up"
+          }
+        ],
+        "manim": {
+          "class": "M11_IntentLayer"
+        },
+        "motion_claim": "The funnel is the strategy; the eleven lit coins are the skepticism."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.21,
+      "audio_file": "mp3/beat-B11.mp3",
+      "render_duration_s": 13.25,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B11.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern one: Full Disk Access — the whole disk, not folder-level. Meta says it only touches files you ask about; Bear and Claude call that a behavioral promise, not a technical boundary. The machine can't tell the difference.",
+      "estimated_duration_s": 15.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A drive outline; a terracotta wash floods the entire thing, edge to edge.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "drive outline"
+          },
+          {
+            "at": 0.45,
+            "event": "wash floods the whole disk"
+          }
+        ],
+        "manim": {
+          "class": "M12_FullDisk"
+        },
+        "motion_claim": "Total coverage, shown totally — the wash is the claim."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 12.42,
+      "audio_file": "mp3/beat-B12.mp3",
+      "render_duration_s": 12.458333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B12.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern two: a deny-list, not an allow-list. Block folders one by one — every forgotten folder, new folder, and external drive exposed by default. Fail-safe defaults, violated. Folder pickers could have worked — but Messages, Notes, and Mail databases need Full Disk Access.",
+      "estimated_duration_s": 17.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Left: a list being crossed out item by endless item. Right: one folder with a ring around it.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "deny-list crossing begins"
+          },
+          {
+            "at": 0.45,
+            "event": "crossing continues, endlessly"
+          },
+          {
+            "at": 0.7,
+            "event": "allow-list folder ringed"
+          }
+        ],
+        "manim": {
+          "class": "M13_DenyList"
+        },
+        "motion_claim": "The endless crossing-out versus the single ring IS fail-open versus fail-closed."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 16.04,
+      "audio_file": "mp3/beat-B13.mp3",
+      "render_duration_s": 16.041666666666668,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B13.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern three: known vulnerabilities. Malwarebytes reported a zero-day where a dictation redirect could steal an auth token — needs local code execution first. One researcher exported six point eight gigabytes of runtime data, SSH keys included. Plus early prompt-extraction reports.",
+      "estimated_duration_s": 16.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Three warning triangles land in a row, each labeled: zero-day, data export, prompt extraction.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "triangle one lands"
+          },
+          {
+            "at": 0.45,
+            "event": "triangle two lands"
+          },
+          {
+            "at": 0.7,
+            "event": "triangle three lands"
+          }
+        ],
+        "manim": {
+          "class": "M14_Vulnerabilities"
+        },
+        "motion_claim": "Three distinct findings, one visual language."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 17.09,
+      "audio_file": "mp3/beat-B14.mp3",
+      "render_duration_s": 17.125,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B14.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern four: policy, not cryptography. Training on by default. The ad-systems separation is a policy claim — no independent audit. Every file you ask about is processed in Meta's cloud, and tokens pasted into chat live in the cloud past expiry.",
+      "estimated_duration_s": 16.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A paper shield labeled 'policy' tears in half; a steel lock labeled 'crypto' holds firm.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "paper shield"
+          },
+          {
+            "at": 0.45,
+            "event": "shield tears"
+          },
+          {
+            "at": 0.7,
+            "event": "steel lock holds"
+          }
+        ],
+        "manim": {
+          "class": "M15_PolicyNotCrypto"
+        },
+        "motion_claim": "The tearing paper is the argument."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 14.7,
+      "audio_file": "mp3/beat-B15.mp3",
+      "render_duration_s": 14.708333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B15.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern five: prompt injection and approval fatigue. Any untrusted text — a webpage, an email, a PR, a code comment — can steer the agent, and the failure is adversarial, not random. Approvals only work if you read them; fatigue turns them into reflex.",
+      "estimated_duration_s": 17.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A page with hidden terracotta text steers an agent dot off course; then approval cards get rubber-stamped faster and faster.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "hidden text steers the dot"
+          },
+          {
+            "at": 0.5,
+            "event": "stamp speeds up"
+          }
+        ],
+        "manim": {
+          "class": "M16_InjectionFatigue"
+        },
+        "motion_claim": "Steering plus the accelerating stamp are both motions."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 14.89,
+      "audio_file": "mp3/beat-B16.mp3",
+      "render_duration_s": 14.916666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B16.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern six: trust by design. The mascot, the persona — Bear and Claude call them trust shortcuts. A cute character reads as safe before it's earned it. And 'superintelligence' branding, they say, overpromises for what's really an errand agent.",
+      "estimated_duration_s": 15.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A cute mascot face; hearts rise from it — then a price tag drops onto it.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "mascot face"
+          },
+          {
+            "at": 0.4,
+            "event": "hearts rise"
+          },
+          {
+            "at": 0.7,
+            "event": "price tag drops"
+          }
+        ],
+        "manim": {
+          "class": "M17_TrustByDesign"
+        },
+        "motion_claim": "The price tag landing on the cute face is the critique."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.5,
+      "audio_file": "mp3/beat-B17.mp3",
+      "render_duration_s": 13.5,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B17.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B18",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concerns seven and eight. Business conflicts: affordability advice from the company selling the ads, self-graded attribution, advice that only ever points at Meta inventory. And platform dependence: lock-in, a shopper-optimized roadmap where developer features can vanish.",
+      "estimated_duration_s": 14.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Two panels: a scale tipping toward ads; a roadmap that shrinks.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "scale tips"
+          },
+          {
+            "at": 0.55,
+            "event": "roadmap shrinks"
+          }
+        ],
+        "manim": {
+          "class": "M18_Conflicts"
+        },
+        "motion_claim": "The tipping scale and the shrinking roadmap are the two critiques."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 15.47,
+      "audio_file": "mp3/beat-B18.mp3",
+      "render_duration_s": 15.5,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B18.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B19",
+      "act": "security concerns",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Concern nine: the phone. Contacts, messages, health — the mobile permissions expose the most personal data of all. Nik won't use it there.",
+      "estimated_duration_s": 9.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A phone mark; permission toggles flip on, one after another — contacts, messages, health.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "phone mark"
+          },
+          {
+            "at": 0.4,
+            "event": "toggles flip on"
+          }
+        ],
+        "manim": {
+          "class": "M19_Phone"
+        },
+        "motion_claim": "The flipping toggles are the exposure."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 8.45,
+      "audio_file": "mp3/beat-B19.mp3",
+      "render_duration_s": 8.458333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B19.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B20",
+      "act": "how Bear resolved it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "How did Bear resolve it? First: the Mac app is gone. Signed out, deleted, revoked, login items cleared — verified with pgrep, the LaunchAgents, and mdfind. Muse is web-only now, through muse.ai, ideally in a dedicated browser profile. Not on the phone.",
+      "estimated_duration_s": 16.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A Mac app icon drops into a trash can; a browser window stays lit.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "app icon drops into trash"
+          },
+          {
+            "at": 0.55,
+            "event": "browser window stays lit"
+          }
+        ],
+        "manim": {
+          "class": "M20_MacAppGone"
+        },
+        "motion_claim": "Removal in motion; what remains is the answer."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 15.13,
+      "audio_file": "mp3/beat-B20.mp3",
+      "render_duration_s": 15.166666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B20.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B21",
+      "act": "how Bear resolved it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Second: the film setup. Muse works only in its cloud VM, on public sandbox repos. GitHub is a dedicated bot account, sandbox repos only, no pasted tokens. PRs only, branch protection, Claude Code review, deterministic CI — rendering on a burner MacBook with no Muse.",
+      "estimated_duration_s": 18.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Five stations — VM, PR, review, merge, burner — and a dot travels the pipeline left to right.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "five stations"
+          },
+          {
+            "at": 0.35,
+            "event": "dot travels the pipeline"
+          }
+        ],
+        "manim": {
+          "class": "M21_Pipeline"
+        },
+        "motion_claim": "The traveling dot is the workflow."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 17.02,
+      "audio_file": "mp3/beat-B21.mp3",
+      "render_duration_s": 17.041666666666668,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B21.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B22",
+      "act": "how Bear resolved it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Third: the general rules. Assume breach. Bound the blast radius. Enforce caps outside the agent — a card limit, not an instruction. Irreversible actions get a human. And protect the short list — email, money, credentials, public voice — with real walls, not policies.",
+      "estimated_duration_s": 17.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A wall; behind it four marks — email, money, credentials, voice.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "the wall"
+          },
+          {
+            "at": 0.5,
+            "event": "four marks behind it"
+          }
+        ],
+        "manim": {
+          "class": "M22_GeneralRules"
+        },
+        "motion_claim": "The wall with the valuables behind it is 'bound the blast radius'."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 15.19,
+      "audio_file": "mp3/beat-B22.mp3",
+      "render_duration_s": 15.208333333333334,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B22.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "B23",
+      "act": "open questions",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Six questions stay open. VM disk and compute limits? GitHub connector OAuth scopes? What does a 'Muse token' map to? Will confidential mode ship — with what guarantees? How long does the free tier stay generous? And do ads come to Muse?",
+      "estimated_duration_s": 16.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Six question marks land in a three-by-two grid.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "first row lands"
+          },
+          {
+            "at": 0.5,
+            "event": "second row lands"
+          }
+        ],
+        "manim": {
+          "class": "M23_OpenQuestions"
+        },
+        "motion_claim": "Open questions, visually open."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 13.21,
+      "audio_file": "mp3/beat-B23.mp3",
+      "render_duration_s": 13.25,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B23.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "BVDT",
+      "act": "recap",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Let's recap with Claude. Muse is Meta's consumer agent — it acts on errands, with endurance more than intelligence. It costs nothing to start; twenty or a hundred dollars a month buys volume, not features. Meta's bet is transaction fees on every purchase it brokers — plus the intent layer itself. The critique: full disk access, a deny-list, real vulnerabilities, and policy where crypto should be. Bear's answer: web-only, the Mac app gone, Muse confined to sandbox repos and reviewed PRs. Open questions: token limits, scopes, confidential mode — and whether the free ride lasts.",
+      "estimated_duration_s": 38.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "line 1 lands"
+          },
+          {
+            "at": 0.28,
+            "event": "line 2 lands"
+          },
+          {
+            "at": 0.46,
+            "event": "line 3 lands"
+          },
+          {
+            "at": 0.62,
+            "event": "line 4 lands"
+          },
+          {
+            "at": 0.78,
+            "event": "line 5 lands"
+          },
+          {
+            "at": 0.9,
+            "event": "line 6 lands"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "Claude on Muse",
+            "artifactHeading": "Recap",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Muse is Meta's consumer agent — acts on errands, endurance over intelligence.",
+              "Free to start; $20 or $100 a month buys volume, not features.",
+              "Meta's bet: transaction fees on every purchase — plus the intent layer.",
+              "The critique: full disk access, a deny-list, real vulns, policy not crypto.",
+              "Bear's answer: web-only, Mac app gone, sandbox repos and reviewed PRs.",
+              "Open: token limits, scopes, confidential mode, whether the free ride lasts."
+            ]
+          },
+          "rendered": {
+            "out": "media/BVDT.mp4",
+            "at": "2026-10-04T00:37:32.184809+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 31.47,
+      "audio_file": "mp3/beat-BVDT.mp3",
+      "render_duration_s": 31.5,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BVDT.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "BHTF",
+      "act": "your turn",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Your turn. List every AI app on your computer with disk access. For each one, write down whether it uses an allow-list or a deny-list. Then check two things yourself. Did you find every app? And can you say which list model each one uses?",
+      "estimated_duration_s": 18.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "Composer opens — 'Your turn.'"
+          },
+          {
+            "at": 0.1,
+            "event": "the prompt types in full"
+          },
+          {
+            "at": 0.8,
+            "event": "two check lines land"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "MUSE · YOUR TURN",
+            "segment": "Audit Your AI Apps",
+            "command": "Open System Settings, Privacy & Security, Full Disk Access — and list every AI app you see",
+            "runningText": "listing your AI apps…",
+            "output": [
+              "Check: you found every AI app with disk access.",
+              "Check: you can say allow-list or deny-list for each."
+            ],
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Muse Spark",
+            "effortLabel": "Low"
+          },
+          "rendered": {
+            "out": "media/BHTF.mp4",
+            "at": "2026-10-04T00:38:27.455470+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 13.03,
+      "audio_file": "mp3/beat-BHTF.mp3",
+      "render_duration_s": 13.041666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BHTF.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-03T21:35:15"
+      }
+    },
+    {
+      "beat_id": "BOUT",
+      "act": "outro",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Claude making a film about Muse. At Nik Bear Brown.",
+      "estimated_duration_s": 4.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "title restates; handle; mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Claude making a film about Muse",
+            "slug": "claude-liam-lecture-claude-making-a-film-about-muse",
+            "handle": "@NikBearBrown",
+            "subline": ""
+          },
+          "rendered": {
+            "out": "media/BOUT.mp4",
+            "at": "2026-10-04T00:38:43.294648+00:00"
+          }
+        }
+      },
+      "kind": "outro_voice",
+      "tail_silence_s": 1.0,
+      "actual_duration_s": 3.65,
+      "audio_file": "mp3/beat-BOUT.mp3",
+      "render_duration_s": 3.6666666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BOUT.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-10-03T21:35:15"
+      }
+    }
+  ]
+}

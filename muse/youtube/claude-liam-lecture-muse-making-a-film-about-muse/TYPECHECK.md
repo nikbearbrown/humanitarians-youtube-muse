@@ -1,6 +1,6 @@
 # TYPECHECK.md — GATE T
 
-Reel: `claude-liam-lecture-muse-making-a-film-about-muse`  |  Checked: 2026-10-03T13:54  |  Overall: **FAIL**  |  Beats checked: 22  |  FAILs: 2
+Reel: `claude-liam-lecture-muse-making-a-film-about-muse`  |  Checked: 2026-10-03T14:07  |  Overall: PASS  |  Beats checked: 22  |  FAILs: 0
 
 Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-height.  Contrast: 4.5:1 WCAG.  Kern threshold: 3.5× expected advance.  Wordy budget: 2 elements.
 
@@ -28,8 +28,8 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 | B12 | manim | light | min-size §8.1: min text-run height 71px >= floor 41px | PASS | — |
 | B13 | manim | light | min-size §8.1: min text-run height 48px >= floor 41px | PASS | — |
 | B14 | manim | light | min-size §8.1: min text-run height 47px >= floor 41px | PASS | — |
-| B15 | manim | light | contrast §8.3: terracotta accent #D97757 on cream 2.74:1 < 4.5:1 WCAG — accent text must s… | **FAIL** | Use INK on cream; add backing plate under accent text |
-| B16 | manim | light | contrast §8.3: terracotta accent #D97757 on cream 2.74:1 < 4.5:1 WCAG — accent text must s… | **FAIL** | Use INK on cream; add backing plate under accent text |
+| B15 | manim | light | min-size §8.1: min text-run height 46px >= floor 41px | PASS | — |
+| B16 | manim | light | min-size §8.1: min text-run height 47px >= floor 41px | PASS | — |
 | B17 | manim | light | min-size §8.1: min text-run height 43px >= floor 41px | PASS | — |
 | BVDT | bookend | light | min-size §8.1: hand-drawn pattern (ClaudeVerdictArtifact) — §8.1 hachure/crossbar fragment… | PASS | — |
 | BHTF | bookend | light | min-size §8.1: hand-drawn pattern (ClaudeComposerAsk) — §8.1 hachure/crossbar fragments ar… | PASS | — |
@@ -39,14 +39,7 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 
 ## Failures requiring action before cut
 
-### B15 (manim)
-- **contrast §8.3**: terracotta accent #D97757 on cream 2.74:1 < 4.5:1 WCAG — accent text must switch to INK #3D3929 or carry a backing plate
-- **Fix:** Use INK on cream; add backing plate under accent text
-
-### B16 (manim)
-- **contrast §8.3**: terracotta accent #D97757 on cream 2.74:1 < 4.5:1 WCAG — accent text must switch to INK #3D3929 or carry a backing plate
-- **Fix:** Use INK on cream; add backing plate under accent text
-
+*None — GATE T PASS.*
 ---
 
 ## Check summary
@@ -56,7 +49,7 @@ Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-heigh
 | no-wordy-card §8.5 | 1 | 0 |
 | min-size §8.1 | 22 | 0 |
 | overflow §8.2 | 22 | 0 |
-| contrast §8.3 | 22 | 2 |
+| contrast §8.3 | 22 | 0 |
 | contrast-local §8.3b | 22 | 0 |
 | bbox-overlap §8.6b | 22 | 0 |
 | card-clip §8.13 | 22 | 0 |

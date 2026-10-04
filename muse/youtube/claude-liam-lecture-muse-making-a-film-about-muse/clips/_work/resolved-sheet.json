@@ -1,0 +1,1070 @@
+{
+  "metadata": {
+    "slug": "claude-liam-lecture-muse-making-a-film-about-muse",
+    "title": "Muse making a film about Muse",
+    "topic": "MUSE · WHAT IT IS",
+    "skill": "lecture",
+    "style_preset": "lecture",
+    "channel": "claude-liam",
+    "persona": "Liam (in for Bear)",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "engine": "kokoro",
+    "clock": "narration",
+    "palette": "claude",
+    "register": "Teardown",
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "width": 3840,
+    "height": 2160,
+    "caption_policy": "none",
+    "greeting_language": "German/Dutch (Hallo)",
+    "audience": "anyone who has heard the name Muse and wants the plain version",
+    "source_doc": "~/docs/muse.md (primary); ~/docs/client-surfaces.md; ~/docs/data-handling.md",
+    "playlist": "Muse",
+    "chapter_number": 0,
+    "tags": [
+      "Muse",
+      "Meta",
+      "personal AI agent",
+      "Muse Spark",
+      "Nik Bear Brown"
+    ],
+    "build": {
+      "at": "2026-10-03T13:52:45",
+      "cut": "review",
+      "filled": 22,
+      "of": 22,
+      "slates": [],
+      "skin_warnings": [
+        "BIDEA: palette=claude but the cold open is 'BrutalistHesitantWriter' — COLD OPEN LAW wants ClaudeComposerAsk"
+      ]
+    }
+  },
+  "beats": [
+    {
+      "beat_id": "BIDEA",
+      "act": "the question",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Hallo. This is Liam, in for Bear. You've heard the name Muse. But what is it — just another chatbot? No. It's something more specific. Let me show you what it does, and how it's paid for.",
+      "estimated_duration_s": 14.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "types 'What is Muse —'"
+          },
+          {
+            "at": 0.5,
+            "event": "backspaces 'just another chatbot' → 'a personal agent' on the spoken correction"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "What is Muse —\njust another chatbot?",
+            "triggerWords": "just another chatbot",
+            "replacementWords": "a personal agent",
+            "fontSize": 70,
+            "charMs": 22,
+            "hesitateBetween": 6,
+            "hesitateWithin": 1,
+            "mistakeRate": 2,
+            "jitter": 20,
+            "seed": "claude-liam-lecture-muse-making-a-film-about-muse",
+            "banner": ""
+          },
+          "rendered": {
+            "out": "media/BIDEA.mp4",
+            "at": "2026-10-03T17:36:32.631396+00:00"
+          }
+        }
+      },
+      "lead_silence_s": 0.8,
+      "motion_claim": "The writer types the naive chatbot framing and corrects it to the real one: a personal agent.",
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "Hesitant-writer bookend: the correction is the motion."
+      },
+      "actual_duration_s": 9.73,
+      "audio_file": "mp3/beat-BIDEA.mp3",
+      "render_duration_s": 9.75,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BIDEA.mp4",
+        "filled_by": "remotion:BrutalistHesitantWriter",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "BDEFS",
+      "act": "terms",
+      "lane": "bookend",
+      "proof_gate": "CARD",
+      "narration_text": "Four terms. Agent: a program that works for you on its own. Memory: what it keeps about you between chats. Skill: one built-in thing it knows how to do. Artifact: a document, page, or app it builds for you.",
+      "estimated_duration_s": 15.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.12,
+            "event": "'agent' lands"
+          },
+          {
+            "at": 0.4,
+            "event": "'memory' lands"
+          },
+          {
+            "at": 0.62,
+            "event": "'skill' lands"
+          },
+          {
+            "at": 0.8,
+            "event": "'artifact' lands"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeDefinitions",
+          "props": {
+            "title": "Terms In This Lecture",
+            "terms": [
+              {
+                "term": "agent",
+                "meaning": "a program that works for you on its own"
+              },
+              {
+                "term": "memory",
+                "meaning": "what it keeps about you between chats"
+              },
+              {
+                "term": "skill",
+                "meaning": "one built-in thing it knows how to do"
+              },
+              {
+                "term": "artifact",
+                "meaning": "a document, page, or app it builds for you"
+              }
+            ],
+            "folderLabel": "@NikBearBrown"
+          },
+          "rendered": {
+            "out": "media/BDEFS.mp4",
+            "at": "2026-10-03T17:37:03.384199+00:00"
+          }
+        }
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "TERMS card: four prerequisites, one line each."
+      },
+      "actual_duration_s": 11.67,
+      "audio_file": "mp3/beat-BDEFS.mp3",
+      "render_duration_s": 11.708333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BDEFS.mp4",
+        "filled_by": "remotion:ClaudeDefinitions",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B01",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Muse is a personal AI agent. Everyone gets their own — you get an agent, and it runs on its own dedicated computer, which stays with you between conversations.",
+      "estimated_duration_s": 11.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "One user mark and one computer mark; a pairing link draws between them and holds.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "user mark and computer mark"
+          },
+          {
+            "at": 0.4,
+            "event": "pairing link draws"
+          }
+        ],
+        "manim": {
+          "class": "M01_OwnAgent"
+        },
+        "motion_claim": "The drawn 1:1 link is the claim: one agent, one computer, yours."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 9.71,
+      "audio_file": "mp3/beat-B01.mp3",
+      "render_duration_s": 9.75,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B01.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B02",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "And it's strictly personal. Every conversation is between you and your own agent. No group chats, no shared rooms. One to one.",
+      "estimated_duration_s": 8.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Two nodes joined by one link; a third node reaches in and its link is crossed out in terracotta.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "two nodes, one link"
+          },
+          {
+            "at": 0.5,
+            "event": "third node rejected"
+          }
+        ],
+        "manim": {
+          "class": "M02_StrictlyPersonal"
+        },
+        "motion_claim": "The rejected third connection teaches 'no group chats' in motion."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 7.57,
+      "audio_file": "mp3/beat-B02.mp3",
+      "render_duration_s": 7.583333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B02.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B03",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Under the hood, it's powered by Muse Spark — from Meta's Muse model family.",
+      "estimated_duration_s": 5.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A lineage tree builds downward: Meta, then the Muse model family, then Muse Spark, then Muse.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "Meta node"
+          },
+          {
+            "at": 0.35,
+            "event": "family branches"
+          },
+          {
+            "at": 0.6,
+            "event": "Muse Spark lands"
+          },
+          {
+            "at": 0.8,
+            "event": "Muse at the root"
+          }
+        ],
+        "manim": {
+          "class": "M03_MuseSpark"
+        },
+        "motion_claim": "The growing tree is the lineage."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 4.74,
+      "audio_file": "mp3/beat-B03.mp3",
+      "render_duration_s": 4.75,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B03.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B04",
+      "act": "what it is",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Muse went live on September 8th, 2026, and it's available in the US and Canada.",
+      "estimated_duration_s": 6.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A timeline; a tick lands on September 8, 2026; 'US' and 'Canada' labels fade in beneath.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "timeline"
+          },
+          {
+            "at": 0.45,
+            "event": "tick lands on the date"
+          },
+          {
+            "at": 0.7,
+            "event": "US + Canada labels"
+          }
+        ],
+        "manim": {
+          "class": "M04_LaunchDate"
+        },
+        "motion_claim": "The tick landing on the date is the launch event."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 6.17,
+      "audio_file": "mp3/beat-B04.mp3",
+      "render_duration_s": 6.208333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B04.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B05",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "Chat is the front door. Every surface opens on a conversation — you talk, it answers, and the thread stays yours.",
+      "estimated_duration_s": 8.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Chat bubbles converge from four surface marks into the agent mark at center.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "surface marks"
+          },
+          {
+            "at": 0.4,
+            "event": "bubbles converge"
+          }
+        ],
+        "manim": {
+          "class": "M05_ChatFrontDoor"
+        },
+        "motion_claim": "The converging bubbles show every surface leading to the same agent."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 6.72,
+      "audio_file": "mp3/beat-B05.mp3",
+      "render_duration_s": 6.75,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B05.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B06",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It remembers. Your conversations, your preferences, your files — they carry from one chat to the next, so you never start over.",
+      "estimated_duration_s": 8.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Chat one deposits a memory chip into a store; chat two retrieves the same chip.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "chat one deposits the chip"
+          },
+          {
+            "at": 0.55,
+            "event": "chat two retrieves it"
+          }
+        ],
+        "manim": {
+          "class": "M06_ItRemembers"
+        },
+        "motion_claim": "Deposit then retrieve, in motion, is memory across chats."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 7.06,
+      "audio_file": "mp3/beat-B06.mp3",
+      "render_duration_s": 7.083333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B06.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B07",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It uses tools. Skills and connectors plug it into mail, calendar, shopping, media, and your paired devices — it can act, not just answer.",
+      "estimated_duration_s": 9.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Hub-and-spoke: the agent at center, tool nodes around; links light up one by one.",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "agent hub, tool nodes"
+          },
+          {
+            "at": 0.4,
+            "event": "links light up in turn"
+          }
+        ],
+        "manim": {
+          "class": "M07_UsesTools"
+        },
+        "motion_claim": "The lighting links show it reaching out and using the tools."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 8.28,
+      "audio_file": "mp3/beat-B07.mp3",
+      "render_duration_s": 8.291666666666666,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B07.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B08",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It builds things. Artifacts — documents, web pages, apps — that you keep, and keep using.",
+      "estimated_duration_s": 6.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Parts assemble into a document, then a page, then an app icon — each labeled once.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "document assembles"
+          },
+          {
+            "at": 0.45,
+            "event": "page assembles"
+          },
+          {
+            "at": 0.7,
+            "event": "app assembles"
+          }
+        ],
+        "manim": {
+          "class": "M08_BuildsThings"
+        },
+        "motion_claim": "Assembly in motion is the making."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.44,
+      "audio_file": "mp3/beat-B08.mp3",
+      "render_duration_s": 5.458333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B08.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B09",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It keeps your stuff. Files you hand it land in your Library — organized, and findable.",
+      "estimated_duration_s": 6.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "File marks flow into a Library shelf that fills, row by row.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "files arrive"
+          },
+          {
+            "at": 0.5,
+            "event": "shelf fills"
+          }
+        ],
+        "manim": {
+          "class": "M09_KeepsYourStuff"
+        },
+        "motion_claim": "The filling shelf is accumulation made visible."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.12,
+      "audio_file": "mp3/beat-B09.mp3",
+      "render_duration_s": 5.125,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B09.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B10",
+      "act": "what it does",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "And it works while you're away. Scheduled checks, Feed posts, Ideas, Goals — the work goes on when you're not watching.",
+      "estimated_duration_s": 8.4,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A clock sweeps while task cards complete along a timeline; the user mark is absent.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "clock starts, user mark leaves"
+          },
+          {
+            "at": 0.45,
+            "event": "task cards complete"
+          }
+        ],
+        "manim": {
+          "class": "M10_WorksWhileAway"
+        },
+        "motion_claim": "Time passing with work happening, and no user present."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 6.68,
+      "audio_file": "mp3/beat-B10.mp3",
+      "render_duration_s": 6.708333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B10.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B11",
+      "act": "where you reach it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "On the web, at muse.ai — the full app in your browser: chat, feed, ideas, goals, library.",
+      "estimated_duration_s": 6.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A browser-window skin labeled muse.ai; chat lines type themselves inside.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "browser window"
+          },
+          {
+            "at": 0.45,
+            "event": "chat lines type"
+          }
+        ],
+        "manim": {
+          "class": "M11_WebApp"
+        },
+        "motion_claim": "The typing lines show the app alive in the browser."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.95,
+      "audio_file": "mp3/beat-B11.mp3",
+      "render_duration_s": 5.958333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B11.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B12",
+      "act": "where you reach it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "On your phone — native iPhone and Android apps, with the same tabs and the same agent.",
+      "estimated_duration_s": 6.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Two phone marks; chat lines animate in on both, in sync.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "two phones"
+          },
+          {
+            "at": 0.45,
+            "event": "chat lines on both"
+          }
+        ],
+        "manim": {
+          "class": "M12_MobileApps"
+        },
+        "motion_claim": "Synced lines on both phones: the same agent, everywhere."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.4,
+      "audio_file": "mp3/beat-B12.mp3",
+      "render_duration_s": 5.416666666666667,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B12.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B13",
+      "act": "where you reach it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "On your Mac — a chat app that also pairs your Mac as one of its devices, so it can work with what's there.",
+      "estimated_duration_s": 9.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A desktop mark; a pairing link draws to the agent and pulses.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "desktop mark"
+          },
+          {
+            "at": 0.45,
+            "event": "pairing link draws and pulses"
+          }
+        ],
+        "manim": {
+          "class": "M13_MacApp"
+        },
+        "motion_claim": "The drawn, pulsing link is the pairing."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.97,
+      "audio_file": "mp3/beat-B13.mp3",
+      "render_duration_s": 6.0,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B13.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B14",
+      "act": "where you reach it",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "And over WhatsApp — Muse as a messaging channel. The same agent, in the chat app you already use.",
+      "estimated_duration_s": 7.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A phone mark; message bubbles exchange between the phone and the agent.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "phone mark"
+          },
+          {
+            "at": 0.45,
+            "event": "bubbles exchange"
+          }
+        ],
+        "manim": {
+          "class": "M14_WhatsApp"
+        },
+        "motion_claim": "The exchange is the channel working."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 5.89,
+      "audio_file": "mp3/beat-B14.mp3",
+      "render_duration_s": 5.916666666666667,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B14.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B15",
+      "act": "how it's paid for",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "It's free to start. Free access comes with a usage limit — enough to put it to work.",
+      "estimated_duration_s": 7.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "A meter fills and stops dead at a limit line.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "meter fills"
+          },
+          {
+            "at": 0.6,
+            "event": "stops at the limit"
+          }
+        ],
+        "manim": {
+          "class": "M15_FreeTier"
+        },
+        "motion_claim": "The meter stopping IS the usage limit."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 4.95,
+      "audio_file": "mp3/beat-B15.mp3",
+      "render_duration_s": 4.958333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B15.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B16",
+      "act": "how it's paid for",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "And there's a paid monthly subscription for more usage, whenever you need it.",
+      "estimated_duration_s": 5.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "The same meter; the cap lifts higher and the meter fills past the old line.",
+        "show": [
+          {
+            "at": 0.2,
+            "event": "cap lifts"
+          },
+          {
+            "at": 0.55,
+            "event": "meter fills higher"
+          }
+        ],
+        "manim": {
+          "class": "M16_Subscription"
+        },
+        "motion_claim": "The same meter, a higher cap — the rhyme teaches the difference."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 4.44,
+      "audio_file": "mp3/beat-B16.mp3",
+      "render_duration_s": 4.458333333333333,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B16.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "B17",
+      "act": "how it's paid for",
+      "lane": "manim",
+      "proof_gate": "SHOW",
+      "narration_text": "You subscribe at muse.ai, or through the Apple App Store and Google Play. It renews monthly, unless you cancel.",
+      "estimated_duration_s": 7.6,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "own",
+        "visual_intent": "Three purchase marks; a circular monthly arrow turns above them.",
+        "show": [
+          {
+            "at": 0.15,
+            "event": "three purchase marks"
+          },
+          {
+            "at": 0.5,
+            "event": "monthly arrow turns"
+          }
+        ],
+        "manim": {
+          "class": "M17_WhereToSubscribe"
+        },
+        "motion_claim": "The turning arrow is the renewing subscription."
+      },
+      "qc": {
+        "sparse_by_design": true,
+        "sparse_reason": "lecture style: one drawn scene on a cream stage per beat, minimal labels, voice carries the explanation."
+      },
+      "actual_duration_s": 6.72,
+      "audio_file": "mp3/beat-B17.mp3",
+      "render_duration_s": 6.75,
+      "build": {
+        "status": "MANIM",
+        "src": "manim/B17.mp4",
+        "filled_by": "manim",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "BVDT",
+      "act": "recap",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Let's recap with Claude. Muse is your own personal AI agent, on its own computer. It talks, remembers, uses tools, builds things, and works while you're away. You reach it on the web, your phone, your Mac, or WhatsApp. It's free with a usage limit — or a monthly subscription for more.",
+      "estimated_duration_s": 20.8,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.1,
+            "event": "line 1 lands"
+          },
+          {
+            "at": 0.35,
+            "event": "line 2 lands"
+          },
+          {
+            "at": 0.6,
+            "event": "line 3 lands"
+          },
+          {
+            "at": 0.8,
+            "event": "line 4 lands"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "What is Muse",
+            "artifactHeading": "Recap",
+            "brandLabel": "@NikBearBrown",
+            "artifactLines": [
+              "Muse is your own personal AI agent, on its own computer.",
+              "It talks, remembers, uses tools, builds things, and works while you're away.",
+              "You reach it on the web, your phone, your Mac, or WhatsApp.",
+              "It's free with a usage limit — or a monthly subscription for more."
+            ]
+          },
+          "rendered": {
+            "out": "media/BVDT.mp4",
+            "at": "2026-10-03T17:38:07.014387+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 14.89,
+      "audio_file": "mp3/beat-BVDT.mp3",
+      "render_duration_s": 14.916666666666666,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BVDT.mp4",
+        "filled_by": "remotion:ClaudeVerdictArtifact",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "BHTF",
+      "act": "your turn",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Your turn. Paste this into Muse: Remember one preference about me: I take my coffee black. Then, in a brand-new chat, tell me what you remember about my coffee. When I ask you to forget it, forget it. Then check two things yourself. Does it recall the preference correctly in the new chat? And does it offer to forget it when you ask?",
+      "estimated_duration_s": 25.2,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "Composer opens — 'Your turn.'"
+          },
+          {
+            "at": 0.1,
+            "event": "the prompt types in full"
+          },
+          {
+            "at": 0.8,
+            "event": "two check lines land"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn.",
+            "topic": "MUSE · YOUR TURN",
+            "segment": "Test Its Memory",
+            "command": "Remember one preference about me: I take my coffee black. Then, in a brand-new chat, tell me what you remember about my coffee. When I ask you to forget it, forget it.",
+            "runningText": "paste this into Muse…",
+            "output": [
+              "Check: it recalls the preference correctly in the new chat.",
+              "Check: it offers to forget it when you ask."
+            ],
+            "folderLabel": "@NikBearBrown",
+            "modelLabel": "Muse Spark",
+            "effortLabel": "Low"
+          },
+          "rendered": {
+            "out": "media/BHTF.mp4",
+            "at": "2026-10-03T17:39:03.810375+00:00"
+          }
+        }
+      },
+      "actual_duration_s": 15.83,
+      "audio_file": "mp3/beat-BHTF.mp3",
+      "render_duration_s": 15.833333333333334,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BHTF.mp4",
+        "filled_by": "remotion:ClaudeComposerAsk",
+        "at": "2026-10-03T13:52:45"
+      }
+    },
+    {
+      "beat_id": "BOUT",
+      "act": "outro",
+      "lane": "bookend",
+      "proof_gate": "SHOW",
+      "narration_text": "Muse making a film about Muse. At Nik Bear Brown.",
+      "estimated_duration_s": 4.0,
+      "voice": "am_onyx",
+      "engine": "kokoro",
+      "shot": {
+        "type": "REMOTION",
+        "source": "own",
+        "show": [
+          {
+            "at": 0.0,
+            "event": "title restates; handle; mascot"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Muse making a film about Muse",
+            "slug": "claude-liam-lecture-muse-making-a-film-about-muse",
+            "handle": "@NikBearBrown",
+            "subline": ""
+          },
+          "rendered": {
+            "out": "media/BOUT.mp4",
+            "at": "2026-10-03T17:39:19.426347+00:00"
+          }
+        }
+      },
+      "kind": "outro_voice",
+      "tail_silence_s": 1.0,
+      "actual_duration_s": 3.63,
+      "audio_file": "mp3/beat-BOUT.mp3",
+      "render_duration_s": 3.6666666666666665,
+      "build": {
+        "status": "VIDEO",
+        "src": "media/BOUT.mp4",
+        "filled_by": "remotion:ClaudeTitleOutro",
+        "at": "2026-10-03T13:52:45"
+      }
+    }
+  ]
+}
