@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- ============================================================================
+  NORTHEASTERN GUEST SPEAKER SERIES — 16:9 TEMPLATE (1920 x 1080)
+  For: YouTube thumbnails, Twitter/X, LinkedIn, Facebook landscape posts.
+  ----------------------------------------------------------------------------
+  LOCKED (do not change): Northeastern colors, "Guest Speaker Series"
+  branding, SEIS / Microsoft Teams labels, red frame.
+  EDITABLE: everything marked <!-- EDIT: ... --> — photo, event title,
+  description, date/time, speaker, QR code, course/host line.
+============================================================================= -->
+<style>
+  /* LOCKED — Northeastern brand colors. Do not change. */
+  :root { --nu-red: #C12925; --nu-black: #111111; --nu-white: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #888; display: flex; justify-content: center; padding: 0;
+  }
+  .page {
+    width: 1920px; height: 1080px; background: var(--nu-white);
+    border: 30px solid var(--nu-red); position: relative; overflow: hidden;
+    color: var(--nu-black); display: flex;
+  }
+  /* EDIT: speaker/event photo */
+  .photo { width: 44%; background: #ddd; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .content { flex: 1; padding: 56px 64px; display: flex; flex-direction: column; }
+  .masthead { display: flex; justify-content: space-between; align-items: flex-start; }
+  .nu-lockup { display: flex; gap: 14px; align-items: flex-start; }
+  .nu-n { color: var(--nu-red); font-weight: 900; font-size: 72px; line-height: 0.9; }
+  .nu-name { font-size: 21px; line-height: 1.25; font-weight: 700; }
+  .nu-name span { display: block; }
+  /* EDIT: replace with the event's QR code (link to Teams/registration) */
+  .qr-slot {
+    width: 130px; height: 130px; border: 3px dashed var(--nu-black);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700; text-align: center;
+  }
+  /* FIXED: series branding */
+  .series { font-weight: 900; font-size: 96px; line-height: 0.95; letter-spacing: -2px; margin: 26px 0 8px; }
+  /* FIXED */
+  .teams { font-weight: 700; font-size: 20px; letter-spacing: 4px; color: var(--nu-red); }
+  /* EDIT: event title */
+  .event-title { font-weight: 900; font-size: 110px; line-height: 0.95; letter-spacing: -2px; margin-top: 18px; }
+  /* EDIT: one-line description */
+  .event-desc { font-size: 30px; line-height: 1.35; margin: 18px 0; max-width: 800px; }
+  .datetime { display: flex; gap: 16px; align-items: center; margin-top: 6px; }
+  /* EDIT: date and time */
+  .date-block { background: var(--nu-black); color: var(--nu-white); font-weight: 800;
+    font-size: 30px; padding: 12px 20px; letter-spacing: 1px; }
+  .time-block { border: 3px solid var(--nu-black); font-weight: 800; font-size: 30px; padding: 9px 20px; }
+  /* EDIT: speaker name */
+  .speaker { font-weight: 900; font-size: 44px; margin-top: 26px; }
+  /* EDIT: speaker role / credentials */
+  .speaker-role { font-size: 28px; line-height: 1.35; }
+  .footer { margin-top: auto; border-top: 3px solid var(--nu-black); padding-top: 18px; display: flex; justify-content: space-between; align-items: flex-end; }
+  /* EDIT: course / host line for this event */
+  .course { font-weight: 800; font-size: 26px; }
+  .course-sub { font-size: 23px; }
+  .seis { font-size: 23px; } /* FIXED */
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- EDIT: speaker/event photo -->
+  <div class="photo"><img src="doug-menuez.png" alt="Speaker photo"></div>
+  <div class="content">
+    <div class="masthead">
+      <!-- FIXED: Northeastern lockup -->
+      <div class="nu-lockup">
+        <div class="nu-n">N</div>
+        <div class="nu-name"><span>Northeastern University</span><span>Software Engineering</span><span>and Information Systems</span></div>
+      </div>
+      <!-- EDIT: replace with the event's QR code (link to Teams/registration) -->
+      <div class="qr-slot">QR<br>CODE</div>
+    </div>
+    <!-- FIXED: series branding -->
+    <div class="series">Guest Speaker Series</div>
+    <!-- FIXED -->
+    <div class="teams">LIVE ON MICROSOFT TEAMS</div>
+    <!-- EDIT: event title -->
+    <div class="event-title">Fearless Genius</div>
+    <!-- EDIT: one-line description -->
+    <div class="event-desc">A conversation on Silicon Valley, creativity, and technological change.</div>
+    <!-- EDIT: date and time -->
+    <div class="datetime">
+      <span class="date-block">SATURDAY, OCT. 10, 2026</span>
+      <span class="time-block">12:00–1:30 PM ET</span>
+    </div>
+    <!-- EDIT: speaker name -->
+    <div class="speaker">Doug Menuez</div>
+    <!-- EDIT: speaker role / credentials -->
+    <div class="speaker-role">Documentary Photographer · Author of <em>Fearless Genius</em></div>
+    <div class="footer">
+      <div>
+        <!-- EDIT: course / host line for this event -->
+        <div class="course">INFO 7375: Branding &amp; AI</div>
+        <div class="course-sub">Prof. Nina Harris and Prof. Nik Bear Brown</div>
+      </div>
+      <!-- FIXED -->
+      <div class="seis">Open to the SEIS community</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
