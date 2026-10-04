@@ -1,66 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920">
-<!-- ======================================================================
-  NORTHEASTERN GUEST SPEAKER SERIES — 9:16 1080x1920
-  LOCKED: Northeastern colors, series branding, SEIS/Teams labels, red frame.
-  EDITABLE: items marked EDIT — photo, title, description, date/time,
-  speaker, QR code, course/host line.
-====================================================================== -->
+<!-- 9:16 1080x1920: LOCKED series branding, EDITABLE event slots (see comments) -->
 <rect x="0" y="0" width="1080" height="1920" fill="#ffffff"/>
 <rect x="15.0" y="15.0" width="1050" height="1890" fill="none" stroke="#C12925" stroke-width="30"/>
-<g id="fixed-nu-lockup">
-<!-- FIXED: Northeastern lockup -->
-<text x="70" y="150" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="72" font-weight="900" fill="#C12925">N</text>
-<text x="152.8" y="105.36" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111">Northeastern University</text>
-<text x="152.8" y="133.96" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111">Software Engineering</text>
-<text x="152.8" y="162.56" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111">and Information Systems</text>
+<g id="fixed-nu-lockup"><!-- FIXED: Northeastern lockup -->
+<text x="70" y="150" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="72" font-weight="900" fill="#C12925" letter-spacing="0">N</text>
+<text x="152.8" y="105.36" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111" letter-spacing="0">Northeastern University</text>
+<text x="152.8" y="133.96" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111" letter-spacing="0">Software Engineering</text>
+<text x="152.8" y="162.56" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#111111" letter-spacing="0">and Information Systems</text>
 </g>
-<g id="editable-qr">
-<!-- EDIT: replace with the event's QR code (link to Teams/registration) -->
+<g id="editable-qr"><!-- EDIT: replace with the event QR code -->
 <rect x="870" y="70" width="140" height="140" fill="none" stroke="#111111" stroke-width="3" stroke-dasharray="10,7"/>
-<text x="940.0" y="146.0" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#111111" text-anchor="middle">QR CODE</text>
+<text x="940.0" y="145.0" text-anchor="middle" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#111111">QR CODE</text>
 </g>
-<g id="fixed-series-title">
-<!-- FIXED: series branding -->
-<text x="70" y="330" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="-2">Guest</text>
-<text x="70" y="424" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="-2">Speaker</text>
-<text x="70" y="518" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="-2">Series</text>
+<g id="fixed-t0"><!-- FIXED: series branding — do not change -->
+<text x="70" y="330" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" letter-spacing="-2">Guest</text>
 </g>
-<text x="70" y="622" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#C12925" text-anchor="start" letter-spacing="4">LIVE ON MICROSOFT TEAMS</text>
-<!-- FIXED: Teams label -->
-<g id="editable-photo">
-<!-- EDIT: speaker/event photo — replace doug-menuez.png -->
-<clipPath id="editable-photo-clip"><rect x="30" y="660" width="1020" height="560"/></clipPath>
-<rect x="30" y="660" width="1020" height="560" fill="#dddddd"/>
-<g clip-path="url(#editable-photo-clip)">
-<image xlink:href="doug-menuez.png" href="doug-menuez.png" x="30" y="660" width="1020" height="560" preserveAspectRatio="xMidYMid slice"/>
+<g id="fixed-t1"><!-- FIXED: series branding — do not change -->
+<text x="70" y="424" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" letter-spacing="-2">Speaker</text>
 </g>
+<g id="fixed-t2"><!-- FIXED: series branding — do not change -->
+<text x="70" y="518" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="100" font-weight="900" fill="#111111" letter-spacing="-2">Series</text>
 </g>
-<g id="editable-event-title">
-<!-- EDIT: event title -->
-<text x="70" y="1330" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="112" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="-2">Fearless</text>
-<text x="70" y="1434" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="112" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="-2">Genius</text>
+<g id="fixed-t3"><!-- FIXED: series branding — do not change -->
+<text x="70" y="566" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#C12925" letter-spacing="4">LIVE ON MICROSOFT TEAMS</text>
 </g>
-<g id="editable-event-desc">
-<!-- EDIT: one-line description -->
-<text x="70" y="1548" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="400" fill="#111111" text-anchor="start" letter-spacing="0">A conversation on Silicon Valley, creativity, and technological change.</text></g>
-<g id="editable-datetime">
-<!-- EDIT: date and time -->
-<rect x="70" y="1588" width="310" height="53" fill="#111111"/>
-<text x="88" y="1623" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="31" font-weight="800" fill="#ffffff" letter-spacing="1">SATURDAY, OCT. 10, 2026</text>
+<g id="editable-photo-ph1"><!-- EDIT: speaker/event photo -->
+<clipPath id="ph1c"><rect x="30" y="610" width="1020" height="540"/></clipPath>
+<rect x="30" y="610" width="1020" height="540" fill="#dddddd"/>
+<g clip-path="url(#ph1c)"><image xlink:href="doug-menuez.png" href="doug-menuez.png" x="30" y="610" width="1020" height="540" preserveAspectRatio="xMidYMid slice"/></g></g>
+<g id="editable-t4"><!-- EDIT -->
+<text x="70" y="1262" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="104" font-weight="900" fill="#111111" letter-spacing="-2">Fearless</text>
 </g>
-<g id="editable-datetime-time">
-<rect x="70" y="1653" width="310" height="49" fill="none" stroke="#111111" stroke-width="3"/>
-<text x="88" y="1686" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="31" font-weight="800" fill="#111111">12:00–1:30 PM ET</text>
+<g id="editable-t5"><!-- EDIT -->
+<text x="70" y="1366" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="104" font-weight="900" fill="#111111" letter-spacing="-2">Genius</text>
 </g>
-<g id="editable-speaker">
-<!-- EDIT: speaker name -->
-<text x="70" y="1738" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="50" font-weight="900" fill="#111111" text-anchor="start" letter-spacing="0">Doug Menuez</text>
-<text x="70" y="1778" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="29" font-weight="400" fill="#111111" text-anchor="start" letter-spacing="0">Documentary Photographer · Author of Fearless Genius</text>
+<g id="editable-t6"><!-- EDIT -->
+<text x="70" y="1410" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="27" font-weight="400" fill="#111111" letter-spacing="0">A conversation on Silicon Valley, creativity,</text>
 </g>
-<line x1="70" y1="1820" x2="1010" y2="1820" stroke="#111111" stroke-width="3"/>
-<g id="editable-course">
-<!-- EDIT: course / host line -->
-<text x="70" y="1852" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="27" font-weight="800" fill="#111111" text-anchor="start" letter-spacing="0">INFO 7375: Branding &amp; AI</text></g>
-<text x="70" y="1880" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="24" font-weight="400" fill="#111111" text-anchor="start" letter-spacing="0">Open to the SEIS community</text>
-<!-- FIXED: SEIS line -->
+<g id="editable-t7"><!-- EDIT -->
+<text x="70" y="1444" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="27" font-weight="400" fill="#111111" letter-spacing="0">and technological change.</text>
+</g>
+<g id="editable-datetime"><!-- EDIT: date and time -->
+<rect x="70" y="1472" width="464" height="52" fill="#111111"/>
+<text x="88" y="1506" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="#ffffff" letter-spacing="1">SATURDAY, OCT. 10, 2026</text>
+<rect x="70" y="1536" width="464" height="48" fill="none" stroke="#111111" stroke-width="3"/>
+<text x="88" y="1568" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="#111111" letter-spacing="0">12:00–1:30 PM ET</text>
+</g>
+<g id="editable-t8"><!-- EDIT -->
+<text x="70" y="1674" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="48" font-weight="900" fill="#111111" letter-spacing="0">Doug Menuez</text>
+</g>
+<g id="editable-t9"><!-- EDIT -->
+<text x="70" y="1716" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="28" font-weight="400" fill="#111111" letter-spacing="0">Documentary Photographer · Author of Fearless Genius</text>
+</g>
+<line x1="70" y1="1760" x2="1010" y2="1760" stroke="#111111" stroke-width="3"/>
+<g id="editable-t10"><!-- EDIT -->
+<text x="70" y="1792" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="26" font-weight="800" fill="#111111" letter-spacing="0">INFO 7375: Branding &amp; AI</text>
+</g>
+<g id="editable-t11"><!-- EDIT -->
+<text x="70" y="1820" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="24" font-weight="400" fill="#111111" letter-spacing="0">Prof. Nina Harris and Prof. Nik Bear Brown</text>
+</g>
+<g id="fixed-t12"><!-- FIXED: series branding — do not change -->
+<text x="70" y="1846" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#111111" letter-spacing="0">Open to the SEIS community</text>
+</g>
 </svg>
