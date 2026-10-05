@@ -1,0 +1,187 @@
+{
+  "video": "muse-account-registration",
+  "metadata": {
+    "slug": "muse-account-registration",
+    "title": "How to register for a Muse account",
+    "voice_kokoro": "am_onyx",
+    "skin": "claude",
+    "build": {
+      "at": "2026-10-04T13:58:00",
+      "cut": "review",
+      "filled": 15,
+      "of": 15,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "source_of_truth": "beat_sheet.json \u2014 edit the sheet, not this file",
+  "beats_total": 15,
+  "beats_open": 0,
+  "beats": [
+    {
+      "beat_id": "BIDEA",
+      "status": "filled",
+      "on_disk": "manim/BIDEA.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/BIDEA.mp4",
+      "label": "Signing up for a new AI account usually means handing a stranger your real credit card. There is a b"
+    },
+    {
+      "beat_id": "BDEFS",
+      "status": "filled",
+      "on_disk": "manim/BDEFS.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/BDEFS.mp4",
+      "label": "Four terms. Virtual card: a real card number that isn't your real card. Merchant-locked: it works at"
+    },
+    {
+      "beat_id": "B01",
+      "status": "filled",
+      "on_disk": "manim/B01.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B01.mp4",
+      "label": "Step one: the email. You want an address Meta has never seen. Ours: muse at humanitarians dot ai. A "
+    },
+    {
+      "beat_id": "B02",
+      "status": "filled",
+      "on_disk": "manim/B02.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B02.mp4",
+      "label": "Step two: the card. At privacy dot com, create a new card. Name it Meta CC. Lock it to the merchant "
+    },
+    {
+      "beat_id": "B03",
+      "status": "filled",
+      "on_disk": "manim/B03.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B03.mp4",
+      "label": "Step three: Instagram. Muse signup runs through Meta's accounts, so an Instagram account comes first"
+    },
+    {
+      "beat_id": "B04",
+      "status": "filled",
+      "on_disk": "manim/B04.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B04.mp4",
+      "label": "Then the age check. Confirm your age with a credit card: one dollar charged, refunded in five to sev"
+    },
+    {
+      "beat_id": "B05",
+      "status": "filled",
+      "on_disk": "manim/B05.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B05.mp4",
+      "label": "See the chain: fresh email, locked card, Instagram account, then Muse. Each step isolates the blast "
+    },
+    {
+      "beat_id": "B06",
+      "status": "filled",
+      "on_disk": "manim/B06.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B06.mp4",
+      "label": "Step four: go to muse dot ai. It asks for a mobile number or email. Enter the new address, and conti"
+    },
+    {
+      "beat_id": "B07",
+      "status": "filled",
+      "on_disk": "manim/B07.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B07.mp4",
+      "label": "Check the inbox. A six-digit code arrives at the new email. Enter it. No password to invent, no pass"
+    },
+    {
+      "beat_id": "B08",
+      "status": "filled",
+      "on_disk": "manim/B08.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B08.mp4",
+      "label": "Then the disclosure \u2014 and actually read it. Your agent can take actions for you. It works around the"
+    },
+    {
+      "beat_id": "B09",
+      "status": "filled",
+      "on_disk": "manim/B09.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B09.mp4",
+      "label": "And you're in. 'Hey! I'm your personal agent, not just a regular assistant.' The account exists, the"
+    },
+    {
+      "beat_id": "B10",
+      "status": "filled",
+      "on_disk": "manim/B10.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/B10.mp4",
+      "label": "The pattern, reusable: whenever a signup demands a credit card, mint a merchant-locked virtual card "
+    },
+    {
+      "beat_id": "BVDT",
+      "status": "filled",
+      "on_disk": "manim/BVDT.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/BVDT.mp4",
+      "label": "So: act one, the setup \u2014 a fresh email and a ten-dollar card locked to Meta. Act two, the chain \u2014 In"
+    },
+    {
+      "beat_id": "BHTF",
+      "status": "filled",
+      "on_disk": "manim/BHTF.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/BHTF.mp4",
+      "label": "Your turn: the next time a service demands your credit card, mint a merchant-locked virtual card fir"
+    },
+    {
+      "beat_id": "BOUT",
+      "status": "filled",
+      "on_disk": "manim/BOUT.mp4",
+      "method": "manim",
+      "who": "pipeline",
+      "scene_hint": "animated_graphics",
+      "prompt": null,
+      "slot": "manim/BOUT.mp4",
+      "label": "Muse, in for Bear. Thanks for watching."
+    }
+  ]
+}

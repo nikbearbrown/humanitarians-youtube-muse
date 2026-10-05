@@ -692,6 +692,24 @@ class M16_InjectionFatigue(Scene):
 # ─────────────────────────────────────────────────────────────────────────────
 #  M17 — B17: trust by design — the mascot and the price tag
 # ─────────────────────────────────────────────────────────────────────────────
+# The Muse mascot as it appears in the film (Bear's keyed 1:1 clip, transparent). Loaded once per scene.
+_MASCOT_KEYED = _os.environ.get(
+    "MUSE_MASCOT_KEYED",
+    "/Users/bear/Documents/CoWork/bear-textbooks/books/muse/muse_logo/keyed/muse-logo-02.mov")
+
+
+def _mascot_frames(side=468):
+    """RGBA frames of the keyed mascot clip, or None if it is not on this machine."""
+    import subprocess
+    if not _os.path.exists(_MASCOT_KEYED):
+        return None
+    raw = subprocess.run(
+        ["ffmpeg", "-v", "error", "-c:v", "prores", "-i", _MASCOT_KEYED, "-vf",
+         f"scale={side}:{side}:flags=lanczos", "-f", "rawvideo", "-pix_fmt", "rgba", "-"],
+        capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.uint8).reshape(-1, side, side, 4)
+
+
 class M17_TrustByDesign(Scene):
 
     def construct(self):
@@ -699,34 +717,40 @@ class M17_TrustByDesign(Scene):
         title = _title("Trust by design")
         self.play(Write(title), run_time=0.6)
 
-        face = Circle(radius=1.2, color=INK, stroke_width=3,
-                      fill_color=CARD, fill_opacity=1).move_to([0, 0.5, 0])
-        e1 = Dot([-0.45, 0.8, 0], radius=0.12, color=INK)
-        e2 = Dot([0.45, 0.8, 0], radius=0.12, color=INK)
-        smile = Arc(radius=0.55, angle=-PI * 0.7, color=INK, stroke_width=4
-                    ).move_to([0, 0.45, 0])
-        self.play(FadeIn(face), FadeIn(e1), FadeIn(e2), FadeIn(smile),
-                  run_time=0.7)
+        frames = _mascot_frames()
+        if frames is None:   # clip not available: fall back to the drawn face so the film still builds
+            face = VGroup(
+                Circle(radius=1.2, color=INK, stroke_width=3, fill_color=CARD, fill_opacity=1),
+                Dot([-0.45, 0.3, 0], radius=0.12, color=INK), Dot([0.45, 0.3, 0], radius=0.12, color=INK),
+                Arc(radius=0.55, angle=-PI * 0.7, color=INK, stroke_width=4).move_to([0, -0.05, 0])
+            ).move_to([0, 0.5, 0])
+            self.play(FadeIn(face), run_time=0.7)
+        else:
+            mascot = ImageMobject(frames[0])
+            mascot.set_height(3.6).move_to([0, 0.1, 0])
+            n = len(frames)
+            mascot.add_updater(lambda m: setattr(m, "pixel_array", frames[int(_elapsed(self) * 24) % n]))
+            self.play(FadeIn(mascot), run_time=0.7)
 
-        # y capped at 2.25 — title bottom sits at ≈2.79; hearts must not overlap it
-        hearts = VGroup(*[Dot([np.random.uniform(-0.8, 0.8),
-                               1.5 + i * 0.15, 0], radius=0.09, color=ACC)
+        # hearts rise off the mascot's head; title bottom sits at ~2.79, so they stay below ~2.5
+        hearts = VGroup(*[Dot([np.random.uniform(-0.7, 0.7),
+                               2.0 + i * 0.05, 0], radius=0.09, color=ACC)
                           for i in range(6)])
         at(self, 0.4)
         self.play(*[FadeIn(h) for h in hearts], run_time=0.5)
-        self.play(*[h.animate.shift(UP * 0.8).set_opacity(0) for h in hearts],
+        self.play(*[h.animate.shift(UP * 0.4).set_opacity(0) for h in hearts],
                   run_time=0.6)
 
-        # Tag starts at y=2.0 (top at y=2.45) — title bottom is at y≈2.79, so no overlap
+        # the price tag drops onto the mascot's head and shoulders
         tag = RoundedRectangle(corner_radius=0.15, width=1.9, height=0.9,
                                color=INK, stroke_width=2.5,
                                fill_color=CARD, fill_opacity=1
-                               ).move_to([0, 2.0, 0])
-        tagl = _label("$", size=44, weight="BOLD", color=ACC).move_to([0, 2.0, 0])
+                               ).move_to([0, 2.2, 0])
+        tagl = _label("$", size=44, weight="BOLD", color=ACC).move_to([0, 2.2, 0])
         at(self, 0.7)
         self.play(FadeIn(tag), FadeIn(tagl), run_time=0.4)
-        self.play(tag.animate.move_to([0, 0.5, 0]),
-                  tagl.animate.move_to([0, 0.5, 0]),
+        self.play(tag.animate.move_to([0, 0.75, 0]),
+                  tagl.animate.move_to([0, 0.75, 0]),
                   run_time=0.6, rate_func=rate_functions.rush_into)
         finish(self)
 

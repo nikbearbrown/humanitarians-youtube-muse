@@ -1,0 +1,15 @@
+{
+  "beat": "BIDEA",
+  "clip": "muse-logo-02",
+  "keyed": "/Users/bear/Documents/CoWork/bear-textbooks/books/muse/muse_logo/keyed/muse-logo-02.mov",
+  "placement": {
+    "x": 2760,
+    "y": 1070,
+    "side": 900,
+    "frame": [
+      3840,
+      2160
+    ]
+  },
+  "method": "transparent (colour-keyed) clip overlaid; base kept as BIDEA.base.mp4"
+}

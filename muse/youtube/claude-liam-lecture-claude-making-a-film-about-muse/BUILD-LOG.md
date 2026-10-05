@@ -43,3 +43,9 @@ Bear's asks: (1) update the film on what 100M tokens means in real work given 18
 - `scenes.py`: M08 revised; M24–M31 added. Old M08/B13/B20 clips, audio and the previous master are in `_superseded/2026-10-04-pre-tokens-update/`.
 - Numbers in B25–B28 are computed from files on disk (13 film packages in this repo, all committed 2026-10-03), Bear's stated 18%, and the document's prices. Every assumption is in FACTCHECK.md rows 23–38; the big ones: that the 18% went into those packages, and that Muse tokens count like ordinary tokens.
 - Free build, no paid steps.
+
+---
+
+## 2026-10-04 — Muse mascot on the first beat
+
+Bear: put the Muse logo clips on the first beat of the Muse films. First attempt used a 2:3 clip (arms cropped at the clip edge); Bear replaced the clips with 1:1 renders in which the whole character stays inside the frame. `books/muse/key_muse_logo.py` keys them to transparent video (`muse_logo/keyed/`), and `books/muse/apply_muse_logo.py` overlays `muse-logo-02` bottom-right of BIDEA (fade in 0.35 s, plays 5.2 s, fade out 0.45 s). The untouched render is `media/BIDEA.base.mp4`; `--undo` restores it. Beat length and audio unchanged. Placement is in `muse_logo.json`. If BIDEA is ever re-rendered from Remotion, re-run the script before the final cut.

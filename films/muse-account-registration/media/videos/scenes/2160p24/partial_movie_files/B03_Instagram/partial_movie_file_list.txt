@@ -1,7 +1,7 @@
 # This file is used internally by FFMPEG.
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1888071356_1172882207_223132457.mp4'
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_301510052_3503022022.mp4'
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_4181134709_3735693021.mp4'
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_860906333_2607225394.mp4'
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_1151569978_2265100130.mp4'
-file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_816073434_707228351.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1888071356_3500931020_223132457.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_301510052_1584204148.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_4181134709_43436614.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_860906333_293011597.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_2080375371_708567937.mp4'
+file 'file:/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/films/muse-account-registration/media/videos/scenes/2160p24/partial_movie_files/B03_Instagram/1495308177_816073434_2880676306.mp4'

@@ -1,7 +1,7 @@
 {
   "status": "ready",
   "output": "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/exports/landscape/claude-liam-lecture-claude-making-a-film-about-muse.mp4",
-  "sha256": "d450d6399848c9b17b8e36bb7154269a5049a0eed6abc62539cc4e600dd3e216",
+  "sha256": "8c4a95c4ef54e3a455037cf4ee8f844ffbb3fad1fdb599e54935103228aceda7",
   "duration_s": 493.5833333333333,
   "input_sha256": {
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/manim/M01.mp4": "91e393fd03019e0e34fc26fdaaa668dca80db9e034c5f24028dd19fe2c823296",
@@ -37,7 +37,7 @@
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/manim/M31.mp4": "711fcfe72804d54ca0f3062fa2f87481823cd57b7c7305a770f2fe4514d4260e",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BDEFS.mp4": "e10395e5231dc2e7d85598b0be7cf0e4ee25fde07bf1d0e11fea460f09847be3",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BHTF.mp4": "5b11b4980bde81e26f4f79c9a3e2733ac0b868e6171b0dd698e2fc2338f57c47",
-    "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BIDEA.mp4": "bb9cf522f08cb50bb5c9c516eddc5a914c7795529e16a3f5e7e02ca2fb381e7a",
+    "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BIDEA.mp4": "d0724c7cf8b59157dc9de9e06824820294d51755d4e4e6926661b7e6515a6e7d",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BOUT.mp4": "b797d96003153af65886b77821a090412fdcc033d57efc063759bc81625391e1",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/media/BVDT.mp4": "509c1bcc7e34456f86ad760b263475ac431484389e9810021df05ac8c43f2c9f",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/mp3/beat-B01.mp3": "691fc8f7261bc068cb0b583bf7b24fe5732f9a5bdc9d1aaaeff96af39a7f9731",
@@ -77,5 +77,5 @@
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/mp3/beat-BOUT.mp3": "e7e5cf46f4d1dc0c88d9b780949bd00594f18e61a98e490e0e6f0d7f8cd793b8",
     "/Users/bear/Documents/CoWork/bear-textbooks/books/humanitarians-youtube-muse/muse/youtube/claude-liam-lecture-claude-making-a-film-about-muse/mp3/beat-BVDT.mp3": "1653d39233387e14392143e9ddc23b12298230e43fd8f0511a344addc1b19339"
   },
-  "at": "2026-10-04T16:59:31.489238+00:00"
+  "at": "2026-10-04T20:03:08.512409+00:00"
 }

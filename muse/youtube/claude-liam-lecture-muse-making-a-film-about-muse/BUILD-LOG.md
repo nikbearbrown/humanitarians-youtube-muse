@@ -22,3 +22,9 @@
   renderable).
 - Outstanding (Bear's side): narration MP3s (Kokoro) and MP4 renders,
   via the Claude Code prompt in CLAUDE-CODE-RENDER.md.
+
+---
+
+## 2026-10-04 — Muse mascot on the first beat
+
+Bear: put the Muse logo clips on the first beat of the Muse films. First attempt used a 2:3 clip (arms cropped at the clip edge); Bear replaced the clips with 1:1 renders in which the whole character stays inside the frame. `books/muse/key_muse_logo.py` keys them to transparent video (`muse_logo/keyed/`), and `books/muse/apply_muse_logo.py` overlays `muse-logo-02` bottom-right of BIDEA (fade in 0.35 s, plays 5.2 s, fade out 0.45 s). The untouched render is `media/BIDEA.base.mp4`; `--undo` restores it. Beat length and audio unchanged. Placement is in `muse_logo.json`. If BIDEA is ever re-rendered from Remotion, re-run the script before the final cut.

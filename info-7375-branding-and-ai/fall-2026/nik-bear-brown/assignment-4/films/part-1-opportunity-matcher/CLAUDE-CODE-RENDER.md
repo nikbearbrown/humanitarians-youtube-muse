@@ -51,6 +51,14 @@ Call the reel path `$REEL` below.
 4. **Watch it.** Look at the review cut (at minimum the qc-sheet / contact
    sheet). Fix anything visually wrong, re-run.
 
+4b. **Muse mascot on the first beat** (Bear, 2026-10-04). Once `$REEL/media/BIDEA.mp4` exists:
+   ```
+   python3 /Users/bear/Documents/CoWork/bear-textbooks/books/muse/apply_muse_logo.py $REEL
+   ```
+   It overlays the mascot (`muse-logo-02`, keyed to transparent; the whole mascot stays inside its square) bottom-right of the first beat and keeps
+   the untouched render as `media/BIDEA.base.mp4`, so running it twice is safe (`--undo` restores). Then re-run
+   step 3 once (recompile only) before the final. The beat's length and audio do not change.
+
 5. **Final 4K master** (only when the review cut is clean):
    ```
    ./brutalist.art/art final $REEL --height 2160 --out $REEL/exports/landscape

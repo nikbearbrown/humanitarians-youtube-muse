@@ -17,6 +17,13 @@ log()  { echo "$(date '+%Y-%m-%d %H:%M:%S') [$NAME] $*" >> "$LOG"; }
 fail() {
   log "ERROR: $*"
   osascript -e "display notification \"$*\" with title \"git-sync: $NAME\"" 2>/dev/null
+  # Silent on success; on a problem, say so in the terminal and show the end of the log.
+  {
+    echo ""
+    echo "git-sync [$NAME] FAILED: $*"
+    echo "--- last 20 lines of $LOG ---"
+    tail -n 20 "$LOG"
+  } >&2
   exit 1
 }
 

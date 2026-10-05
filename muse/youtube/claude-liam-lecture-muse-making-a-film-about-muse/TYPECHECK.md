@@ -1,6 +1,6 @@
 # TYPECHECK.md — GATE T
 
-Reel: `claude-liam-lecture-muse-making-a-film-about-muse`  |  Checked: 2026-10-03T14:07  |  Overall: PASS  |  Beats checked: 22  |  FAILs: 0
+Reel: `claude-liam-lecture-muse-making-a-film-about-muse`  |  Checked: 2026-10-04T16:05  |  Overall: PASS  |  Beats checked: 22  |  FAILs: 0
 
 Spec: `skills/make/kerning/reference/type-spec.md` §8.  Floor: 1.9% frame-height.  Contrast: 4.5:1 WCAG.  Kern threshold: 3.5× expected advance.  Wordy budget: 2 elements.
 

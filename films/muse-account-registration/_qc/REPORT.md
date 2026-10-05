@@ -36,7 +36,7 @@ Frames sampled: 30  ·  BLOCKER: 0  ·  MAJOR: 23
 - **MAJOR** `underfill` — content fills only 21% of the safe area (min 55%) — too much negative space
 
 ### B07_85.png
-- **MAJOR** `underfill` — content fills only 40% of the safe area (min 55%) — too much negative space
+- **MAJOR** `underfill` — content fills only 39% of the safe area (min 55%) — too much negative space
 
 ### B08_50.png
 - **MAJOR** `underfill` — content fills only 44% of the safe area (min 55%) — too much negative space

@@ -22,10 +22,10 @@ CARD = "#FFFFFF"
 
 def title_card(title, sub=None):
     g = VGroup()
-    t = Text(title, font_size=40, color=INK).move_to(ORIGIN)
+    t = Text(title, font='EB Garamond', font_size=40, color=INK).move_to(ORIGIN)
     g.add(t)
     if sub:
-        s = Text(sub, font_size=28, color=GREY).next_to(t, DOWN, buff=0.3)
+        s = Text(sub, font='EB Garamond', font_size=28, color=GREY).next_to(t, DOWN, buff=0.3)
         g.add(s)
     return g
 
@@ -40,10 +40,10 @@ class BIDEA_Intro(Scene):
                                fill_color=CARD, fill_opacity=1,
                                stroke_color=ACCENT, stroke_width=3).move_to(
             [5.2, 0.3, 0])
-        tt = Text("$10", font_size=34, color=ACCENT).move_to(tag.get_center())
+        tt = Text("$10", font='EB Garamond', font_size=34, color=ACCENT).move_to(tag.get_center())
         lock = Circle(radius=0.35, fill_color=ACCENT, fill_opacity=1,
                       stroke_width=0).move_to([-1.5, 2.0, 0])
-        q = Text("a ten-dollar leash", font_size=36, color=INK).to_edge(
+        q = Text("a ten-dollar leash", font='EB Garamond', font_size=36, color=INK).to_edge(
             UP, buff=0.7)
         self.play(FadeIn(card))
         self.play(GrowFromEdge(leash, LEFT), run_time=0.6)
@@ -61,7 +61,7 @@ class BDEFS_Defs(Scene):
             ("age check", "$1 charged, refunded in days"),
             ("Muse account", "what we're here for"),
         ]
-        cap = Text("four terms", font_size=34, color=INK).to_edge(UP, buff=0.6)
+        cap = Text("four terms", font='EB Garamond', font_size=34, color=INK).to_edge(UP, buff=0.6)
         self.play(Write(cap))
         for i, (term, defn) in enumerate(pairs):
             y = 1.55 - i * 1.05
@@ -70,8 +70,8 @@ class BDEFS_Defs(Scene):
                                   stroke_color=INK, stroke_width=1.5).move_to([0, y, 0])
             div = Line([0, y - 0.35, 0], [0, y + 0.35, 0],
                        color=ACCENT, stroke_width=2.5)
-            t = Text(term, font_size=28, color=ACCENT).move_to([-3.2, y, 0])
-            s = Text(defn, font_size=28, color=INK).move_to([3.2, y, 0])
+            t = Text(term, font='EB Garamond', font_size=28, color=ACCENT).move_to([-3.2, y, 0])
+            s = Text(defn, font='EB Garamond', font_size=28, color=INK).move_to([3.2, y, 0])
             self.play(FadeIn(bg), GrowFromCenter(div), run_time=0.3)
             self.play(FadeIn(t, shift=RIGHT * 0.15),
                       FadeIn(s, shift=LEFT * 0.15), run_time=0.5)
@@ -86,11 +86,11 @@ class B01_Email(Scene):
         flap = Polygon([-3.2, 2.3, 0], [3.2, 2.3, 0], [0, 0.6, 0],
                        fill_color="#EDE8DA", fill_opacity=1,
                        stroke_color=INK).move_to(UP * 0.3)
-        addr = Text("muse@humanitarians.ai", font_size=30, color=BLUE).move_to(
+        addr = Text("muse@humanitarians.ai", font='EB Garamond', font_size=30, color=BLUE).move_to(
             DOWN * 1.1)
-        badge = Text("fresh — Meta has never seen it", font_size=28,
+        badge = Text("fresh — Meta has never seen it", font='EB Garamond', font_size=28,
                      color=GREEN).move_to(DOWN * 2.1)
-        cap = Text("step one: the email", font_size=32, color=INK).to_edge(
+        cap = Text("step one: the email", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(env))
@@ -105,18 +105,18 @@ class B02_Card(Scene):
         card = RoundedRectangle(corner_radius=0.25, width=7.2, height=4.2,
                                 fill_color=BLUE, fill_opacity=1,
                                 stroke_color=INK).move_to(UP * 0.4)
-        name = Text("Meta CC", font_size=32, color=CARD).move_to(
+        name = Text("Meta CC", font='EB Garamond', font_size=32, color=CARD).move_to(
             [-2.6, 1.5, 0])
         lockb = RoundedRectangle(corner_radius=0.12, width=3.8, height=0.9,
                                  fill_color=CARD, fill_opacity=0.9,
                                  stroke_width=0).move_to([1.6, 1.5, 0])
-        lockt = Text("MERCHANT-LOCKED", font_size=28, color=BLUE).move_to(
+        lockt = Text("MERCHANT-LOCKED", font='EB Garamond', font_size=28, color=BLUE).move_to(
             lockb.get_center())
-        lim = Text("$10 limit", font_size=30, color=CARD).move_to(
+        lim = Text("$10 limit", font='EB Garamond', font_size=30, color=CARD).move_to(
             [-2.6, -0.4, 0])
-        worst = Text("worst case: $10 at one merchant", font_size=28,
+        worst = Text("worst case: $10 at one merchant", font='EB Garamond', font_size=28,
                      color=INK).move_to(DOWN * 2.4)
-        cap = Text("step two: the card", font_size=32, color=INK).to_edge(
+        cap = Text("step two: the card", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(card))
@@ -145,8 +145,8 @@ class B03_Instagram(Scene):
         btn = RoundedRectangle(corner_radius=0.3, width=3.4, height=0.8,
                                fill_color=BLUE, fill_opacity=1,
                                stroke_width=0).move_to(DOWN * 2.3)
-        bt = Text("Log in", font_size=28, color=CARD).move_to(btn.get_center())
-        cap = Text("step three: Instagram first", font_size=32,
+        bt = Text("Log in", font='EB Garamond', font_size=28, color=CARD).move_to(btn.get_center())
+        cap = Text("step three: Instagram first", font='EB Garamond', font_size=32,
                    color=INK).to_edge(UP, buff=0.6)
         self.play(Write(cap))
         self.play(FadeIn(phone))
@@ -161,20 +161,20 @@ class B04_AgeCheck(Scene):
         card = RoundedRectangle(corner_radius=0.2, width=9.6, height=3.6,
                                 fill_color=CARD, fill_opacity=1,
                                 stroke_color=INK).move_to(UP * 0.4)
-        t = Text("Confirm your age", font_size=34, color=INK).move_to(
+        t = Text("Confirm your age", font='EB Garamond', font_size=34, color=INK).move_to(
             UP * 1.4)
-        price = Text("$1.00 charged", font_size=30, color=ACCENT).move_to(
+        price = Text("$1.00 charged", font='EB Garamond', font_size=30, color=ACCENT).move_to(
             UP * 0.4)
-        ref = Text("refunded in 5–7 business days", font_size=28,
+        ref = Text("refunded in 5–7 business days", font='EB Garamond', font_size=28,
                    color=GREEN).move_to(DOWN * 0.5)
-        earn = Text("the ten-dollar card earns its keep", font_size=28,
+        earn = Text("the ten-dollar card earns its keep", font='EB Garamond', font_size=28,
                     color=INK).move_to(DOWN * 2.2)
         coin = Circle(radius=0.4, fill_color=ACCENT, fill_opacity=1,
                       stroke_width=0).move_to([-3.6, 0.4, 0])
         refund = RoundedRectangle(corner_radius=0.12, width=2.6, height=0.8,
                                  fill_color=GREEN, fill_opacity=1,
                                  stroke_width=0).move_to([3.6, -0.5, 0])
-        cap = Text("the age check", font_size=32, color=INK).to_edge(
+        cap = Text("the age check", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(card))
@@ -200,7 +200,7 @@ class B05_Chain(Scene):
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=col, stroke_width=3).move_to(
                 [cx, 0.6, 0])
-            t = Text(lab, font_size=28, color=col).move_to([cx, 0.6, 0])
+            t = Text(lab, font='EB Garamond', font_size=28, color=col).move_to([cx, 0.6, 0])
             boxes.add(VGroup(b, t))
         # Arrows span the gap between adjacent boxes (right-edge → left-edge)
         re = [cx + bw / 2 for cx in cxs[:-1]]
@@ -212,9 +212,9 @@ class B05_Chain(Scene):
                         stroke_color=GREEN, stroke_width=3).move_to(
             [0, -1.9, 0])
         # Text placed below the circle so it never overlaps the stroke
-        st = Text("your real wallet: untouched", font_size=28,
+        st = Text("your real wallet: untouched", font='EB Garamond', font_size=28,
                   color=GREEN).move_to([0, -2.95, 0])
-        cap = Text("the chain isolates the blast radius", font_size=30,
+        cap = Text("the chain isolates the blast radius", font='EB Garamond', font_size=30,
                    color=INK).to_edge(UP, buff=0.7)
         self.play(Write(cap))
         for b in boxes:
@@ -226,20 +226,20 @@ class B05_Chain(Scene):
 
 class B06_Login(Scene):
     def construct(self):
-        logo = Text("Muse", font_size=54, color=BLUE).move_to(UP * 1.8)
-        sub = Text("AI that manages calendars", font_size=28,
+        logo = Text("Muse", font='EB Garamond', font_size=54, color=BLUE).move_to(UP * 1.8)
+        sub = Text("AI that manages calendars", font='EB Garamond', font_size=28,
                    color=INK).move_to(UP * 1.0)
         field = RoundedRectangle(corner_radius=0.3, width=6.4, height=0.9,
                                  fill_color="#EDE8DA", fill_opacity=1,
                                  stroke_width=0).move_to(DOWN * 0.2)
-        ft = Text("muse@humanitarians.ai", font_size=28, color=INK).move_to(
+        ft = Text("muse@humanitarians.ai", font='EB Garamond', font_size=28, color=INK).move_to(
             field.get_center())
         btn = RoundedRectangle(corner_radius=0.4, width=6.4, height=0.9,
                                fill_color=BLUE, fill_opacity=1,
                                stroke_width=0).move_to(DOWN * 1.5)
-        bt = Text("Continue", font_size=28, color=CARD).move_to(
+        bt = Text("Continue", font='EB Garamond', font_size=28, color=CARD).move_to(
             btn.get_center())
-        cap = Text("step four: muse.ai", font_size=32, color=INK).to_edge(
+        cap = Text("step four: muse.ai", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(logo, scale=1.2))
@@ -256,11 +256,11 @@ class B07_Code(Scene):
                                           fill_opacity=1, stroke_color=BLUE,
                                           stroke_width=3).move_to(
             [-2.5 + i * 1.0, 0.6, 0]) for i in range(6)])
-        sent = Text("code sent to muse@humanitarians.ai", font_size=28,
+        sent = Text("code sent to muse@humanitarians.ai", font='EB Garamond', font_size=28,
                     color=INK).move_to(DOWN * 1.0)
-        nopw = Text("no password to invent, no password to leak", font_size=28,
+        nopw = Text("no password to invent, no password to leak", font='EB Garamond', font_size=28,
                     color=GREEN).move_to(DOWN * 2.0)
-        cap = Text("the six-digit code", font_size=32, color=INK).to_edge(
+        cap = Text("the six-digit code", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
         self.play(Write(cap))
         for i in range(0, 6, 2):
@@ -285,12 +285,12 @@ class B08_Disclosure(Scene):
             bar = Rectangle(width=0.28, height=1.4, fill_color=col,
                             fill_opacity=1, stroke_width=0).move_to(
                 [-5.05, y, 0])
-            th = Text(h, font_size=28, color=INK).move_to([-2.0, y + 0.2, 0])
-            ts = Text(s, font_size=28, color=INK).move_to([-2.0, y - 0.3, 0])
+            th = Text(h, font='EB Garamond', font_size=28, color=INK).move_to([-2.0, y + 0.2, 0])
+            ts = Text(s, font='EB Garamond', font_size=28, color=INK).move_to([-2.0, y - 0.3, 0])
             rows.add(VGroup(bg, bar, th, ts))
-        cap = Text("read the disclosure", font_size=32, color=INK).to_edge(
+        cap = Text("read the disclosure", font='EB Garamond', font_size=32, color=INK).to_edge(
             UP, buff=0.7)
-        skip = Text("the screen most people skip — don't", font_size=28,
+        skip = Text("the screen most people skip — don't", font='EB Garamond', font_size=28,
                     color=ACCENT).to_edge(DOWN, buff=0.8)
         self.play(Write(cap))
         for r in rows:
@@ -307,20 +307,20 @@ class B09_In(Scene):
         bubble = RoundedRectangle(corner_radius=0.3, width=9.6, height=2.6,
                                   fill_color="#EDE8DA", fill_opacity=1,
                                   stroke_width=0).move_to(UP * 0.6)
-        b1 = Text("Hey! I'm your personal agent,", font_size=28,
+        b1 = Text("Hey! I'm your personal agent,", font='EB Garamond', font_size=28,
                   color=INK).move_to(UP * 1.0)
-        b2 = Text("not just a regular assistant.", font_size=28,
+        b2 = Text("not just a regular assistant.", font='EB Garamond', font_size=28,
                   color=INK).move_to(UP * 0.25)
         check = VGroup(
-            Text("account: live", font_size=28, color=GREEN),
-            Text("card on file: $10 max, Meta only", font_size=28,
+            Text("account: live", font='EB Garamond', font_size=28, color=GREEN),
+            Text("card on file: $10 max, Meta only", font='EB Garamond', font_size=28,
                  color=GREEN),
-            Text("real card: never involved", font_size=28, color=GREEN),
+            Text("real card: never involved", font='EB Garamond', font_size=28, color=GREEN),
         ).arrange(DOWN, aligned_edge=LEFT, buff=0.2).move_to(DOWN * 1.6)
         dots = VGroup(*[Circle(radius=0.1, fill_color=GREEN, fill_opacity=1,
                                stroke_width=0).move_to([-4.4, -0.9 - i * 0.55, 0])
                         for i in range(3)])
-        cap = Text("you're in", font_size=36, color=INK).to_edge(UP,
+        cap = Text("you're in", font='EB Garamond', font_size=36, color=INK).to_edge(UP,
                                                                  buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(bubble, shift=UP * 0.3))
@@ -336,14 +336,14 @@ class B10_Pattern(Scene):
                                 fill_color=CARD, fill_opacity=1,
                                 stroke_color=ACCENT, stroke_width=4).move_to(
             ORIGIN)
-        head = Text("the pattern, reusable", font_size=32, color=INK).move_to(
+        head = Text("the pattern, reusable", font='EB Garamond', font_size=32, color=INK).move_to(
             UP * 1.2)
         items = VGroup(*[
-            Text("1 · mint a merchant-locked virtual card", font_size=28,
+            Text("1 · mint a merchant-locked virtual card", font='EB Garamond', font_size=28,
                  color=INK),
-            Text("2 · set the limit to what the signup is worth", font_size=28,
+            Text("2 · set the limit to what the signup is worth", font='EB Garamond', font_size=28,
                  color=INK),
-            Text("3 · name it after the merchant", font_size=28, color=INK),
+            Text("3 · name it after the merchant", font='EB Garamond', font_size=28, color=INK),
         ]).arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(DOWN * 0.3)
         dots = VGroup(*[Circle(radius=0.1, fill_color=ACCENT, fill_opacity=1,
                                stroke_width=0).move_to([-4.5, 0.35 - i * 0.62, 0])
@@ -374,8 +374,8 @@ class BVDT_Recap(Scene):
             badge = RoundedRectangle(corner_radius=0.12, width=0.7, height=0.55,
                                      fill_color=col, fill_opacity=1,
                                      stroke_width=0).move_to([-4.8, y, 0])
-            num = Text(str(i + 1), font_size=28, color=CARD).move_to(badge.get_center())
-            t = Text(line, font_size=28, color=INK).move_to([0.0, y, 0])
+            num = Text(str(i + 1), font='EB Garamond', font_size=28, color=CARD).move_to(badge.get_center())
+            t = Text(line, font='EB Garamond', font_size=28, color=INK).move_to([0.0, y, 0])
             self.play(FadeIn(badge, scale=1.3), FadeIn(num),
                       FadeIn(t, shift=RIGHT * 0.2), run_time=0.6)
         self.wait(1.2)
@@ -386,7 +386,7 @@ class BHTF_DoToday(Scene):
         doplate = RoundedRectangle(corner_radius=0.25, width=10.8, height=3.4,
                                    fill_color="#EDE8DA", fill_opacity=1,
                                    stroke_color=ACCENT)
-        header = Text("Your turn", font_size=34, color=ACCENT).move_to(UP * 1.1)
+        header = Text("Your turn", font='EB Garamond', font_size=34, color=ACCENT).move_to(UP * 1.1)
         accent_line = Rectangle(width=2.2, height=0.12, fill_color=ACCENT,
                                 fill_opacity=1, stroke_width=0).move_to(UP * 0.62)
         actions = [
@@ -400,7 +400,7 @@ class BHTF_DoToday(Scene):
             y = 0.05 - i * 0.78
             dot = Circle(radius=0.15, fill_color=ACCENT, fill_opacity=1,
                          stroke_width=0).move_to([-4.4, y, 0])
-            t = Text(action, font_size=28, color=INK).move_to([0.0, y, 0])
+            t = Text(action, font='EB Garamond', font_size=28, color=INK).move_to([0.0, y, 0])
             self.play(FadeIn(dot, scale=1.4), FadeIn(t, shift=RIGHT * 0.2),
                       run_time=0.5)
         self.wait(1.2)
