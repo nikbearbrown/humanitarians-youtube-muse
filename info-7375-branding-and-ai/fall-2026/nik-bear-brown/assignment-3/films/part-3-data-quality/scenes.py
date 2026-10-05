@@ -8,22 +8,27 @@ from manim import *
 
 config.pixel_width = 1920
 config.pixel_height = 1080
+config.background_color = "#F2F0E9"
 
-INK = "#111111"
+INK = "#3D3929"
 PAPER = "#F7F3EA"
-ACCENT = "#B8472F"
-BLUE = "#2F6BB8"
-GREEN = "#2E8B57"
+ACCENT = "#D97757"
 GREY = "#8A8578"
 CARD = "#FFFFFF"
 
 
+def T(s, **kw):
+    fs = kw.pop("font_size", 30)
+    kw.setdefault("font", "EB Garamond")
+    return Text(s, font_size=fs * 3, **kw).scale(1 / 3)
+
+
 def title_card(title, sub=None):
     g = VGroup()
-    t = Text(title, font_size=40, color=INK).move_to(ORIGIN)
+    t = T(title, font="EB Garamond", font_size=40, color=INK).move_to(ORIGIN)
     g.add(t)
     if sub:
-        s = Text(sub, font_size=24, color=GREY).next_to(t, DOWN, buff=0.3)
+        s = T(sub, font="EB Garamond", font_size=24, color=INK).next_to(t, DOWN, buff=0.3)
         g.add(s)
     return g
 
@@ -33,18 +38,18 @@ class M01_Bidea(Scene):
         card = RoundedRectangle(corner_radius=0.2, width=7.2, height=3.6,
                                 fill_color=CARD, fill_opacity=1,
                                 stroke_color=INK).move_to(UP * 0.3)
-        t = Text("“high quality!”", font_size=44, color=INK).move_to(
+        t = T("“high quality!”", font="EB Garamond", font_size=44, color=INK).move_to(
             UP * 0.9)
-        stamp = Text("UNMEASURED", font_size=36, color=ACCENT).move_to(
+        stamp = T("UNMEASURED", font="EB Garamond", font_size=36, color=ACCENT).move_to(
             DOWN * 0.5)
         frame = Rectangle(width=5.6, height=1.1, stroke_color=ACCENT,
                           stroke_width=4).move_to(DOWN * 0.5)
-        cap = Text("quality isn't a claim", font_size=34, color=INK).to_edge(
+        cap = T("quality isn't a claim", font="EB Garamond", font_size=34, color=INK).to_edge(
             UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(FadeIn(card))
         self.play(FadeIn(t, shift=DOWN * 0.2))
-        self.play(FadeIn(frame), Write(stamp))
+        self.play(FadeIn(frame), FadeIn(stamp))
         self.wait(1.2)
 
 
@@ -59,8 +64,8 @@ class M02_Bdefs(Scene):
             box = RoundedRectangle(corner_radius=0.2, width=3.2, height=2.4,
                                    fill_color=CARD, fill_opacity=1,
                                    stroke_color=INK).move_to([x, 0, 0])
-            t = Text(w, font_size=24, color=ACCENT).move_to([x, 0.55, 0])
-            s = Text(d, font_size=15, color=INK).move_to([x, -0.35, 0])
+            t = T(w, font="EB Garamond", font_size=24, color=ACCENT).move_to([x, 0.55, 0])
+            s = T(d, font="EB Garamond", font_size=15, color=INK).move_to([x, -0.35, 0])
             cards.add(VGroup(box, t, s))
         for c in cards:
             self.play(FadeIn(c, shift=UP * 0.3), run_time=0.7)
@@ -73,16 +78,16 @@ class M03_B01Gate(Scene):
             Line([-5.0, 1.2, 0], [5.0, 1.2, 0], color=INK, stroke_width=6),
             *[Line([x, 1.2, 0], [x, -0.4, 0], color=INK, stroke_width=4)
               for x in [-3.0, -1.0, 1.0, 3.0]])
-        reqs = VGroup(*[Text(w, font_size=28, color=GREEN) for w in
+        reqs = VGroup(*[T(w, font="EB Garamond", font_size=28, color=ACCENT) for w in
                         ["title", "link", "date"]]).arrange(
             RIGHT, buff=1.2).move_to(DOWN * 0.2)
-        badge = Text("100% — by construction", font_size=30,
-                     color=GREEN).move_to(DOWN * 1.8)
-        seal = Circle(radius=0.45, fill_color=GREEN, fill_opacity=1,
+        badge = T("100% — by construction", font="EB Garamond", font_size=30,
+                     color=ACCENT).move_to(DOWN * 1.8)
+        seal = Circle(radius=0.45, fill_color=ACCENT, fill_opacity=1,
                       stroke_width=0).move_to([4.6, -1.8, 0])
-        cap = Text("the writer refuses anything less", font_size=32,
+        cap = T("the writer refuses anything less", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(Create(gate), run_time=0.8)
         for r in reqs:
             self.play(FadeIn(r, shift=UP * 0.2), run_time=0.4)
@@ -96,19 +101,19 @@ class M04_B02RealNumber(Scene):
         enforced = RoundedRectangle(corner_radius=0.15, width=8.0, height=1.4,
                                     fill_color="#EDE8DA", fill_opacity=1,
                                     stroke_width=0).move_to(UP * 1.2)
-        et = Text("enforced fields: 100% (measures the gate)", font_size=24,
-                  color=GREY).move_to(enforced.get_center())
+        et = T("enforced fields: 100% (measures the gate)", font="EB Garamond", font_size=24,
+                  color=INK).move_to(enforced.get_center())
         real = RoundedRectangle(corner_radius=0.15, width=8.0, height=1.8,
                                 fill_color=CARD, fill_opacity=1,
                                 stroke_color=ACCENT, stroke_width=4).move_to(
             DOWN * 0.6)
-        rt = Text("optional fields: the real number", font_size=28,
+        rt = T("optional fields: the real number", font="EB Garamond", font_size=28,
                   color=ACCENT).move_to(real.get_center())
         arrow = Arrow([0, 0.5, 0], [0, 0.3, 0], color=INK, buff=0.08,
                       stroke_width=6)
-        cap = Text("report the number the gate doesn't enforce", font_size=30,
+        cap = T("report the number the gate doesn't enforce", font="EB Garamond", font_size=30,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(FadeIn(enforced), FadeIn(et))
         self.play(GrowArrow(arrow), run_time=0.4)
         self.play(FadeIn(real, scale=0.95), FadeIn(rt))
@@ -126,15 +131,15 @@ class M05_B03Rejects(Scene):
             bar = Rectangle(width=2.2, height=h, fill_color=ACCENT,
                             fill_opacity=0.75, stroke_width=0).move_to(
                 [x, -1.8 + h / 2, 0])
-            tv = Text(str(n), font_size=28, color=ACCENT).move_to(
+            tv = T(str(n), font="EB Garamond", font_size=28, color=ACCENT).move_to(
                 [x, -1.8 + h + 0.3, 0])
-            tl = Text(lab, font_size=20, color=INK).move_to([x, -2.3, 0])
+            tl = T(lab, font="EB Garamond", font_size=20, color=INK).move_to([x, -2.3, 0])
             bars.add(VGroup(bar, tv, tl))
-        total = Text("3,349 rejects — a table, not a shrug", font_size=26,
+        total = T("3,349 rejects — a table, not a shrug", font="EB Garamond", font_size=26,
                      color=INK).to_edge(DOWN, buff=0.8)
-        cap = Text("every reject carries its reason", font_size=32,
+        cap = T("every reject carries its reason", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         for b in bars:
             self.play(GrowFromEdge(b[0], DOWN), run_time=0.5)
             self.play(FadeIn(b[1]), FadeIn(b[2]), run_time=0.3)
@@ -146,23 +151,23 @@ class M06_B04Dedup(Scene):
     def construct(self):
         j1 = RoundedRectangle(corner_radius=0.15, width=4.4, height=2.0,
                               fill_color=CARD, fill_opacity=1,
-                              stroke_color=BLUE, stroke_width=3).move_to(
+                              stroke_color=INK, stroke_width=3).move_to(
             [-2.8, 0.4, 0])
         j2 = RoundedRectangle(corner_radius=0.15, width=4.4, height=2.0,
                               fill_color=CARD, fill_opacity=1,
-                              stroke_color=BLUE, stroke_width=3).move_to(
+                              stroke_color=INK, stroke_width=3).move_to(
             [2.8, 0.4, 0])
-        t1 = Text("same job", font_size=24, color=BLUE).move_to(j1.get_center())
-        t2 = Text("same job", font_size=24, color=BLUE).move_to(j2.get_center())
-        key = Text("key: source + posting id", font_size=24,
+        t1 = T("same job", font="EB Garamond", font_size=24, color=INK).move_to(j1.get_center())
+        t2 = T("same job", font="EB Garamond", font_size=24, color=INK).move_to(j2.get_center())
+        key = T("key: source + posting id", font="EB Garamond", font_size=24,
                    color=INK).move_to(DOWN * 1.6)
-        zero = Text("collapsed this run: 0", font_size=28,
-                    color=GREEN).move_to(DOWN * 2.5)
+        zero = T("collapsed this run: 0", font="EB Garamond", font_size=28,
+                    color=ACCENT).move_to(DOWN * 2.5)
         merge = Arrow([-0.4, 0.4, 0], [0.4, 0.4, 0], color=INK,
                       stroke_width=8, buff=0.1)
-        cap = Text("seen twice, counted once", font_size=32,
+        cap = T("seen twice, counted once", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(FadeIn(j1), FadeIn(t1), run_time=0.5)
         self.play(FadeIn(j2), FadeIn(t2), run_time=0.5)
         self.play(GrowArrow(merge), run_time=0.5)
@@ -174,23 +179,23 @@ class M06_B04Dedup(Scene):
 class M07_B05Dates(Scene):
     def construct(self):
         shapes = VGroup(*[
-            Text("Jan 5, 2026", font_size=24, color=GREY),
-            Text("2026-01-05T09:00:00Z", font_size=24, color=GREY),
-            Text("01/05/2026", font_size=24, color=GREY),
+            T("Jan 5, 2026", font="EB Garamond", font_size=24, color=INK, opacity=0.35),
+            T("2026-01-05T09:00:00Z", font="EB Garamond", font_size=24, color=INK, opacity=0.35),
+            T("01/05/2026", font="EB Garamond", font_size=24, color=INK, opacity=0.35),
         ]).arrange(DOWN, buff=0.3).move_to([-3.4, 0, 0])
         arrow = Arrow([-1.0, 0, 0], [0.6, 0, 0], color=INK, buff=0.1,
                       stroke_width=6)
         out = RoundedRectangle(corner_radius=0.15, width=4.6, height=1.6,
                                fill_color=CARD, fill_opacity=1,
-                               stroke_color=GREEN, stroke_width=3).move_to(
+                               stroke_color=ACCENT, stroke_width=3).move_to(
             [3.2, 0.4, 0])
-        ot = Text("2026-01-05", font_size=30, color=GREEN).move_to(
+        ot = T("2026-01-05", font="EB Garamond", font_size=30, color=ACCENT).move_to(
             out.get_center() + UP * 0.2)
-        os_ = Text("+ original kept", font_size=18, color=GREY).move_to(
+        os_ = T("+ original kept", font="EB Garamond", font_size=18, color=INK).move_to(
             out.get_center() + DOWN * 0.45)
-        cap = Text("three shapes in, one column out", font_size=32,
+        cap = T("three shapes in, one column out", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         for s in shapes:
             self.play(FadeIn(s, shift=RIGHT * 0.2), run_time=0.4)
         self.play(GrowArrow(arrow), run_time=0.5)
@@ -212,17 +217,17 @@ class M08_B06Validators(Scene):
             box = Square(side_length=0.32, stroke_color=INK, stroke_width=4,
                          fill_opacity=0).move_to([-4.4, y, 0])
             tick = VGroup(
-                Line([-4.52, y, 0], [-4.38, y - 0.12, 0], color=GREEN,
+                Line([-4.52, y, 0], [-4.38, y - 0.12, 0], color=ACCENT,
                      stroke_width=8),
-                Line([-4.38, y - 0.12, 0], [-4.18, y + 0.14, 0], color=GREEN,
+                Line([-4.38, y - 0.12, 0], [-4.18, y + 0.14, 0], color=ACCENT,
                      stroke_width=8))
-            t = Text(c, font_size=24, color=INK).move_to([-2.6, y, 0])
+            t = T(c, font="EB Garamond", font_size=24, color=INK).move_to([-2.6, y, 0])
             rows.add(VGroup(bg, box, tick, t))
-        note = Text("each one a mistake that already happened once",
-                    font_size=22, color=GREY).to_edge(DOWN, buff=0.8)
-        cap = Text("checks that catch mistakes", font_size=32,
+        note = T("each one a mistake that already happened once",
+                    font="EB Garamond", font_size=22, color=INK).to_edge(DOWN, buff=0.8)
+        cap = T("checks that catch mistakes", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         for r in rows:
             self.play(FadeIn(r[0]), FadeIn(r[1]))
             self.play(Create(r[2]), run_time=0.35)
@@ -237,19 +242,19 @@ class M09_B07Counted(Scene):
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK).move_to(UP * 0.4)
         rows = VGroup(*[
-            Text("fetched ......... 3,446", font_size=24, color=INK),
-            Text("kept ............... 97", font_size=24, color=GREEN),
-            Text("rejected ...... 3,349", font_size=24, color=INK),
-            Text("duplicates ......... 0", font_size=24, color=INK),
+            T("fetched ......... 3,446", font="EB Garamond", font_size=24, color=INK),
+            T("kept ............... 97", font="EB Garamond", font_size=24, color=ACCENT),
+            T("rejected ...... 3,349", font="EB Garamond", font_size=24, color=INK),
+            T("duplicates ......... 0", font="EB Garamond", font_size=24, color=INK),
         ]).arrange(DOWN, aligned_edge=LEFT, buff=0.18).move_to(
             table.get_center())
         pen = Line([-4.5, -2.2, 0], [-3.5, -1.4, 0], color=ACCENT,
                    stroke_width=10)
-        hand = Text("the script writes this", font_size=24,
+        hand = T("the script writes this", font="EB Garamond", font_size=24,
                     color=ACCENT).move_to(DOWN * 2.4)
-        cap = Text("counted, not estimated", font_size=34, color=INK).to_edge(
+        cap = T("counted, not estimated", font="EB Garamond", font_size=34, color=INK).to_edge(
             UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(FadeIn(table))
         for r in rows:
             self.play(FadeIn(r, shift=RIGHT * 0.25), run_time=0.45)
@@ -265,9 +270,9 @@ class M10_B08Problems(Scene):
             x = -4.2 + i * 4.2
             b = RoundedRectangle(corner_radius=0.15, width=3.8, height=1.8,
                                  fill_color=CARD, fill_opacity=1,
-                                 stroke_color=BLUE, stroke_width=3).move_to(
+                                 stroke_color=INK, stroke_width=3).move_to(
                 [x, 0.8, 0])
-            t = Text(name, font_size=22, color=BLUE).move_to(b.get_center())
+            t = T(name, font="EB Garamond", font_size=22, color=INK).move_to(b.get_center())
             srcs.add(VGroup(b, t))
         dead = Circle(radius=0.9, stroke_color=ACCENT, stroke_width=4,
                       fill_opacity=0).move_to([4.2, 0.8, 0])
@@ -277,11 +282,11 @@ class M10_B08Problems(Scene):
         state = RoundedRectangle(corner_radius=0.15, width=6.4, height=1.2,
                                  fill_color="#EDE8DA", fill_opacity=1,
                                  stroke_width=0).move_to(DOWN * 1.8)
-        st = Text("state file: never written on a failed run", font_size=22,
+        st = T("state file: never written on a failed run", font="EB Garamond", font_size=22,
                   color=INK).move_to(state.get_center())
-        cap = Text("a dead source doesn't kill the run", font_size=30,
+        cap = T("a dead source doesn't kill the run", font="EB Garamond", font_size=30,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         for s in srcs:
             self.play(FadeIn(s, shift=DOWN * 0.2), run_time=0.4)
         self.play(Create(dead), run_time=0.5)
@@ -296,19 +301,19 @@ class M11_B09Replicate(Scene):
         cmd = RoundedRectangle(corner_radius=0.15, width=7.2, height=1.4,
                                fill_color=INK, fill_opacity=1,
                                stroke_width=0).move_to(UP * 1.0)
-        ct = Text("python3 collect.py", font_size=28, color=CARD).move_to(
+        ct = T("python3 collect.py", font="EB Garamond", font_size=28, color=CARD).move_to(
             cmd.get_center())
-        nokey = Text("no keys", font_size=24, color=GREEN).move_to(DOWN * 0.2)
+        nokey = T("no keys", font="EB Garamond", font_size=24, color=ACCENT).move_to(DOWN * 0.2)
         raw = RoundedRectangle(corner_radius=0.15, width=7.2, height=1.4,
                                fill_color=CARD, fill_opacity=1,
                                stroke_color=INK).move_to(DOWN * 1.4)
-        rt = Text("dated raw/ responses ship too", font_size=24,
+        rt = T("dated raw/ responses ship too", font="EB Garamond", font_size=24,
                   color=INK).move_to(raw.get_center())
-        peer = Circle(radius=0.5, fill_color=BLUE, fill_opacity=1,
+        peer = Circle(radius=0.5, fill_color=ACCENT, fill_opacity=1,
                       stroke_width=0).move_to(RIGHT * 5.0 + DOWN * 0.2)
-        cap = Text("a peer can redo all of it", font_size=32,
+        cap = T("a peer can redo all of it", font="EB Garamond", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
-        self.play(Write(cap))
+        self.play(FadeIn(cap))
         self.play(FadeIn(cmd), FadeIn(ct))
         self.play(FadeIn(nokey, scale=1.2))
         self.play(FadeIn(raw), FadeIn(rt))
@@ -322,14 +327,14 @@ class M12_BvdtHtfOut(Scene):
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK)
         recap = VGroup(*[
-            Text("1 · completeness: enforced at write, reported on optional",
-                 font_size=26, color=INK),
-            Text("2 · the counts: rejects by reason, 0 dupes, dates clean",
-                 font_size=26, color=INK),
-            Text("3 · validators: four checks; script counts everything",
-                 font_size=26, color=INK),
-            Text("4 · excellence: problems handled; peer can replicate",
-                 font_size=26, color=INK),
+            T("1 · completeness: enforced at write, reported on optional",
+                 font="EB Garamond", font_size=26, color=INK),
+            T("2 · the counts: rejects by reason, 0 dupes, dates clean",
+                 font="EB Garamond", font_size=26, color=INK),
+            T("3 · validators: four checks; script counts everything",
+                 font="EB Garamond", font_size=26, color=INK),
+            T("4 · excellence: problems handled; peer can replicate",
+                 font="EB Garamond", font_size=26, color=INK),
         ]).arrange(DOWN, aligned_edge=LEFT, buff=0.3).move_to(ORIGIN)
         self.play(FadeIn(plate))
         for r in recap:
@@ -340,11 +345,11 @@ class M12_BvdtHtfOut(Scene):
                                    fill_color="#EDE8DA", fill_opacity=1,
                                    stroke_color=ACCENT)
         do = VGroup(
-            Text("Your turn", font_size=34, color=ACCENT),
-            Text("Replace one quality claim", font_size=24, color=INK),
-            Text("with a number your script writes.", font_size=24,
+            T("Your turn", font="EB Garamond", font_size=34, color=ACCENT),
+            T("Replace one quality claim", font="EB Garamond", font_size=24, color=INK),
+            T("with a number your script writes.", font="EB Garamond", font_size=24,
                  color=INK),
-            Text("Put it where someone can check it.", font_size=24,
+            T("Put it where someone can check it.", font="EB Garamond", font_size=24,
                  color=INK),
         ).arrange(DOWN, buff=0.25).move_to(ORIGIN)
         self.play(FadeIn(doplate))
