@@ -1,0 +1,728 @@
+{
+  "playlists": {
+    "Muse for Educational AI": {
+      "order": [
+        "Muse making a film about Muse",
+        "Claude making a film about Muse"
+      ],
+      "remove": [],
+      "note": "Two-film arc: the Muse film first (the subject), then the Claude-making-a-film-about-Muse response."
+    },
+    "CSYE 7270 Virtual Environments and Real-Time 3D": {
+      "order": [
+        "CSYE 7270: Virtual Environments and Real-Time 3D",
+        "Godot GDD Skill | Explain Your Game Design Document",
+        "Godot Game-Development Skill | Explain Code, Components, and Art",
+        "Godot Walkthrough Skill | Turn Gameplay into an Explainer",
+        "Building Clawd: Code to Gameplay, One Change at a Time | CSYE 7270",
+        "Clawd in Walker Jumpman: First Playthrough | CSYE 7270",
+        "Creating a BMW Ad Parody in Just 15 Minutes | 1973 VW Beetle Commercial",
+        "I Recreated a BMW Commercial in 25 Minutes Using AI (vs. 61 Days in Unreal Engine) | Professor Bear",
+        "Recreating Simon Meyer's Miniature VW Bus Commercial with AI Tools",
+        "Recreating Simon Meyer's Miniature VW Bus Commercial | With Commentary | GPT-5 & Veo 3",
+        "My Email Policy (Professor Bear)"
+      ],
+      "remove": [],
+      "note": "Course intro first, then the Godot skill chain (GDD → dev → walkthrough), then the Clawd build→play arc, then the BMW ad projects, admin video last."
+    },
+    "CSYE 7270 — Building Virtual Environments": {
+      "order": [
+        "Making Game Or Film Art With Gemini",
+        "Ideation of a musical style and visual style\\",
+        "Creating a BMW Ad Parody in Just 15 Minutes | 1973 VW Beetle Commercial",
+        "I Recreated a BMW Commercial in 25 Minutes Using AI (vs. 61 Days in Unreal Engine) | Professor Bear",
+        "Recreating Simon Meyer's Miniature VW Bus Commercial with AI Tools",
+        "Recreating Simon Meyer's Miniature VW Bus Commercial | With Commentary | GPT-5 & Veo 3",
+        "My Email Policy (Professor Bear)"
+      ],
+      "remove": [],
+      "note": "Art pipeline first (Gemini art → ideation), then the ad projects in build order, admin last. Title 2 copied verbatim including trailing backslash."
+    },
+    "Shorts": {
+      "order": [
+        "What Is Brutalist? | Film as Code in 95 Seconds #Shorts",
+        "Your First Brutalist Film #Shorts",
+        "Download Brutalist #Shorts",
+        "Download Brutalist with Claude Code #Shorts",
+        "The screen-clean Skill #Shorts",
+        "The NBB Skill #Shorts",
+        "The logo-motion Skill #Shorts",
+        "The logo Skill #Shorts",
+        "The HAI Skill #Shorts",
+        "The guests Skill #Shorts",
+        "The finance Skill #Shorts",
+        "The fellows Skill #Shorts",
+        "The fashionista Skill #Shorts",
+        "The explainer Skill #Shorts",
+        "The duration-planner Skill #Shorts",
+        "The deep-explainer Skill #Shorts",
+        "The cli-explainer Skill #Shorts",
+        "The anthropics Skill #Shorts",
+        "The ai-explainer Skill #Shorts",
+        "Can You Trust What Claude Tells You?",
+        "Six Agentic Terms",
+        "Agentic Memory, Audited.",
+        "AICR. The Hardware.",
+        "Cowork",
+        "The Architecture of a Production AI System — and Where Security Actually Lives",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "The Watermark Is One Line of Code",
+        "The Metaprompt.",
+        "Claude's Three Bosses",
+        "The Chart Isn't Neutral. It's Arguing.",
+        "Abstract Reasoning: The Specific Gap That Separates LLMs from AGI",
+        "Byrne's 47.",
+        "Why a Dim Blue Lamp Beats a Blinding Red One",
+        "Pick Your Pebble",
+        "What Actually Changed.",
+        "Playing with an art style",
+        "Schrödinger's cat (Dr Suess style)",
+        "Claude Invaders.",
+        "One Piece Ink Smoke Stills",
+        "Experiments in visualizing physics. A distant galaxy,",
+        "The Untold History of William M. Buttlicker (1891–1964)",
+        "Doug Menuez - SEIS NEU Branding and AI talk",
+        "Eighteenth Century Professor Bear",
+        "Slowpoke fan art",
+        "A student requested I design some Pokemon cards. This is Machamp",
+        "Where is Mitch McConnell?",
+        "Wicked Seedance Test A",
+        "Wicked Seedance Test B",
+        "Seedance test Just Move (Wicked in London)"
+      ],
+      "remove": [],
+      "note": "Thematic grouping: Brutalist intro → skill explainers → Claude/AI explainers → curiosities → misc. Positions 42-47, 50-70, 78-119 had descriptive (not exact) titles in the audit and were left unlisted — they keep current relative order after these. Deleted (120) and private (121-150) entries auto-removed by script."
+    },
+    "Branding & AI": {
+      "order": [
+        "Doug Menuez - SEIS NEU Branding and AI talk",
+        "The Reallocation Engine — Current State",
+        "Assemble & Audit for Coherence",
+        "When the Signal Stops Sorting: Why \"I Can Code\" Isn't a Signal Anymore",
+        "Job-Hunting in Public, Without Needing a Job"
+      ],
+      "remove": [],
+      "note": "Talk first for context, then the engine concept, then the craft pieces."
+    },
+    "Claude": {
+      "order": [],
+      "remove": [],
+      "note": "Unlisted playlist; its single video is private/deleted and the title is unrecoverable. Nothing to order — flag for Bear: repopulate or delete."
+    },
+    "INFO 7375 — Prompt Engineering & Agentic AI": {
+      "order": [
+        "What a Language Model Does [2:26]",
+        "Why Softmax Subtracts the Max",
+        "Agent Decomposition: Skills vs Tools [3:07]",
+        "Agent Decomposition - Skills vs Tools (4:32)",
+        "What a Language Model Does [8:13]",
+        "Fan Out: Coordinating Dozens of Agents in Parallel Without Blocking",
+        "greenhouse-watch — Your Board, Your Call",
+        "Scores Into Chances",
+        "The Reallocation Engine — Current State",
+        "Job-Hunting in Public, Without Needing a Job",
+        "My Email Policy (Professor Bear)"
+      ],
+      "remove": [],
+      "note": "Foundations first (short LM explainer → softmax → agent decomposition), then the deep-dive LM video, then applied topics, admin last. The two 'What a Language Model Does' videos disambiguated by duration (2:26 and 8:13 per video inventory)."
+    },
+    "INFO 7375 — Computational Skepticism": {
+      "order": [
+        "Meet Gru & Scope Your App: The /v0 Gate",
+        "Build the SDD: /v1 → /s1 + the Paragraph That's Yours",
+        "Build It Small + Pre-Register the Suspect",
+        "Break Your Own Build: the Loop + Calibration",
+        "Probe the Model and Its Data: Robustness + the Data-Frame",
+        "Generate & Read the Boondoggle Score",
+        "Read the Answer: The Reflection + Ship",
+        "Assemble the Skeptic's Portfolio + Ship",
+        "The Confession: Where I Let the Mistake In",
+        "Unrefuted Is Not Validated | Popper's Move on AI Claims",
+        "Doubt What Your Work Depends On",
+        "A Concentration Control, Not a Fact Checker",
+        "The Test That Is 99% Accurate",
+        "Missing Is Not One Thing",
+        "The Market for Lemons: An AI-Washing Reverse Filter for OPT Students",
+        "greenhouse-watch — Your Board, Your Call",
+        "The Reallocation Engine — Current State",
+        "Job-Hunting in Public, Without Needing a Job",
+        "My Email Policy (Professor Bear)"
+      ],
+      "remove": [],
+      "note": "Project-gate order (/v0 → /v1 → build → break → probe → score → reflect → ship), then the skepticism concept pieces, applied topics, admin last. Duplicates auto-deduped by script."
+    },
+    "Brutalist — AI Video Production": {
+      "order": [
+        "What Is Brutalist?",
+        "What Is Brutalist? | Film as Code with Claude Code",
+        "What Is Brutalist? | Film as Code",
+        "Download Brutalist with Claude Code | Setup Guide",
+        "Get the Repo",
+        "What Manim Is Actually For",
+        "Seven Scenes, Seven Tools (Brutalist)",
+        "The Beat Sheet Is the Program",
+        "Make It Move",
+        "Voices: Free and Local",
+        "Kokoro, English.",
+        "Make It Yours",
+        "Fixed Bookends, Free Middle",
+        "Your Work in One Folder",
+        "Watch and Revise",
+        "Publish It Yourself",
+        "Brutalist, Conducted",
+        "Every Outro We Ship",
+        "The fashionista Skill | Style as a Repeatable System",
+        "The explainer Skill | Mixed-Media Learning",
+        "The deep-explainer Skill | From Topic to Evidence",
+        "The duration-planner Skill | Let Content Set the Clock",
+        "The cli-explainer Skill | Claude Code on Screen",
+        "The ai-explainer Skill | How Brutalist Builds Explainers",
+        "The anthropics Skill | Claude's Official Skill Library",
+        "The NBB Skill | Adapt a Film Without Changing the Original",
+        "The riff Skill",
+        "Brutalist Command: art help",
+        "Brutalist Command: art --list",
+        "Brutalist Command: art scenes",
+        "Brutalist Command: art scene-index",
+        "Brutalist Command: art todo",
+        "Brutalist Command: art run",
+        "Brutalist Command: art final",
+        "Brutalist Command: art shorts",
+        "Brutalist Command: art vertical",
+        "Brutalist Command: art icons",
+        "Brutalist Command: art icon-build"
+      ],
+      "remove": [],
+      "note": "Intro → setup → concepts → workflow → skills → CLI reference. Positions 12-70 (In-Motion logo series, imprecise range titles in audit) left unlisted — they keep current relative order after these; script dedupes the 43-70 repeats. Positions 101-109 were not retrieved in the audit. Skill-explainer full titles taken from the video inventory (audit listed them by skill name only) — verify on apply."
+    },
+    "Figma for Educational AI": {
+      "order": [
+        "Figma for Educational AI: A Design Tool for Engineers",
+        "The Figma MCP Server: Hand Your Agent the Design",
+        "Plugin or Connector? Connecting Figma to Claude Cowork",
+        "Claude Code + Figma: Connect It, Then Draw the Project",
+        "Verify, Then Upgrade: Setting Up Figma for Education",
+        "What a Day of Figma Costs an Agent",
+        "Tell the Agent What a Component Is For",
+        "Variables Become Your CSS",
+        "Auto Layout Is for the Agent?",
+        "Screenshot vs the Frame",
+        "Where a Figma Note Lands",
+        "The Agent Draws, You Merge",
+        "An Agent's Permission Slip",
+        "Designing \"I Don't Know\"",
+        "Weave: Visual Programming for AI Pipelines",
+        "Hand In the History, Not Just the Design",
+        "Show Your Work: A Real Version Log",
+        "Two Agents, One Figma Frame (Codex Pending)",
+        "Figma - Can an Agent Ask the Right Questions About a Messy Board?",
+        "Figma AI - The Diagram That Changes Every Week",
+        "Figma Eval Board to Tests",
+        "Three Students Click Through (the test we haven't run) - Figma AI Test",
+        "Figma Make: What It Needs and Costs (pending the run)",
+        "A Design-Review Skill, Run by Claude Code (Figma's agent pending)",
+        "The Sixty-Minute Workshop (the kit, pending the class)",
+        "Job-Hunting in Public, Without Needing a Job"
+      ],
+      "remove": [],
+      "note": "Framing video first, then connect → setup → design-system concepts → agent workflow → experiments → workshop. 'Job-Hunting in Public' is off-topic for this playlist but left in place at the end — flag for Bear (remove or keep)."
+    },
+    "Claude & Agentic AI": {
+      "order": [
+        "What a Language Model Does",
+        "Autocomplete vs. a Language Model",
+        "No Understanding, Either Way",
+        "Agent Decomposition: Skills vs Tools",
+        "Five Things the Model Can't Do for Itself",
+        "The Test That Is 99% Accurate",
+        "Missing Is Not One Thing",
+        "A Claim That Cannot Be Wrong Is Not a Claim",
+        "Doubt What Your Work Depends On",
+        "A Concentration Control, Not a Fact Checker",
+        "Induction Works Until the World Changes",
+        "A Test That Can't Fail Isn't a Test",
+        "Look at the State, Make a Move",
+        "The Loop Runs While You Read. Plan Mode Is The Pause.",
+        "The Same Experiment, One Floor Up",
+        "Gru's Phase Gates: Validated, Not Attempted",
+        "The Creative Engineer",
+        "Cheap to Make, Cheap to Signal",
+        "Spending Your Effort",
+        "The Inspector Says No First",
+        "A Security Review on Every Pull Request",
+        "What's Inside a Plugin Folder",
+        "One Plugin per Service",
+        "Claude on Your Desk",
+        "Claude Code + Figma: Connect It, Then Draw the Project",
+        "Variables Become Your CSS",
+        "Tell the Agent What a Component Is For",
+        "The Agent Draws, You Merge",
+        "An Agent's Permission Slip",
+        "Designing \"I Don't Know\"",
+        "Weave: Visual Programming for AI Pipelines",
+        "A Design-Review Skill, Run by Claude Code",
+        "Figma Make: What It Needs and Costs",
+        "Three Students Click Through - Figma AI Test",
+        "Show-Tell: Drawings and Cards",
+        "Hand In the History, Not Just the Design",
+        "What Musinique Is",
+        "The Reallocation Engine — Current State",
+        "Job-Hunting in Public, Without Needing a Job"
+      ],
+      "remove": [],
+      "note": "Foundations → skepticism concepts → agent craft → Figma/agent-design arc → misc. Positions 41-100 and 101-163 were not individually titled in the audit — they keep current relative order after these. 'What a Language Model Does' has two versions on the channel (2:26 and 8:13); listed plain, matches first occurrence — flag if the wrong one lands first."
+    },
+    "@NikBearBrown": {
+      "order": [
+        "Claude making a film about Muse",
+        "Muse making a film about Muse",
+        "What Musinique Is",
+        "Medhavy Hub: One Sign-In, Every Textbook",
+        "Five Things the Model Can't Do for Itself",
+        "Agent Decomposition: Skills vs Tools",
+        "The Test That Is 99% Accurate",
+        "Missing Is Not One Thing",
+        "A Claim That Cannot Be Wrong Is Not a Claim",
+        "Autocomplete vs. a Language Model",
+        "No Understanding, Either Way",
+        "Look at the State, Make a Move",
+        "The Loop Runs While You Read. Plan Mode Is The Pause.",
+        "The Same Experiment, One Floor Up",
+        "Induction Works Until the World Changes",
+        "Gru's Phase Gates: Validated, Not Attempted",
+        "The Creative Engineer",
+        "Cheap to Make, Cheap to Signal",
+        "Spending Your Effort",
+        "The Inspector Says No First",
+        "A Security Review on Every Pull Request",
+        "One Plugin per Service",
+        "Claude Code + Figma: Connect It, Then Draw the Project",
+        "Weave: Visual Programming for AI Pipelines",
+        "Designing \"I Don't Know\"",
+        "An Agent's Permission Slip",
+        "The Agent Draws, You Merge",
+        "Three Students Click Through - Figma AI Test",
+        "The Reallocation Engine — Current State"
+      ],
+      "remove": [],
+      "note": "Channel-showcase playlist: strongest hooks first (the two Muse films, Musinique, Medhavy Hub), then the skepticism/AI concept arc. Positions 30-100 and 101-211 were not individually titled in the audit — they keep current relative order after these."
+    },
+    "Frictional": {
+      "order": [
+        "Hand In the History, Not Just the Design",
+        "The Artifact Stopped Being Proof"
+      ],
+      "remove": [],
+      "note": "Two-video pair, kept in current order."
+    },
+    "Claude Basics": {
+      "order": [
+        "Claude Code, Opened.",
+        "Run Claude Code",
+        "Can You Trust What Claude Tells You?",
+        "What's Inside a Plugin Folder",
+        "How a Skill Loads",
+        "Five Ways to Wire an Agent",
+        "Custom Slash Commands and Skills",
+        "Claude Code Hooks",
+        "Claude Skill Development",
+        "Plugin Structure — Claude Code Skills Teardown",
+        "Claude Plugins: Package, Submit, Go Live",
+        "Why does Claude skip the linter?",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "Multi-Agent Orchestration: When Claude Manages Claude",
+        "When Cowork Can Help Claude Code",
+        "1 Hour on Claude Cowork",
+        "Find the Pruning Cliff with Claude Code",
+        "Claude's Values Across Models and Languages",
+        "Claude, On Average",
+        "Claude, Oversimplified — Graded",
+        "Claude, On Empty",
+        "Claude, Judged",
+        "Claude, Steered",
+        "Claude, Taught",
+        "Claude, Scripted",
+        "Claude, Self-Taught.",
+        "Claude, Skinned",
+        "Claude, Documented",
+        "Claude, Revised.",
+        "Claude on the Clock."
+      ],
+      "remove": [],
+      "note": "Basics-first: open → run → trust → plugins/skills → architecture → the 'Claude,' series as a closing run. The internal order of the 'Claude,' series is a best guess — flag as uncertain."
+    },
+    "Professor Bear Xmas 2026": {
+      "order": [
+        "Footage from my working film \"Professor Bear's Christmas\"",
+        "Professor Bear Xmas 2026"
+      ],
+      "remove": [],
+      "note": "Work-in-progress footage first, finished piece second. Kept current order."
+    },
+    "Spoken Word": {
+      "order": [
+        "If — Rudyard Kipling (1910)",
+        "Invictus — William Ernest Henley (1875)",
+        "The Raven - Edgar Allan Poe (1845) [6:55]",
+        "The Raven by Edgar Allan Poe (1845) [6:32]",
+        "Visit from Saint Nicholas - Clement Clarke Moore (1823) [4:02]",
+        "A Visit from St. Nicholas - Clement-Clarke Moore (1823) [2:50]",
+        "Strange Meeting - Wilfred Owen (1920)",
+        "Miniver Cheevy - Edwin Arlington Robinson (1922)",
+        "Max Ehrmann's Desiderata Tribute",
+        "I Do Not Like You (Spoken Word)"
+      ],
+      "remove": [
+        "My Email Policy (Professor Bear)"
+      ],
+      "note": "Most accessible poems first. The two Ravens and two St. Nicholas videos are separate performances — kept both, disambiguated by duration. Removed My Email Policy (wrong topic for a poetry playlist)."
+    },
+    "INFO 6205 — Algorithms": {
+      "order": [
+        "Algorithmic Foundations",
+        "Proving the Pythagorean theorem geometrically | INFO 6205",
+        "Gale–Shapley Stable Matching",
+        "Gale-Shapley, Proved and Traced",
+        "BFS vs DFS: The Frontier Is the Algorithm",
+        "BFS vs DFS, Proved and Traced",
+        "Greedy Interval Scheduling: Finish First",
+        "Interval Scheduling, Proved by Exchange",
+        "Merge Sort: Where the n log n Work Hides",
+        "Merge Sort, All the Way Down",
+        "LRU Caching: When Recent Is Wrong",
+        "LRU, Proved and Traced",
+        "0/1 Knapsack: When the Best-Looking Item Loses",
+        "0/1 Knapsack, Proved and Traced",
+        "Bellman-Ford: The Road That Pays You",
+        "Bellman-Ford, Proved and Traced",
+        "Ford–Fulkerson: The Edge That Undoes a Mistake",
+        "Ford–Fulkerson (Sep 5)",
+        "Randomized Quickselect: The Input Cannot Aim at a Coin",
+        "Randomized Quickselect (Sep 5)",
+        "Optimal Stopping: Look, Then Leap",
+        "Optimal Stopping (Sep 5)",
+        "Vertex Cover: Why Twice Optimal Is a Promise",
+        "My Email Policy (Professor Bear)"
+      ],
+      "remove": [],
+      "note": "Teaching order: foundations → each topic as short explainer followed by its 'Proved and Traced' deep version. The (Sep 5) suffixed videos are shorter alternate versions — placed right after their main versions. Admin video last."
+    },
+    "Lyrical Literacy": {
+      "order": [
+        "Let's learn to count from one to ten in Hindi"
+      ],
+      "remove": [],
+      "note": "Single video."
+    },
+    "Musinique": {
+      "order": [
+        "Tongue Twister Song: Fuzzy Wuzzy Was a Bear",
+        "Five Little Speckled Frogs — Mayfield King × Lyrical Literacy",
+        "Let's learn to count from one to ten in Hindi",
+        "ਗੂਸੀ ਗੂਸੀ ਗੈਂਡਰ (Goosey Goosey Gander).",
+        "Mayfield King — The Voice of Conscious Soul",
+        "Lift Every Voice and Sing | Mayfield King",
+        "Lift Every Voice and Sing — Mayfield King",
+        "Boogeyman | Conscious Soul Music Video — Mayfield King",
+        "Boogeyman — Mayfield King (Seedance Audio-Sync Experiment)",
+        "Tuzi Brown — Mon Homme (Sur cette terre)",
+        "Bella Ciao | Historical Folk Song | Tuzi Brown",
+        "A Freedom Rider's Prayer",
+        "Still the Mothers Count the Missing — Musinique",
+        "Astra music video test",
+        "Sacred Emily (1913) — Gertrude Stein",
+        "Prufrock (Spoken Word) — Nik Bear Brown",
+        "If — Rudyard Kipling (1910)",
+        "I Do Not Like You (Spoken Word)",
+        "Letter from a Region in My Mind (30 Second Commercial)"
+      ],
+      "remove": [],
+      "note": "Playful/accessible first (tongue twister, kids' songs), then artist-grouped: Mayfield King, Tuzi Brown, then spoken-word poetry. The two 'Lift Every Voice' and two 'Boogeyman' entries are distinct versions — kept both adjacent."
+    },
+    "Walker (Game AI)": {
+      "order": [
+        "Godot on Mac: Your First Walker Project with Claude Code",
+        "Godot GDD Skill | Explain Your Game Design Document",
+        "Godot Game-Development Skill | Explain Code, Components, and Art",
+        "Godot Walkthrough Skill | Turn Gameplay into an Explainer",
+        "Walker Pong: A Rally, Not a Finished Game",
+        "Inside Walker Pong: Code, Then Consequence",
+        "Walker Jumpman: Play the First Level.",
+        "Inside Walker Jumpman: Code, Components, and Art.",
+        "Walker 3D Platformer: Play, Inspect, Revise",
+        "Inside Walker 3D Platformer: Code Into Play",
+        "Walker Rhythm Game: One Key, Every Setting"
+      ],
+      "remove": [],
+      "note": "Setup → skill chain (GDD → dev → walkthrough) → projects in complexity order (Pong → Jumpman → 3D platformer → rhythm game), each as play-then-inspect pair."
+    },
+    "Claude Code 101": {
+      "order": [
+        "Five Products. One Name. Which Claude Am I In?",
+        "Claude Code Is an Agentic Harness. What Is That?",
+        "Vibecoders Welcome",
+        "Agentic Loop vs. Chatbot | Claude Code 101",
+        "Five Questions Before Code | Claude Code 101",
+        "Why Writing the Spec First Changes What Claude Builds",
+        "Plan Mode vs. Accept-Edits",
+        "The One Line That Predicts If Claude Will Actually Help You",
+        "Run the Engineering Partner Loop with Claude Code | Claude Code 101",
+        "Does a Long CLAUDE.md Actually Get Ignored?",
+        "Why Your Students' CLAUDE.md Is Evidence They Conducted the Build"
+      ],
+      "remove": [],
+      "note": "True 101 progression: orient → concepts → calibration loop → spec-first workflow → advanced topics."
+    },
+    "AI Ethics": {
+      "order": [
+        "People are volunteering to safety check Cyber-cabs"
+      ],
+      "remove": [],
+      "note": "Single video."
+    },
+    "Claude for Education": {
+      "order": [
+        "The Robot Tutor and the Fishing Village",
+        "Train the Teacher",
+        "NYC Paused Student AI Through 8th Grade. Who Actually Loses?",
+        "Honor, Unpriced."
+      ],
+      "remove": [],
+      "note": "Story first (robot tutor), then teacher-facing, then policy, then the philosophical closer. The 5th (unavailable) video auto-removed by script."
+    },
+    "Computational Skepticism": {
+      "order": [
+        "Distinctions, Not Definitions",
+        "The Chinese Room",
+        "Solving Is Not Verifying",
+        "The Chart Isn't Neutral. It's Arguing.",
+        "The Statistician's Pythagoras.",
+        "Base-Rate Bayes Calculator",
+        "Bayesian Inference vs. Political Favoritism",
+        "Can Math Prove Corruption?",
+        "Were Albania's Instagram Takedowns Bought?",
+        "Intelligent Poverty",
+        "What Makes Prompts a Graph?",
+        "The Missing Feedback Loop",
+        "Train the Teacher",
+        "The Robot Tutor and the Fishing Village",
+        "NYC Paused Student AI Through 8th Grade. Who Actually Loses?",
+        "Honor, Unpriced.",
+        "The Conductorless Orchestra — Conducting AI"
+      ],
+      "remove": [],
+      "note": "Skepticism foundations first (distinctions → Chinese Room → verification), then the statistics/Bayes arc, then applied investigations, then education pieces. The unavailable 18th video auto-removed by script."
+    },
+    "Conducting AI": {
+      "order": [
+        "The Conductorless Orchestra — Conducting AI",
+        "Distinctions, Not Definitions",
+        "Tool Orchestration — The Capability Stack",
+        "Tool Orchestration — Every Handoff Explicit — Conducting AI",
+        "Interpretive Judgment — The Counterfeit and the Chord",
+        "Solving Is Not Verifying",
+        "Can Math Prove Corruption?",
+        "The Dress Rehearsal"
+      ],
+      "remove": [],
+      "note": "Framing video first, then the orchestration framework pieces, then the applied investigations."
+    },
+    "Irreducibly Human": {
+      "order": [
+        "Distinctions, Not Definitions",
+        "When the Signal Stops Sorting",
+        "The Dignity That Can Be Destroyed",
+        "The Conductorless Orchestra — Conducting AI"
+      ],
+      "remove": [],
+      "note": "Conceptual build: distinctions → signal → dignity → the conducting frame."
+    },
+    "AI and Politics": {
+      "order": [
+        "Where is Mitch McConnell?",
+        "The Dignity That Can Be Destroyed"
+      ],
+      "remove": [],
+      "note": "Short hook first, then the substantive piece. Kept current order."
+    },
+    "Just Move": {
+      "order": [
+        "A Sailor's Hornpipe (Boston 2026)"
+      ],
+      "remove": [],
+      "note": "Single video."
+    },
+    "Claude Code & Agentic Development": {
+      "order": [
+        "Claude Code, Opened.",
+        "Run Claude Code",
+        "The Claude Code Walkthrough Kit",
+        "Agent Decomposition - Skills vs Tools",
+        "Context Engineering: You're Burning Tokens Like It's Free",
+        "Claude Code Hooks",
+        "The Prompting Playbook — Debug the Prompt Like Code",
+        "Agents that Remember - Memory Store",
+        "Fan Out: Coordinating Dozens of Agents in Parallel Without Blocking",
+        "Plugin Structure — Claude Code Skills Teardown",
+        "How to Read Any Codebase — agentmemory",
+        "rough.js, Ripped Open",
+        "Humanitarians AI: Walk Me Through the Codebase.",
+        "Refactor, Verified",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "Anthropic's \"Watermark\" Is One Line of Code",
+        "When Cowork Can Help Claude Code"
+      ],
+      "remove": [],
+      "note": "Developer progression: open → run → walkthrough → agent concepts → codebase work → architecture deep-dives. Duplicate of 'How to Read Any Codebase — agentmemory' auto-deduped by script."
+    },
+    "Claude Cowork & Knowledge Work": {
+      "order": [
+        "Cowork",
+        "The Cowork Walkthrough Kit",
+        "1 Hour on Claude Cowork",
+        "When Cowork Can Help Claude Code",
+        "Can You Trust What Claude Tells You?",
+        "Claude Code, Opened.",
+        "Run Claude Code",
+        "Custom Slash Commands and Skills",
+        "Claude Skill Development",
+        "Plugin Structure — Claude Code Skills Teardown",
+        "Claude Code Hooks",
+        "Context Engineering: You're Burning Tokens Like It's Free",
+        "Multi-Agent Orchestration: When Claude Manages Claude",
+        "Why does Claude skip the linter?",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "Find the Pruning Cliff with Claude Code",
+        "Claude's Values Across Models and Languages",
+        "Claude, On Average",
+        "Claude, Oversimplified — Graded",
+        "Claude, On Empty",
+        "Claude, Judged",
+        "Claude, Steered",
+        "Claude, Taught",
+        "Claude, Scripted",
+        "Claude, Self-Taught.",
+        "Claude, Skinned",
+        "Claude, Documented",
+        "Claude, Revised.",
+        "Claude on the Clock."
+      ],
+      "remove": [],
+      "note": "Cowork-first (this playlist's theme): Cowork intro → walkthrough → deep session → then the Code/skills arc → the 'Claude,' series as a closing run (order best-guess, flagged uncertain)."
+    },
+    "Prompting Claude": {
+      "order": [
+        "The Prompting Playbook — Debug the Prompt Like Code",
+        "What Makes Prompts a Graph?",
+        "Context Engineering: You're Burning Tokens Like It's Free",
+        "Custom Slash Commands and Skills",
+        "Claude Skill Development",
+        "Plugin Structure — Claude Code Skills Teardown",
+        "Claude Code Hooks",
+        "Run Claude Code",
+        "Claude Code, Opened.",
+        "Can You Trust What Claude Tells You?",
+        "Multi-Agent Orchestration: When Claude Manages Claude",
+        "Why does Claude skip the linter?",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "Ten Years Every Year.",
+        "1 Hour on Claude Cowork",
+        "Claude's Values Across Models and Languages",
+        "Claude, On Average",
+        "Claude, Taught",
+        "Claude, Scripted",
+        "Claude, Self-Taught.",
+        "Claude, Skinned",
+        "Claude, Documented",
+        "Claude, Revised.",
+        "Claude on the Clock."
+      ],
+      "remove": [],
+      "note": "Prompting craft first (playbook → graph → context engineering → skills), then the tooling arc, then the 'Claude,' series. Duplicates auto-deduped by script. The 28th video was not identified in the audit — left in place."
+    },
+    "The Reallocation Engine": {
+      "order": [],
+      "remove": [],
+      "note": "Playlist is empty. The video 'The Reallocation Engine — Current State' exists on the channel but is not in this playlist — recommend adding it (plus any future Reallocation Engine videos) here. Flag for Bear's decision."
+    },
+    "Behind the Model": {
+      "order": [
+        "Six Agentic Terms",
+        "What Is Reflection Training?",
+        "What Is the J-Space?",
+        "Agentic Memory, Audited.",
+        "Agents that Remember - Memory Store",
+        "Is your AI just telling you what you want to hear?",
+        "Claude × Remotion Demo (Chinese Room Explainer)",
+        "The Metaprompt.",
+        "The Watermark Is One Line of Code",
+        "What Anthropic Leaked About Claude Code's Architecture",
+        "The Architecture of a Production AI System — and Where Security Actually Lives",
+        "The Missing Feedback Loop (Anthropic's Model Hardware Standard)",
+        "Pick Your Pebble",
+        "A P-Value Is Not a Verdict",
+        "Workspace Anatomy",
+        "Workspace Assistant POV",
+        "Workspace Five Tests",
+        "Workspace Reflection Training",
+        "How to Read Any Codebase — agentmemory",
+        "The Fundamental Themes — Conducting AI",
+        "Executive Integration — Holding All Four at Once",
+        "Join the $1M AgentX-AgentBeats Competition"
+      ],
+      "remove": [],
+      "note": "Vocabulary first, then how models are trained/evaluated, then the Workspace research arc. The 5 unavailable videos auto-removed and duplicates auto-deduped by script."
+    },
+    "Claude Research": {
+      "order": [
+        "What Is Brutalist?",
+        "The Claude Mascot",
+        "Humanitarians AI: Walk Me Through the Codebase."
+      ],
+      "remove": [],
+      "note": "Only 3 exact titles were available from the audit for this 236-video playlist (positions 4-100 described as ranges: physics explainers, Kokoro voice series, 'Build with Claude Code + Manim' series; 101-236 not retrieved). These three lead as accessible entry points; everything else keeps current relative order after them. Recommend a follow-up pass with exact titles before finalizing this playlist."
+    },
+    "AI Compute Resource": {
+      "order": [
+        "AICR. The Hardware - AI Compute Resource (AICR)",
+        "AICR. Three Tiers.",
+        "AICR. First Session.",
+        "AICR. Certificate Login.",
+        "AICR. OnDemand.",
+        "AICR. Slurm.",
+        "AICR. CPU Jobs.",
+        "AICR. GPU Jobs.",
+        "AICR. Moving Data.",
+        "AICR. Watch Your Jobs.",
+        "AICR. Use It Right."
+      ],
+      "remove": [],
+      "note": "Onboarding flow: what it is → tiers → first session → login → schedulers → job types → data → monitoring → best practices. Duplicate of 'AICR. CPU Jobs.' auto-deduped by script."
+    },
+    "Claude for Data, Mathematics & Visualization": {
+      "order": [
+        "The Statistician's Pythagoras.",
+        "The Chart Isn't Neutral. It's Arguing.",
+        "Byrne's 47.",
+        "Max Planck — The Reluctant Revolutionary",
+        "What Wave–Particle Duality Actually Means",
+        "Particle in a Box",
+        "Why a Dim Blue Lamp Beats a Blinding Red One"
+      ],
+      "remove": [],
+      "note": "Statistics/visualization foundations first, then the physics explainers. Positions 3-8 and 15-23 had descriptive (not exact) titles in the audit and were left unlisted — they keep current relative order after these. Every video appears twice in this playlist; script dedupes automatically."
+    },
+    "Seedance": {
+      "order": [],
+      "remove": [],
+      "note": "Playlist is empty but has 27 views — videos were likely removed at some point. Flag for Bear's decision: repopulate with Seedance experiments or delete the playlist."
+    },
+    "Fashionista Claude": {
+      "order": [
+        "Is this a sherwani? — Can AI describe clothes? · Fashion, Rendered Aug 3"
+      ],
+      "remove": [],
+      "note": "Single video. Title copied verbatim from audit (including 'Aug 3')."
+    }
+  }
+}
