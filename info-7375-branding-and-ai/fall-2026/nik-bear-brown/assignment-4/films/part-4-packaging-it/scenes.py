@@ -77,7 +77,7 @@ class M03_B01Summary(Scene):
                                 fill_color=CARD, fill_opacity=1,
                                 stroke_color=INK)
         head = T("Executive summary — one page", font_size=30,
-                    color=INK).to_edge(UP, buff=0.9)
+                    color=INK).to_edge(UP, buff=0.5)
         secs = VGroup()
         for i, s in enumerate(["problem: 3,446 postings is a pile",
                                "solution: 5 dimensions, 2 impls, 1 spec",
@@ -90,7 +90,7 @@ class M03_B01Summary(Scene):
                                            aligned_edge=ORIGIN))
         secs.arrange(DOWN, aligned_edge=LEFT, buff=0.3).move_to(UP * 0.2)
         badge = T("Built with n8n + Python", font_size=22,
-                     color=ACCENT).to_edge(DOWN, buff=0.9)
+                     color=ACCENT).to_edge(DOWN, buff=0.55)
         self.play(FadeIn(page))
         self.play(Write(head))
         for sec in secs:

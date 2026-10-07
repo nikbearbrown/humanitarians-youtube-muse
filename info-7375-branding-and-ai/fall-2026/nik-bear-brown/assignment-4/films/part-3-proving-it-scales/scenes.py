@@ -224,7 +224,7 @@ class M09_B07Cost(Scene):
             t = T(w, font_size=22, color=INK)
             why.add(VGroup(coin, t).arrange(RIGHT, buff=0.25,
                                             aligned_edge=ORIGIN))
-        why.arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(DOWN * 2.0)
+        why.arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(DOWN * 2.45)
         self.play(FadeIn(tag))
         self.play(Write(price))
         self.play(FadeIn(per))

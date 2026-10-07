@@ -1,7 +1,7 @@
 """scenes.py — Manim scenes for part-1-opportunity-matcher.
 
 "Muse builds the opportunity matcher" — lecture skill, claude-liam (Liam, in for Bear).
-17 Scene classes, one per body beat (B01..B17). Class names match
+22 Scene classes, one per body beat. Class names match
 shot.manim.class in beat_sheet.json EXACTLY.
 
 Palette: cream #F2F0E9, ink #3D3929, terracotta #D97757 (ONE accent moment
@@ -11,6 +11,9 @@ from manim import *
 import numpy as np
 import json as _json
 import os as _os
+
+config.pixel_width = 1920
+config.pixel_height = 1080
 
 # ── Palette ───────────────────────────────────────────────────────────────────
 BG    = "#F2F0E9"   # cream stage
@@ -672,4 +675,220 @@ class M17_PushBug(Scene):
         ok = _label("25 / 25 landed", size=32, color=ACC, weight="BOLD"
                     ).move_to([0, -2.2, 0])
         self.play(FadeOut(wrench), FadeIn(ok), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M18 — B16: the film is also the test — four cards converge into the repo
+# ─────────────────────────────────────────────────────────────────────────────
+class M18_Evaluation(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("The film is also the test")
+        self.play(Write(title), run_time=0.6)
+
+        names = ["scripts", "boards", "analysis", "evidence"]
+        cards = VGroup(*[
+            RoundedRectangle(corner_radius=0.3, width=2.9, height=1.5,
+                             color=INK, stroke_width=2.5,
+                             fill_color=CARD, fill_opacity=1
+                             ).move_to([-4.95 + i * 3.3, 1.3, 0])
+            for i in range(4)])
+        labels = VGroup(*[
+            _label(name, size=34).move_to(cards[i].get_center())
+            for i, name in enumerate(names)])
+        self.play(FadeIn(cards), FadeIn(labels), run_time=0.6)
+
+        repo = RoundedRectangle(corner_radius=0.4, width=5.6, height=1.8,
+                                color=ACC, stroke_width=3,
+                                fill_color=CARD, fill_opacity=1
+                                ).move_to([0, -2.0, 0])
+        rlbl = _label("the repo", size=34).move_to([0, -2.0, 0])
+        at(self, 0.4)
+        self.play(FadeIn(repo), FadeIn(rlbl), run_time=0.5)
+
+        # the four cards converge into the repo, then fade — the work lands
+        at(self, 0.55)
+        self.play(*[c.animate.move_to([0, -2.0, 0]) for c in cards],
+                  *[l.animate.move_to([0, -2.0, 0]) for l in labels],
+                  run_time=0.7, rate_func=rate_functions.rush_into)
+        self.play(FadeOut(cards), FadeOut(labels), run_time=0.3)
+        ok = _label("pushed where Bear can see it", size=30, color=ACC,
+                    weight="BOLD").move_to([0, -3.4, 0])
+        self.play(FadeIn(ok), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M19 — B17: what failed — scoping bug diagram, wrong scope vs fixed scope
+# ─────────────────────────────────────────────────────────────────────────────
+class M19_WhatFailed(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("What failed: a scoping bug")
+        self.play(Write(title), run_time=0.6)
+
+        # left: wrong scope — the push script misses, files scatter out
+        left = RoundedRectangle(corner_radius=0.4, width=4.6, height=3.4,
+                                color=GHOST, stroke_width=3,
+                                fill_opacity=0).move_to([-3.6, -0.6, 0])
+        ll = _label("wrong scope", size=32, color=SOFT
+                    ).move_to([-3.6, 1.5, 0])
+        script = _label("push.py", size=30, color=SOFT
+                        ).move_to([-3.6, -0.6, 0])
+        outs = VGroup(*[
+            Square(side_length=0.42, color=SOFT, stroke_width=2,
+                   fill_color=CARD, fill_opacity=1).move_to([x, y, 0])
+            for x, y in [(-6.3, -2.3), (-1.0, -2.5),
+                         (-6.5, 0.5), (-0.9, 0.3)]])
+        xs = VGroup(*[
+            _label("×", size=44, color=SOFT).move_to(sq.get_center())
+            for sq in outs])
+        zero = _label("25 files · zero landed", size=30, color=SOFT
+                      ).move_to([-3.6, -2.95, 0])
+        self.play(FadeIn(left), FadeIn(ll), FadeIn(script), run_time=0.5)
+        self.play(FadeIn(outs), FadeIn(xs), run_time=0.4)
+        self.play(FadeIn(zero), run_time=0.4)
+
+        # right: fixed scope — all 25 land inside
+        at(self, 0.5)
+        right = RoundedRectangle(corner_radius=0.4, width=4.6, height=3.4,
+                                 color=ACC, stroke_width=3,
+                                 fill_color=CARD, fill_opacity=1
+                                 ).move_to([3.6, -0.6, 0])
+        rl = _label("fixed scope", size=32, color=INK, weight="BOLD"
+                    ).move_to([3.6, 1.5, 0])
+        grid = VGroup(*[
+            Square(side_length=0.5, color=INK, stroke_width=2,
+                   fill_color=CARD, fill_opacity=1
+                   ).move_to([3.6 - 1.2 + (i % 5) * 0.6,
+                              0.75 - (i // 5) * 0.6, 0])
+            for i in range(25)])
+        done = _label("25 / 25 landed", size=30, color=ACC, weight="BOLD"
+                      ).move_to([3.6, -2.95, 0])
+        arrow = Arrow([-1.1, -0.6, 0], [1.1, -0.6, 0], color=INK,
+                      stroke_width=6, buff=0.2)
+        self.play(Create(arrow), run_time=0.4)
+        self.play(FadeIn(right), FadeIn(rl), run_time=0.5)
+        self.play(FadeIn(grid), run_time=0.5)
+        self.play(FadeIn(done), run_time=0.4)
+
+        logged = _label("logged, not hidden", size=30, color=INK
+                        ).move_to([0, -3.6, 0])
+        at(self, 0.8)
+        self.play(FadeIn(logged), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M20 — BVDT: recap board — the headline numbers
+# ─────────────────────────────────────────────────────────────────────────────
+class M20_Recap(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("Recap")
+        self.play(Write(title), run_time=0.6)
+
+        rows = [
+            ("3,446 postings judged",
+             "five dimensions · one fit score · four decisions"),
+            ("one spec, two implementations",
+             "matcher.py + the n8n workflow"),
+            ("Anthropic: live · Meta: unreadable",
+             "honestly recorded"),
+            ("measured, then fixed",
+             "the pairing rule · the bullseye at 0.66"),
+        ]
+        ys = [1.8, 0.82, -0.16, -1.14]
+        for i, (head, sub) in enumerate(rows):
+            y = ys[i]
+            card = RoundedRectangle(corner_radius=0.25, width=11.4,
+                                    height=0.92, color=INK, stroke_width=2,
+                                    fill_color=CARD, fill_opacity=1
+                                    ).move_to([0, y, 0])
+            h = _label(head, size=32, weight="BOLD").move_to([0, y + 0.18, 0])
+            s = _label(sub, size=28, color=SOFT).move_to([0, y - 0.22, 0])
+            self.play(FadeIn(card), FadeIn(h), FadeIn(s), run_time=0.4)
+
+        # the verdict row — terracotta accent on the count
+        y = -2.12
+        card = RoundedRectangle(corner_radius=0.25, width=11.4,
+                                height=0.92, color=ACC, stroke_width=2.5,
+                                fill_color=CARD, fill_opacity=1
+                                ).move_to([0, y, 0])
+        n22 = _label("22", size=32, color=ACC, weight="BOLD")
+        rest = _label("PURSUE · 0 quarantined", size=32, weight="BOLD")
+        grp = VGroup(n22, rest).arrange(RIGHT, buff=0.18
+                                       ).move_to([0, y + 0.18, 0])
+        s = _label("everything on GitHub — failures included",
+                   size=28, color=SOFT).move_to([0, y - 0.22, 0])
+        self.play(FadeIn(card), FadeIn(grp), FadeIn(s), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M21 — BHTF: your turn — the five dimensions, then the two checks
+# ─────────────────────────────────────────────────────────────────────────────
+class M21_YourTurn(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        title = _title("Your turn")
+        self.play(Write(title), run_time=0.6)
+
+        dims = ["role", "audience", "materials", "gap", "company"]
+        for i, name in enumerate(dims):
+            y = 1.7 - i * 0.95
+            chip = Square(side_length=0.55, color=INK, stroke_width=2.5,
+                          fill_color=CARD, fill_opacity=1).move_to([-5.6, y, 0])
+            num = _label(str(i + 1), size=30, weight="BOLD"
+                         ).move_to([-5.6, y, 0])
+            lbl = _label(name, size=34)
+            lbl.next_to(chip, RIGHT, buff=0.35)
+            self.play(FadeIn(chip), FadeIn(num), FadeIn(lbl), run_time=0.3)
+
+        qhead = _label("check two things", size=32, color=ACC, weight="BOLD"
+                       ).move_to([3.6, 1.7, 0])
+        q1 = RoundedRectangle(corner_radius=0.3, width=5.8, height=1.7,
+                              color=INK, stroke_width=2.5,
+                              fill_color=CARD, fill_opacity=1
+                              ).move_to([3.6, 0.45, 0])
+        q1t = VGroup(_label("Is your score within 0.1", size=28),
+                     _label("of the machine's?", size=28)
+                     ).arrange(DOWN, buff=0.08, aligned_edge=ORIGIN
+                               ).move_to([3.6, 0.45, 0])
+        q2 = RoundedRectangle(corner_radius=0.3, width=5.8, height=1.7,
+                              color=INK, stroke_width=2.5,
+                              fill_color=CARD, fill_opacity=1
+                              ).move_to([3.6, -1.5, 0])
+        q2t = VGroup(_label("Can you name the single signal", size=28),
+                     _label("that decided it?", size=28)
+                     ).arrange(DOWN, buff=0.08, aligned_edge=ORIGIN
+                               ).move_to([3.6, -1.5, 0])
+        at(self, 0.5)
+        self.play(FadeIn(qhead), run_time=0.4)
+        self.play(FadeIn(q1), FadeIn(q1t), run_time=0.4)
+        self.play(FadeIn(q2), FadeIn(q2t), run_time=0.4)
+        finish(self)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  M22 — BOUT: outro card
+# ─────────────────────────────────────────────────────────────────────────────
+class M22_Outro(Scene):
+
+    def construct(self):
+        self.camera.background_color = BG
+        main = _label("Muse builds the opportunity matcher",
+                      size=46, weight="BOLD").move_to([0, 0.35, 0])
+        rule = Line([-2.5, -0.35, 0], [2.5, -0.35, 0],
+                    color=ACC, stroke_width=4)
+        sub = _label("@NikBearBrown", size=32, color=SOFT
+                     ).move_to([0, -1.1, 0])
+        self.play(FadeIn(main), run_time=0.6)
+        self.play(Create(rule), run_time=0.4)
+        self.play(FadeIn(sub), run_time=0.4)
         finish(self)

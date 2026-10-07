@@ -50,9 +50,7 @@ def brief_card(title, company, fit, why_lines, step, y_shift=0):
     card = RoundedRectangle(corner_radius=0.25, width=10.5, height=5.6,
                             fill_color=CARD, fill_opacity=1, stroke_color=INK)
     head = T(title, font_size=30, color=INK)
-    head.to_edge(LEFT, buff=1.0).shift(UP * 2.0 + UP * y_shift)
-    co = T(f"{company} — fit {fit}  PURSUE", font_size=22,
-              color=ACCENT).next_to(head, DOWN, buff=0.2).align_to(head, LEFT)
+    co = T(f"{company} — fit {fit}  PURSUE", font_size=22, color=ACCENT)
     why = VGroup()
     for w in why_lines:
         dot = Circle(radius=0.09, fill_color=ACCENT, fill_opacity=1,
@@ -60,10 +58,12 @@ def brief_card(title, company, fit, why_lines, step, y_shift=0):
         line = T(w, font_size=20, color=INK)
         row = VGroup(dot, line).arrange(RIGHT, buff=0.2, aligned_edge=ORIGIN)
         why.add(row)
-    why.arrange(DOWN, aligned_edge=LEFT, buff=0.14).next_to(
-        co, DOWN, buff=0.35).align_to(co, LEFT)
-    foot = T("Next: " + step, font_size=20, color=ACCENT).next_to(
-        why, DOWN, buff=0.4).align_to(why, LEFT)
+    why.arrange(DOWN, aligned_edge=LEFT, buff=0.14)
+    foot = T("Next: " + step, font_size=20, color=ACCENT)
+    text = VGroup(head, co, why, foot).arrange(DOWN, aligned_edge=LEFT,
+                                               buff=0.3)
+    # tuck the whole text block inside the card: 0.7 left margin, centered
+    text.move_to([card.get_left()[0] + 0.7 + text.width / 2, 0, 0])
     return VGroup(card, head, co, why, foot)
 
 
@@ -90,8 +90,8 @@ class M02_Bdefs(Scene):
     def construct(self):
         words = ["output", "digest", "brief", "proof"]
         defs = ["a file built for a human", "the one-page summary",
-                "one role card: score, reasons, link, next step",
-                "the run report that shows the work is real"]
+                "one role card:\nscore, reasons,\nlink, next step",
+                "the run report\nthat shows the\nwork is real"]
         cards = VGroup()
         for i, (w, d) in enumerate(zip(words, defs)):
             x = -5.4 + i * 3.6
@@ -99,7 +99,7 @@ class M02_Bdefs(Scene):
                                    fill_color=CARD, fill_opacity=1,
                                    stroke_color=INK).move_to([x, 0, 0])
             t = T(w, font_size=30, color=ACCENT).move_to([x, 0.55, 0])
-            s = T(d, font_size=16, color=INK).move_to([x, -0.35, 0])
+            s = T(d, font_size=16, color=INK).move_to([x, -0.45, 0])
             cards.add(VGroup(box, t, s))
         for c in cards:
             self.play(FadeIn(c, shift=UP * 0.3), run_time=0.7)
@@ -108,17 +108,27 @@ class M02_Bdefs(Scene):
 
 class M03_B01Test(Scene):
     def construct(self):
-        left = VGroup(
-            T("raw JSON", font_size=28, color=GREY),
-            Rectangle(width=4.6, height=4.4, fill_color="#EDE8DA",
-                      fill_opacity=1, stroke_color=GREY),
-        ).shift(LEFT * 3.4)
-        right = VGroup(
-            T("brief card", font_size=28, color=ACCENT),
-            RoundedRectangle(corner_radius=0.2, width=4.6, height=4.4,
-                             fill_color=CARD, fill_opacity=1, stroke_color=INK),
-        ).shift(RIGHT * 3.4)
-        check = check_mark(right.get_center() + DOWN * 2.9, scale=1.0)
+        left_box = Rectangle(width=4.6, height=4.4, fill_color="#EDE8DA",
+                             fill_opacity=1, stroke_color=GREY)
+        left_lab = T("raw JSON", font_size=28, color=GREY)
+        left = VGroup(left_lab, left_box).arrange(DOWN, buff=0.25)
+        left_json = T('{ "jobs": [ ... ] }', font_size=18,
+                      color=GREY).move_to(left_box.get_center())
+        left.add(left_json)
+        left.shift(LEFT * 3.4)
+        right_box = RoundedRectangle(corner_radius=0.2, width=4.6, height=4.4,
+                                     fill_color=CARD, fill_opacity=1,
+                                     stroke_color=INK)
+        right_lab = T("brief card", font_size=28, color=ACCENT)
+        right = VGroup(right_lab, right_box).arrange(DOWN, buff=0.25)
+        right_inner = VGroup(*[
+            T("one sentence of why", font_size=18, color=INK),
+            T("the posting link", font_size=18, color=INK),
+            T("what to do next", font_size=18, color=INK),
+        ]).arrange(DOWN, buff=0.2).move_to(right_box.get_center())
+        right.add(right_inner)
+        right.shift(RIGHT * 3.4)
+        check = check_mark(right_box.get_center() + DOWN * 2.9, scale=1.0)
         cap = T("Could a non-technical person use it?", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
         self.play(FadeIn(left), FadeIn(right))
@@ -139,8 +149,9 @@ class M04_B02Flow(Scene):
                                  stroke_color=INK).move_to([x, 0, 0])
             t = T(lab, font_size=22, color=INK).move_to([x, 0, 0])
             boxes.add(VGroup(b, t))
-        arrows = VGroup(*[Arrow([-3.6 + i * 3.6, 0, 0], [-2.0 + i * 3.6, 0, 0],
-                                color=ACCENT, buff=0.15) for i in range(3)])
+        arrows = VGroup(*[Arrow([-4.0 + i * 3.6, -1.5, 0],
+                                [-3.2 + i * 3.6, -1.5, 0],
+                                color=ACCENT, buff=0.1) for i in range(3)])
         for b in boxes:
             self.play(FadeIn(b, shift=RIGHT * 0.3), run_time=0.6)
         self.play(*[GrowArrow(a) for a in arrows], run_time=0.9)
@@ -149,11 +160,11 @@ class M04_B02Flow(Scene):
 
 class M05_B03Digest(Scene):
     def construct(self):
-        page = RoundedRectangle(corner_radius=0.2, width=9.6, height=5.8,
+        page = RoundedRectangle(corner_radius=0.2, width=9.6, height=5.4,
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK)
         head = T("Opportunity digest — 2026-10-03", font_size=30,
-                    color=INK).to_edge(UP, buff=1.0)
+                    color=INK).move_to(UP * 2.05)
         rows = VGroup()
         for i, (t, f) in enumerate([("Developer Education Lead — Anthropic", "0.91"),
                                     ("Designer Advocate, Partnerships — Figma", "0.84"),
@@ -163,9 +174,8 @@ class M05_B03Digest(Scene):
             r = T(f"{t}  ({f})", font_size=22, color=INK)
             row = VGroup(sq, r).arrange(RIGHT, buff=0.25, aligned_edge=ORIGIN)
             rows.add(row)
-        rows.arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(UP * 0.3)
-        badge = T("md  +  html", font_size=24, color=ACCENT).to_edge(DOWN,
-                                                                     buff=0.9)
+        rows.arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(UP * 0.35)
+        badge = T("md  +  html", font_size=24, color=ACCENT).move_to(DOWN * 3.2)
         self.play(FadeIn(page))
         self.play(Write(head))
         for row in rows:
@@ -256,7 +266,7 @@ class M10_B08Nontech(Scene):
         browser = RoundedRectangle(corner_radius=0.25, width=9.6, height=5.4,
                                    fill_color=CARD, fill_opacity=1,
                                    stroke_color=INK)
-        bar = Rectangle(width=9.6, height=0.7, fill_color="#EDE8DA",
+        bar = Rectangle(width=9.5, height=0.68, fill_color="#EDE8DA",
                         fill_opacity=1, stroke_width=0).move_to(
             browser.get_top() + DOWN * 0.35)
         url = T("digest-2026-10-03.html", font_size=20,
