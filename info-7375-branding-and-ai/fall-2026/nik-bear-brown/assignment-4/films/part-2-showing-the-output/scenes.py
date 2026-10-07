@@ -8,27 +8,31 @@ from manim import *
 
 config.pixel_width = 1920
 config.pixel_height = 1080
+config.background_color = "#F2F0E9"
 
-INK = "#111111"
+INK = "#3D3929"
 PAPER = "#F7F3EA"
-ACCENT = "#B8472F"
-BLUE = "#2F6BB8"
-GREEN = "#2E8B57"
+ACCENT = "#D97757"
 GREY = "#8A8578"
 CARD = "#FFFFFF"
+
+def T(s, **kw):
+    fs = kw.pop("font_size", 30)
+    kw.setdefault("font", "EB Garamond")
+    return Text(s, font_size=fs * 3, **kw).scale(1 / 3)
 
 
 def title_card(title, sub=None):
     g = VGroup()
-    t = Text(title, font_size=40, color=INK).move_to(ORIGIN)
+    t = T(title, font_size=40, color=INK).move_to(ORIGIN)
     g.add(t)
     if sub:
-        s = Text(sub, font_size=24, color=GREY).next_to(t, DOWN, buff=0.3)
+        s = T(sub, font_size=24, color=INK).next_to(t, DOWN, buff=0.3)
         g.add(s)
     return g
 
 
-def check_mark(pos, scale=1.0, color=GREEN):
+def check_mark(pos, scale=1.0, color=ACCENT):
     g = VGroup(
         Line(ORIGIN, RIGHT * 0.5 + DOWN * 0.3, color=color, stroke_width=10),
         Line(RIGHT * 0.5 + DOWN * 0.3, RIGHT * 1.3 + UP * 0.4,
@@ -45,20 +49,20 @@ def bullet(pos, color=ACCENT):
 def brief_card(title, company, fit, why_lines, step, y_shift=0):
     card = RoundedRectangle(corner_radius=0.25, width=10.5, height=5.6,
                             fill_color=CARD, fill_opacity=1, stroke_color=INK)
-    head = Text(title, font_size=30, color=INK)
+    head = T(title, font_size=30, color=INK)
     head.to_edge(LEFT, buff=1.0).shift(UP * 2.0 + UP * y_shift)
-    co = Text(f"{company} — fit {fit}  PURSUE", font_size=22,
+    co = T(f"{company} — fit {fit}  PURSUE", font_size=22,
               color=ACCENT).next_to(head, DOWN, buff=0.2).align_to(head, LEFT)
     why = VGroup()
     for w in why_lines:
         dot = Circle(radius=0.09, fill_color=ACCENT, fill_opacity=1,
                      stroke_width=0)
-        line = Text(w, font_size=20, color=INK)
+        line = T(w, font_size=20, color=INK)
         row = VGroup(dot, line).arrange(RIGHT, buff=0.2, aligned_edge=ORIGIN)
         why.add(row)
     why.arrange(DOWN, aligned_edge=LEFT, buff=0.14).next_to(
         co, DOWN, buff=0.35).align_to(co, LEFT)
-    foot = Text("Next: " + step, font_size=20, color=BLUE).next_to(
+    foot = T("Next: " + step, font_size=20, color=ACCENT).next_to(
         why, DOWN, buff=0.4).align_to(why, LEFT)
     return VGroup(card, head, co, why, foot)
 
@@ -71,9 +75,9 @@ class M01_Bidea(Scene):
                     stroke_width=0).shift(LEFT * 3 + DOWN * 1.2)
         doc = Rectangle(width=3.2, height=4.2, fill_color=CARD, fill_opacity=1,
                         stroke_color=INK).shift(RIGHT * 2.5 + UP * 0.4)
-        json_line = Text('{ "jobs": [ ... ] }', font_size=22, color=GREY).move_to(
+        json_line = T('{ "jobs": [ ... ] }', font_size=22, color=GREY).move_to(
             doc.get_center())
-        cap = Text("raw JSON is not an output", font_size=34, color=INK).to_edge(
+        cap = T("raw JSON is not an output", font_size=34, color=INK).to_edge(
             UP, buff=0.8)
         x = Cross(scale_factor=0.5, color=ACCENT).move_to(doc.get_center())
         self.play(FadeIn(desk), FadeIn(wr), FadeIn(doc), FadeIn(json_line))
@@ -94,8 +98,8 @@ class M02_Bdefs(Scene):
             box = RoundedRectangle(corner_radius=0.2, width=3.2, height=2.4,
                                    fill_color=CARD, fill_opacity=1,
                                    stroke_color=INK).move_to([x, 0, 0])
-            t = Text(w, font_size=30, color=ACCENT).move_to([x, 0.55, 0])
-            s = Text(d, font_size=16, color=INK).move_to([x, -0.35, 0])
+            t = T(w, font_size=30, color=ACCENT).move_to([x, 0.55, 0])
+            s = T(d, font_size=16, color=INK).move_to([x, -0.35, 0])
             cards.add(VGroup(box, t, s))
         for c in cards:
             self.play(FadeIn(c, shift=UP * 0.3), run_time=0.7)
@@ -105,17 +109,17 @@ class M02_Bdefs(Scene):
 class M03_B01Test(Scene):
     def construct(self):
         left = VGroup(
-            Text("raw JSON", font_size=28, color=GREY),
+            T("raw JSON", font_size=28, color=GREY),
             Rectangle(width=4.6, height=4.4, fill_color="#EDE8DA",
                       fill_opacity=1, stroke_color=GREY),
         ).shift(LEFT * 3.4)
         right = VGroup(
-            Text("brief card", font_size=28, color=ACCENT),
+            T("brief card", font_size=28, color=ACCENT),
             RoundedRectangle(corner_radius=0.2, width=4.6, height=4.4,
                              fill_color=CARD, fill_opacity=1, stroke_color=INK),
         ).shift(RIGHT * 3.4)
         check = check_mark(right.get_center() + DOWN * 2.9, scale=1.0)
-        cap = Text("Could a non-technical person use it?", font_size=32,
+        cap = T("Could a non-technical person use it?", font_size=32,
                    color=INK).to_edge(UP, buff=0.7)
         self.play(FadeIn(left), FadeIn(right))
         self.play(Write(cap))
@@ -133,7 +137,7 @@ class M04_B02Flow(Scene):
             b = RoundedRectangle(corner_radius=0.2, width=3.2, height=2.2,
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK).move_to([x, 0, 0])
-            t = Text(lab, font_size=22, color=INK).move_to([x, 0, 0])
+            t = T(lab, font_size=22, color=INK).move_to([x, 0, 0])
             boxes.add(VGroup(b, t))
         arrows = VGroup(*[Arrow([-3.6 + i * 3.6, 0, 0], [-2.0 + i * 3.6, 0, 0],
                                 color=ACCENT, buff=0.15) for i in range(3)])
@@ -148,7 +152,7 @@ class M05_B03Digest(Scene):
         page = RoundedRectangle(corner_radius=0.2, width=9.6, height=5.8,
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK)
-        head = Text("Opportunity digest — 2026-10-03", font_size=30,
+        head = T("Opportunity digest — 2026-10-03", font_size=30,
                     color=INK).to_edge(UP, buff=1.0)
         rows = VGroup()
         for i, (t, f) in enumerate([("Developer Education Lead — Anthropic", "0.91"),
@@ -156,11 +160,11 @@ class M05_B03Digest(Scene):
                                     ("Learning Experiences Creator — Replit", "0.75")]):
             sq = Square(side_length=0.18, fill_color=ACCENT, fill_opacity=1,
                         stroke_width=0)
-            r = Text(f"{t}  ({f})", font_size=22, color=INK)
+            r = T(f"{t}  ({f})", font_size=22, color=INK)
             row = VGroup(sq, r).arrange(RIGHT, buff=0.25, aligned_edge=ORIGIN)
             rows.add(row)
         rows.arrange(DOWN, aligned_edge=LEFT, buff=0.25).move_to(UP * 0.3)
-        badge = Text("md  +  html", font_size=24, color=BLUE).to_edge(DOWN,
+        badge = T("md  +  html", font_size=24, color=ACCENT).to_edge(DOWN,
                                                                      buff=0.9)
         self.play(FadeIn(page))
         self.play(Write(head))
@@ -221,13 +225,13 @@ class M08_B06BriefReplit(Scene):
 
 class M09_B07RunReport(Scene):
     def construct(self):
-        head = Text("run-report-2026-10-03.json", font_size=28,
+        head = T("run-report-2026-10-03.json", font_size=28,
                     color=INK).to_edge(UP, buff=0.7)
         stats = VGroup(
-            Text("714 postings scored in 3.1 s", font_size=26, color=INK),
-            Text("0 quarantined · 0 errors", font_size=26, color=GREEN),
+            T("714 postings scored in 3.1 s", font_size=26, color=INK),
+            T("0 quarantined · 0 errors", font_size=26, color=ACCENT),
         ).arrange(DOWN, buff=0.25).move_to(UP * 1.2)
-        dec = [("PURSUE", 22, ACCENT), ("NETWORK", 37, BLUE),
+        dec = [("PURSUE", 22, ACCENT), ("NETWORK", 37, ACCENT),
                ("WATCH", 325, GREY), ("SKIP", 330, "#C9C4B5")]
         bars = VGroup()
         for i, (lab, n, col) in enumerate(dec):
@@ -236,7 +240,7 @@ class M09_B07RunReport(Scene):
             bar = Rectangle(width=w, height=0.55, fill_color=col,
                             fill_opacity=1, stroke_width=0).move_to(
                 [-5 + w / 2, y, 0])
-            t = Text(f"{lab}: {n}", font_size=20, color=INK).next_to(
+            t = T(f"{lab}: {n}", font_size=20, color=INK).next_to(
                 bar, LEFT, buff=0.2)
             bars.add(VGroup(bar, t))
         self.play(Write(head))
@@ -255,13 +259,13 @@ class M10_B08Nontech(Scene):
         bar = Rectangle(width=9.6, height=0.7, fill_color="#EDE8DA",
                         fill_opacity=1, stroke_width=0).move_to(
             browser.get_top() + DOWN * 0.35)
-        url = Text("digest-2026-10-03.html", font_size=20,
-                   color=BLUE).move_to(bar.get_center())
+        url = T("digest-2026-10-03.html", font_size=20,
+                   color=ACCENT).move_to(bar.get_center())
         checks = VGroup()
         for i, q in enumerate(["one sentence of why", "one link", "one next step"]):
             y = 1.2 - i * 0.9
             row = VGroup(
-                Text(q, font_size=24, color=INK).move_to([-1.5, y, 0]),
+                T(q, font_size=24, color=INK).move_to([-1.5, y, 0]),
                 check_mark([2.2, y, 0], scale=0.45),
             )
             checks.add(row)
@@ -277,13 +281,13 @@ class M11_B09Gap(Scene):
         box = RoundedRectangle(corner_radius=0.2, width=8.6, height=3.6,
                                fill_color="#EDE8DA", fill_opacity=0.9,
                                stroke_color=GREY).move_to(UP * 0.4)
-        t = Text("scheduled delivery: approvals → weekly digest → email",
+        t = T("scheduled delivery: approvals → weekly digest → email",
                  font_size=24, color=GREY).move_to(box.get_center() + UP * 0.5)
-        stamp = Text("TODO", font_size=44, color=ACCENT).move_to(
+        stamp = T("TODO", font_size=44, color=ACCENT).move_to(
             box.get_center() + DOWN * 0.6)
         muse = Circle(radius=0.5, fill_color=ACCENT, fill_opacity=1,
                       stroke_width=0).shift(DOWN * 2.4 + LEFT * 2)
-        cap = Text("The honest gap", font_size=32, color=INK).to_edge(UP,
+        cap = T("The honest gap", font_size=32, color=INK).to_edge(UP,
                                                                       buff=0.7)
         self.play(Write(cap))
         self.play(FadeIn(box), FadeIn(t))
@@ -301,7 +305,7 @@ class M12_B10Loop(Scene):
         for i, ((lab, w), x) in enumerate(zip(stages, xs)):
             c = Circle(radius=w / 2, fill_color=CARD, fill_opacity=1,
                        stroke_color=INK).move_to([x, 0, 0])
-            t = Text(lab, font_size=20, color=INK).move_to([x, 0, 0])
+            t = T(lab, font_size=20, color=INK).move_to([x, 0, 0])
             self.play(FadeIn(c, scale=0.8), FadeIn(t), run_time=0.7)
             if i < 2:
                 a = Arrow([x + w / 2 + 0.15, 0, 0],
@@ -317,13 +321,13 @@ class M13_BvdtHtfOut(Scene):
                                  fill_color=CARD, fill_opacity=1,
                                  stroke_color=INK)
         recap = VGroup(*[
-            Text("1 · an output is a file a human can open", font_size=26,
+            T("1 · an output is a file a human can open", font_size=26,
                  color=INK),
-            Text("2 · the gallery: digest, 15 briefs, run report", font_size=26,
+            T("2 · the gallery: digest, 15 briefs, run report", font_size=26,
                  color=INK),
-            Text("3 · quality check passes; scheduled delivery is the gap",
+            T("3 · quality check passes; scheduled delivery is the gap",
                  font_size=26, color=INK),
-            Text("4 · the loop is closed: postings to usable files",
+            T("4 · the loop is closed: postings to usable files",
                  font_size=26, color=INK),
         ]).arrange(DOWN, aligned_edge=LEFT, buff=0.3).move_to(ORIGIN)
         self.play(FadeIn(plate))
@@ -335,11 +339,11 @@ class M13_BvdtHtfOut(Scene):
                                    fill_color="#EDE8DA", fill_opacity=1,
                                    stroke_color=ACCENT)
         do = VGroup(
-            Text("Your turn", font_size=34, color=ACCENT),
-            Text("Open the HTML digest. Pick one PURSUE brief.", font_size=24,
+            T("Your turn", font_size=34, color=ACCENT),
+            T("Open the HTML digest. Pick one PURSUE brief.", font_size=24,
                  color=INK),
-            Text("Run the three-question test.", font_size=24, color=INK),
-            Text("Which brief would you act on first?", font_size=24,
+            T("Run the three-question test.", font_size=24, color=INK),
+            T("Which brief would you act on first?", font_size=24,
                  color=INK),
         ).arrange(DOWN, buff=0.25).move_to(ORIGIN)
         self.play(FadeIn(doplate))

@@ -23,11 +23,12 @@ SERIF = "EB Garamond"
 
 
 def _label(text, size=36, color=INK, weight=None):
-    """Single-line label, EB Garamond."""
-    kw = {"font": SERIF, "font_size": size, "color": color}
+    """Single-line label, EB Garamond (3x oversample: manimpango 0.18.1
+    drops inter-word spaces at small sizes)."""
+    kw = {"font": SERIF, "font_size": size * 3, "color": color}
     if weight:
         kw["weight"] = weight
-    return Text(text, **kw)
+    return Text(text, **kw).scale(1 / 3)
 
 
 def _title(text):
