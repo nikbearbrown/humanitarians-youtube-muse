@@ -1,0 +1,17 @@
+{"action":"confirm","player_x":64.0,"player_y":320.0,"state":0,"tick":120,"type":"press"}
+{"action":"move_right","player_x":64.0,"player_y":320.0,"state":1,"tick":121,"type":"press"}
+{"action":"jump","player_x":122.0,"player_y":319.9,"state":1,"tick":146,"type":"press"}
+{"action":"jump","player_x":132.6,"player_y":300.2,"state":1,"tick":150,"type":"release"}
+{"action":"jump","player_x":290.0,"player_y":319.9,"state":1,"tick":209,"type":"press"}
+{"action":"jump","player_x":300.6,"player_y":300.2,"state":1,"tick":213,"type":"release"}
+{"action":"move_right","player_x":505.1,"player_y":435.9,"state":3,"tick":301,"type":"release"}
+{"action":"move_right","player_x":64.0,"player_y":320.0,"state":1,"tick":335,"type":"press"}
+{"action":"move_right","player_x":151.0,"player_y":320.0,"state":1,"tick":394,"type":"release"}
+{"action":"restart","player_x":151.0,"player_y":320.0,"state":1,"tick":394,"type":"press"}
+{"action":"restart","player_x":151.0,"player_y":320.0,"state":1,"tick":394,"type":"release"}
+{"action":"move_right","player_x":64.0,"player_y":320.0,"state":1,"tick":395,"type":"press"}
+{"action":"move_right","player_x":151.0,"player_y":320.0,"state":1,"tick":454,"type":"release"}
+{"action":"pause","player_x":151.0,"player_y":320.0,"state":1,"tick":454,"type":"press"}
+{"action":"pause","player_x":151.0,"player_y":320.0,"state":1,"tick":454,"type":"release"}
+{"action":"menu","player_x":151.0,"player_y":320.0,"state":2,"tick":455,"type":"press"}
+{"action":"menu","player_x":151.0,"player_y":320.0,"state":2,"tick":455,"type":"release"}

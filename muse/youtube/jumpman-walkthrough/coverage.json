@@ -1,0 +1,477 @@
+{
+ "schema_version": 1,
+ "game": {
+  "name": "walker-jumpman",
+  "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100"
+ },
+ "captures": {
+  "full_run_4k": {
+   "path": "capture/full_run_4k.mp4",
+   "sha256": "bc71e2e3c6f2113bac39641db600abf634c28fc53ebbb1d813ae7b3780ffd357",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/full_run_4k_inputs.jsonl"
+  },
+  "death_4k": {
+   "path": "capture/death_4k.mp4",
+   "sha256": "e7653275f2e29fb5cc1eb766efde98adce5cd0b0b6c3ae4bcdf5a859dc362bac",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/death_4k_inputs.jsonl"
+  },
+  "take_pause_4k": {
+   "path": "capture/take_pause_4k.mp4",
+   "sha256": "2a144f4f4c9656b97bef4b387edd5faa2b804d72cdf17d1fa74e609d659eda69",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/take_pause_4k_inputs.jsonl"
+  },
+  "take_egg_4k": {
+   "path": "capture/take_egg_4k.mp4",
+   "sha256": "af8449b7f42f17720f0599f459ff6c6456ba70a74e489f8103429c898e5a10cb",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/take_egg_4k_inputs.jsonl"
+  },
+  "take_grumbler_4k": {
+   "path": "capture/take_grumbler_4k.mp4",
+   "sha256": "e50a1058fefa5f627c0876df01e31a60c51b0c90201113fcb78e2361685f448c",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/take_grumbler_4k_inputs.jsonl"
+  },
+  "take_sidekill_4k": {
+   "path": "capture/take_sidekill_4k.mp4",
+   "sha256": "f15c6e965987404fccca190780d53ae858eec513800b8ac34046f2908a3ac7bb",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/take_sidekill_4k_inputs.jsonl"
+  },
+  "take_fallretry_4k": {
+   "path": "capture/take_fallretry_4k.mp4",
+   "sha256": "9a2d71d86924581619227ed4827794f59162a3808e4ef7ed71eb87cf474ac5ae",
+   "build_id": "3d3611512622d9b8c64d4e446f5013dc42ff98054044bf5b2ee11a1df8f7d100",
+   "method": "scripted-input",
+   "input_log": "capture/take_fallretry_4k_inputs.jsonl"
+  }
+ },
+ "features": [
+  {
+   "id": "F_MENU",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 0.5,
+     "action_s": 1.0,
+     "end_s": 2.0,
+     "observation": "Menu card reads 'First steps. Real jumps.' with ENTER / START; ENTER starts the run at t=2.0.",
+     "riff": "The whole game is taught in one card \u2014 no tutorial walls; the tuition for skipping it is one half-second retry."
+    }
+   ]
+  },
+  {
+   "id": "F_CONTROLS",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 0.5,
+     "action_s": 1.2,
+     "end_s": 2.0,
+     "observation": "Controls row on the menu: A/D or arrows move, Space jumps, R retries, Esc pauses.",
+     "riff": "One jump, four bindings, zero combos \u2014 the control scheme fits on a single line."
+    }
+   ]
+  },
+  {
+   "id": "F_PLAYER",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 2.0,
+     "action_s": 2.43,
+     "end_s": 3.2,
+     "observation": "Player runs right and jumps the first step; single jump only, no double jump.",
+     "riff": "The 53px max jump is the level's whole difficulty budget \u2014 every obstacle is a variation on one leap."
+    }
+   ]
+  },
+  {
+   "id": "F_YARD",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 2.0,
+     "action_s": 4.0,
+     "end_s": 6.4,
+     "observation": "Tutorial yard: coin arcs, step, first spike bed, two gaps \u2014 geometry unchanged from the original 960px level.",
+     "riff": "Keeping the yard intact makes the extension readable: old ground, new tricks."
+    }
+   ]
+  },
+  {
+   "id": "F_COINS",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 2.0,
+     "action_s": 4.5,
+     "end_s": 6.4,
+     "observation": "Coins collected along the route; HUD counter climbs 00/23 upward with each pickup.",
+     "riff": "Coins are the film's progress bar \u2014 the counter tells you the run's story at a glance."
+    }
+   ]
+  },
+  {
+   "id": "F_QBLOCKS",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B03",
+     "start_s": 7.6,
+     "action_s": 8.52,
+     "end_s": 9.5,
+     "observation": "Three question blocks bonked at t=7.88/8.52/9.13; each pops a coin and flips to the spent sprite.",
+     "riff": "Bonking is the Mario verb this level is built around \u2014 the sign even says 'Jump into them. Trust me.'"
+    }
+   ]
+  },
+  {
+   "id": "F_BONK",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B03",
+     "start_s": 7.6,
+     "action_s": 7.88,
+     "end_s": 8.5,
+     "observation": "Head-sweep bonk: jumping into the block pays a coin with a '+1' tick; used block turns gray.",
+     "riff": "The detection is generous \u2014 near misses still pay out, which feels good rather than fussy."
+    }
+   ]
+  },
+  {
+   "id": "F_GAPS",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 4.0,
+     "action_s": 4.3,
+     "end_s": 5.0,
+     "observation": "Gap at x448-512 jumped cleanly; two more gaps cleared later in the run.",
+     "riff": "Gaps are the honest jump \u2014 no enemy, no trick, just distance versus the 53px budget."
+    }
+   ]
+  },
+  {
+   "id": "F_PIPES",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B03",
+     "start_s": 9.8,
+     "action_s": 10.3,
+     "end_s": 11.4,
+     "observation": "Two green pipes hopped: onto pipe1, across to pipe2, spikes between them.",
+     "riff": "Pipes turn jumping into routing \u2014 the obstacle is the line you choose, not the leap."
+    }
+   ]
+  },
+  {
+   "id": "F_STAIRS",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B03",
+     "start_s": 11.3,
+     "action_s": 11.8,
+     "end_s": 12.6,
+     "observation": "Staircase climbed to the high platform; the route takes a vertical jump to clear the stair wedge.",
+     "riff": "Stairs are jumps with commitment issues \u2014 each step is a small promise you keep mid-air."
+    }
+   ]
+  },
+  {
+   "id": "F_GRUMBLER",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B04",
+     "start_s": 12.5,
+     "action_s": 12.98,
+     "end_s": 13.8,
+     "observation": "Grumbler patrols x1620-1700 at 55px/s; this run leaps over it from the platform edge.",
+     "riff": "The patrol is a moving question: jump over for safety, stomp for greed \u2014 same enemy, two risk profiles."
+    }
+   ]
+  },
+  {
+   "id": "F_STOMP",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_grumbler_4k",
+     "beat_id": "B06",
+     "start_s": 11.5,
+     "action_s": 12.97,
+     "end_s": 14.0,
+     "observation": "Player lands on the grumbler while falling; the enemy dies and vanishes, player bounces on.",
+     "riff": "The stomp window is brutally tight \u2014 falling fast onto a 55px/s target \u2014 which is why it gets its own take."
+    }
+   ]
+  },
+  {
+   "id": "F_SPIKES",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B04",
+     "start_s": 13.8,
+     "action_s": 14.25,
+     "end_s": 15.0,
+     "observation": "The 64-pixel spike bed cleared with one committed jump; no room for a correction hop.",
+     "riff": "The level's exam question: 64px at this jump's range means you decide before you leap."
+    }
+   ]
+  },
+  {
+   "id": "F_FINISH",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B04",
+     "start_s": 14.8,
+     "action_s": 15.2,
+     "end_s": 17.0,
+     "observation": "FINISH flag touched at x1881; 'Course complete.' card with ENTER / PLAY AGAIN.",
+     "riff": "The flag is a period, not an exclamation mark \u2014 the run just ends, cleanly."
+    }
+   ]
+  },
+  {
+   "id": "F_RANK",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B04",
+     "start_s": 15.2,
+     "action_s": 16.0,
+     "end_s": 18.0,
+     "observation": "Completion stats: '13.2 seconds / 0 retries / 22 coins - Solid haul.'",
+     "riff": "The rank grades the run, not the player \u2014 and note 'Coin master' can never fire; it's a dead branch."
+    }
+   ]
+  },
+  {
+   "id": "F_HUD",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "full_run_4k",
+     "beat_id": "B02",
+     "start_s": 2.0,
+     "action_s": 4.0,
+     "end_s": 6.4,
+     "observation": "HUD: title, COINS x/23, progress bar, RETRIES, timer, controls reminder, 'No lives. Just another try.'",
+     "riff": "The HUD never hides information the player needs \u2014 the design trusts the player to read."
+    }
+   ]
+  },
+  {
+   "id": "F_DEATHCARD",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "death_4k",
+     "beat_id": "B05",
+     "start_s": 3.1,
+     "action_s": 3.3,
+     "end_s": 4.2,
+     "observation": "Death card: 'Watch the spikes / Back at the start in a moment.' RETRIES ticks to 01.",
+     "riff": "The card teaches instead of punishing \u2014 it names what killed you."
+    }
+   ]
+  },
+  {
+   "id": "F_RETRY_AUTO",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "death_4k",
+     "beat_id": "B05",
+     "start_s": 3.5,
+     "action_s": 3.72,
+     "end_s": 4.8,
+     "observation": "Auto-retry 0.55s after death; player respawns at spawn with no input and runs on.",
+     "riff": "No lives, no game-over screen \u2014 the loop is die, learn, retry in under a second."
+    }
+   ]
+  },
+  {
+   "id": "F_RETRY_MANUAL",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_pause_4k",
+     "beat_id": "B06",
+     "start_s": 2.5,
+     "action_s": 4.0,
+     "end_s": 5.5,
+     "observation": "Pause card lists 'R: restart attempt' and 'M: main menu' bindings.",
+     "riff": "The bindings sit on the pause card like a fire exit sign \u2014 there when you need them."
+    },
+    {
+     "capture": "take_fallretry_4k",
+     "beat_id": "B06B",
+     "start_s": 6.0,
+     "action_s": 6.57,
+     "end_s": 7.2,
+     "observation": "R pressed mid-run: instant restart_attempt, player back at spawn with no death.",
+     "riff": "R is the speedrunner's button \u2014 the run restarts before regret can form."
+    },
+    {
+     "capture": "take_fallretry_4k",
+     "beat_id": "B06B",
+     "start_s": 7.4,
+     "action_s": 7.58,
+     "end_s": 9.0,
+     "observation": "ESC pauses, then M returns to the menu card; coins reset to 00/23, retries persist.",
+     "riff": "M is the graceful exit \u2014 back to the menu with your retry count intact."
+    }
+   ]
+  },
+  {
+   "id": "F_PAUSE",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_pause_4k",
+     "beat_id": "B06",
+     "start_s": 2.5,
+     "action_s": 3.0,
+     "end_s": 5.5,
+     "observation": "ESC freezes mid-run: 'Take a breath.' card with ENTER / RESUME; second ESC resumes exactly in place.",
+     "riff": "A hard freeze \u2014 trivially correct, zero drama, the sim just stops."
+    }
+   ]
+  },
+  {
+   "id": "F_EASTER",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_egg_4k",
+     "beat_id": "B06",
+     "start_s": 6.5,
+     "action_s": 8.82,
+     "end_s": 11.5,
+     "observation": "Five jumps at the hidden block's exact spot; eblock.found stays false \u2014 the block is real but unreachable (84px climb needed, 53px max jump).",
+     "riff": "An honest negative: the footage documents a genuine defect, not a secret. The Verdict covers it."
+    }
+   ]
+  },
+  {
+   "id": "F_FALL",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_fallretry_4k",
+     "beat_id": "B06B",
+     "start_s": 4.0,
+     "action_s": 5.02,
+     "end_s": 6.0,
+     "observation": "Player runs off gap1 without jumping and falls; death card 'Missed the landing' at t=5.02.",
+     "riff": "The gap doesn't forgive and doesn't explain \u2014 'Missed the landing' is the whole post-mortem."
+    }
+   ]
+  },
+  {
+   "id": "F_ENEMY_DAMAGE",
+   "status": "implemented",
+   "evidence": [
+    {
+     "capture": "take_sidekill_4k",
+     "beat_id": "B06B",
+     "start_s": 12.5,
+     "action_s": 13.55,
+     "end_s": 13.9,
+     "observation": "Player walks into the grumbler's side at x1617; death card 'Squashed by a grumbler', RETRIES 01.",
+     "riff": "Side contact is the stomp's evil twin \u2014 same enemy, and vertical velocity decides which one you get."
+    }
+   ]
+  },
+  {
+   "id": "P_MOVING_PLATFORMS",
+   "status": "planned",
+   "evidence": [],
+   "reason": "GDD MECH-05 defers moving platforms; not built."
+  },
+  {
+   "id": "P_TASK_STATIONS",
+   "status": "planned",
+   "evidence": [],
+   "reason": "Assignment-1 mini-goals; not built."
+  },
+  {
+   "id": "P_AGENTIC_LOOP",
+   "status": "planned",
+   "evidence": [],
+   "reason": "Full agentic loop; not built."
+  },
+  {
+   "id": "P_MALWARE_UNDO",
+   "status": "planned",
+   "evidence": [],
+   "reason": "Malware patrol with task undo; not built."
+  },
+  {
+   "id": "P_CHECKPOINTS",
+   "status": "planned",
+   "evidence": [],
+   "reason": "No checkpoints; retry always returns to spawn."
+  },
+  {
+   "id": "P_DOUBLEJUMP",
+   "status": "planned",
+   "evidence": [],
+   "reason": "No double jump, wall jump, or dash; single jump only."
+  },
+  {
+   "id": "P_LEVELS",
+   "status": "planned",
+   "evidence": [],
+   "reason": "One level (First Steps, 1920px); no level select."
+  },
+  {
+   "id": "P_LIVES",
+   "status": "planned",
+   "evidence": [],
+   "reason": "No lives or health; unlimited retries by design."
+  },
+  {
+   "id": "P_FORKS",
+   "status": "planned",
+   "evidence": [],
+   "reason": "No branch choices; linear level."
+  }
+ ]
+}

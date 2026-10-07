@@ -1,0 +1,287 @@
+{
+  "beats": [
+    {
+      "act": "walker prompt",
+      "beat_id": "B00",
+      "engine": "kokoro",
+      "estimated_duration_s": 20,
+      "narration_text": "This is Liam, in for Bear. Every Walker film starts with a prompt — and this one is a reconstruction, not a transcript. The brief: take the Jumpman starter, double the level, and make it feel like Mario. Coins, question blocks, a patrolling grumbler, an Easter egg — have fun with it. Here is the level that came back.",
+      "shot": {
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "command": "Please use Walker to convert my game design document about a Mario-inspired platformer into a playable Godot project: double the level, add coins, question blocks, a patrolling enemy, and hide an Easter egg. Make it feel like Mario.",
+            "effortLabel": "High",
+            "folderLabel": "@NikBearBrown",
+            "greeting": "Hola, Bear",
+            "modelLabel": "Fable 5",
+            "output": [
+              "Level doubled: 960 → 1920 px, tutorial yard kept.",
+              "23 coins · 3 question blocks · 1 patrolling grumbler.",
+              "Easter egg hidden. Somewhere mean."
+            ],
+            "runningText": "extending the level…",
+            "segment": "Jumpman Extended",
+            "topic": "GODOT WALKTHROUGH · WALKER MODE"
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-10-07T03:09:23.973287+00:00"
+          }
+        },
+        "type": "REMOTION"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 16.49,
+      "audio_file": "mp3/beat-B00.mp3"
+    },
+    {
+      "act": "what was built",
+      "beat_id": "B01",
+      "engine": "kokoro",
+      "estimated_duration_s": 30,
+      "narration_text": "I doubled the First Steps level — 960 to 1920 pixels — keeping the original tutorial yard as it was. The new second half is the Mario stretch: green pipes, a staircase to a high platform, three question blocks that pay out coins from below, twenty-three coins in arcs and risky spots, a patrolling grumbler guarding the high platform, a sixty-four-pixel spike bed at the finish, and one invisible block hiding five bonus coins. One correction: a scripted driver beats this with zero deaths — but no human has played it. Beatable in code isn't proven in feel.",
+      "shot": {
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "align": "center",
+            "banner": "",
+            "face": "serif",
+            "fontSize": 72,
+            "replacementWords": "fair",
+            "seed": "jumpman-b01",
+            "text": "Doubled the level: 960 → 1920 px.\nTutorial yard kept as it was.\nMario stretch: pipes, stairs,\nquestion blocks, 23 coins,\na patrolling grumbler,\na 64-pixel spike bed.\nBeatable in code isn't proven in feel.",
+            "triggerWords": "proven"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-10-07T03:14:05.640386+00:00"
+          }
+        },
+        "type": "REMOTION"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 31.67,
+      "audio_file": "mp3/beat-B01.mp3"
+    },
+    {
+      "act": "gameplay run part 1",
+      "beat_id": "B02",
+      "engine": "kokoro",
+      "estimated_duration_s": 7,
+      "narration_text": "Menu states the deal: gaps, spikes, blocks, grumbler. ENTER starts it — coins, a step, spikes, jumped.",
+      "shot": {
+        "capture": "full_run_4k",
+        "note": "Pre-trimmed media/B02.mp4; narration window conforms to the action, no retiming.",
+        "source": "own",
+        "trim": [
+          0.0,
+          7.0
+        ],
+        "type": "GAMEPLAY"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 6.5,
+      "audio_file": "mp3/beat-B02.mp3"
+    },
+    {
+      "act": "gameplay run part 2",
+      "beat_id": "B03",
+      "engine": "kokoro",
+      "estimated_duration_s": 6,
+      "narration_text": "The new stretch: question blocks — bonk, bonk, bonk. Up the pipes, the staircase, the high platform.",
+      "shot": {
+        "capture": "full_run_4k",
+        "note": "Pre-trimmed media/B03.mp4; narration window conforms to the action, no retiming.",
+        "source": "own",
+        "trim": [
+          7.0,
+          13.0
+        ],
+        "type": "GAMEPLAY"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 5.8,
+      "audio_file": "mp3/beat-B03.mp3"
+    },
+    {
+      "act": "gameplay run part 3",
+      "beat_id": "B04",
+      "engine": "kokoro",
+      "estimated_duration_s": 6.5,
+      "narration_text": "Over the grumbler, over the spike bed, flag. Thirteen seconds, zero retries, twenty-two coins — solid haul.",
+      "shot": {
+        "capture": "full_run_4k",
+        "note": "Pre-trimmed media/B04.mp4; narration window conforms to the action, no retiming.",
+        "source": "own",
+        "trim": [
+          13.0,
+          19.2
+        ],
+        "type": "GAMEPLAY"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 6.7667,
+      "audio_file": "mp3/beat-B04.mp3"
+    },
+    {
+      "act": "failure and recovery",
+      "beat_id": "B05",
+      "engine": "kokoro",
+      "estimated_duration_s": 6.6,
+      "narration_text": "Spikes, on purpose — no jump. Watch the spikes. Half a second later: auto-retry. No lives, just another try.",
+      "shot": {
+        "capture": "death_4k",
+        "note": "Pre-trimmed media/B05.mp4; narration window conforms to the action, no retiming.",
+        "source": "own",
+        "trim": [
+          0.0,
+          6.63
+        ],
+        "type": "GAMEPLAY"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 7.0333,
+      "audio_file": "mp3/beat-B05.mp3"
+    },
+    {
+      "act": "feature takes",
+      "beat_id": "B06",
+      "engine": "kokoro",
+      "estimated_duration_s": 16,
+      "narration_text": "The mechanics the full run skipped. Pause freezes the game — ENTER resumes where you left off. The hidden block: jumped the exact spot, found nothing. The climb needs eighty-four pixels; the jump tops out at fifty-three. And the grumbler — land on it falling, and it squashes flat.",
+      "shot": {
+        "capture": "takes",
+        "note": "PROVISIONAL narration; finalize against actual take outcomes.",
+        "source": "own",
+        "trim": "TO-FILL from take_pause_4k / take_egg_4k / take_grumbler_4k",
+        "type": "GAMEPLAY"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 14.63,
+      "audio_file": "mp3/beat-B06.mp3"
+    },
+    {
+      "beat_id": "B06B",
+      "act": "failure and recovery",
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "estimated_duration_s": 12,
+      "narration_text": "More ways to fail. Walk into the grumbler’s side — squashed; no stomp without the fall. Run off the gap — missed the landing. R restarts instantly; M from pause drops back to the menu.",
+      "shot": {
+        "type": "GAMEPLAY",
+        "source": "own",
+        "capture": "take_sidekill_4k",
+        "note": "Pre-trimmed media/B06B.mp4 from take_sidekill_4k + take_fallretry_4k; narration window conforms to the action, no retiming."
+      },
+      "actual_duration_s": 10.62,
+      "audio_file": "mp3/beat-B06B.mp3"
+    },
+    {
+      "act": "verdict",
+      "beat_id": "B07",
+      "engine": "kokoro",
+      "estimated_duration_s": 22,
+      "narration_text": "Verdict. Observed working: the full route completes — menus, movement, bonks, coins, pipes, stairs, the grumbler patrol, spike deaths, auto-retry, and the completion ranking. Defects: the hidden Easter-egg block is real but unreachable by normal play. The Coin master rank can never fire — a dead branch in the code. And no human has playtested this; every run you saw was scripted input. Planned, not built: moving platforms, checkpoints, more levels.",
+      "shot": {
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "align": "center",
+            "banner": "",
+            "face": "serif",
+            "fontSize": 64,
+            "replacementWords": "",
+            "seed": "jumpman-verdict",
+            "text": "VERDICT\nWorks: full route, bonks,\ncoins, pipes, stairs, patrol,\ndeaths, auto-retry, ranking.\nDefects: egg unreachable,\nCoin master never fires.\nNo human playtest —\nscripted input only.",
+            "triggerWords": ""
+          },
+          "rendered": {
+            "out": "media/B07.mp4",
+            "at": "2026-10-07T03:18:32.221471+00:00"
+          }
+        },
+        "type": "REMOTION"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 23.17,
+      "audio_file": "mp3/beat-B07.mp3"
+    },
+    {
+      "act": "your turn",
+      "beat_id": "B08",
+      "engine": "kokoro",
+      "estimated_duration_s": 10,
+      "narration_text": "Your turn. Open Walker and add a moving platform to the gap after the pipes — ride it across without falling. Or hide your own Easter egg. Somewhere mean.",
+      "shot": {
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "command": "Add a moving platform to the gap after the pipes. Let me ride it across without falling.",
+            "effortLabel": "High",
+            "folderLabel": "@NikBearBrown",
+            "greeting": "Hola, Bear",
+            "modelLabel": "Fable 5",
+            "output": [
+              "Or hide your own Easter egg.",
+              "Somewhere mean."
+            ],
+            "runningText": "your experiment…",
+            "segment": "Jumpman Extended",
+            "topic": "YOUR TURN · WALKER EXPERIMENT"
+          },
+          "rendered": {
+            "out": "media/B08.mp4",
+            "at": "2026-10-07T03:24:29.628208+00:00"
+          }
+        },
+        "type": "REMOTION"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 8.32,
+      "audio_file": "mp3/beat-B08.mp3"
+    },
+    {
+      "act": "regular outro",
+      "beat_id": "B09",
+      "engine": "kokoro",
+      "estimated_duration_s": 6,
+      "narration_text": "Jumpman Extended: Full Godot Walkthrough. At Nik Bear Brown.",
+      "shot": {
+        "note": "OUTRO-LOCK: exact title, @NikBearBrown hardcoded, slug-seeded mascot below handle, no subline. Spoken card: title + 1.0s tail hold, no music.",
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "slug": "jumpman-walkthrough",
+            "title": "Jumpman Extended: Full Godot Walkthrough"
+          },
+          "rendered": {
+            "out": "media/B09.mp4",
+            "at": "2026-10-07T03:26:02.020655+00:00"
+          }
+        },
+        "type": "REMOTION"
+      },
+      "voice": "am_onyx",
+      "actual_duration_s": 5.1667,
+      "audio_file": "mp3/beat-B09.mp3"
+    }
+  ],
+  "metadata": {
+    "audience": "Bear",
+    "brand": "claude-liam",
+    "engine": "kokoro",
+    "folderLabel": "@NikBearBrown",
+    "in_for_bear": true,
+    "palette": "claude",
+    "persona": "Liam (in for Bear)",
+    "playlist": "Walker Builds",
+    "register": "Teardown",
+    "slug": "jumpman-walkthrough",
+    "title": "Jumpman Extended: Full Godot Walkthrough",
+    "topic": "GODOT WALKTHROUGH · WALKER MODE",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx"
+  }
+}

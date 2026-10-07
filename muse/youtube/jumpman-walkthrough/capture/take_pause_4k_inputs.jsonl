@@ -1,0 +1,17 @@
+{"action":"confirm","player_x":64.0,"player_y":320.0,"state":0,"tick":60,"type":"press"}
+{"action":"move_right","player_x":64.0,"player_y":320.0,"state":1,"tick":61,"type":"press"}
+{"action":"jump","player_x":122.0,"player_y":319.9,"state":1,"tick":86,"type":"press"}
+{"action":"jump","player_x":132.6,"player_y":300.2,"state":1,"tick":90,"type":"release"}
+{"action":"jump","player_x":290.0,"player_y":319.9,"state":1,"tick":149,"type":"press"}
+{"action":"jump","player_x":300.6,"player_y":300.2,"state":1,"tick":153,"type":"release"}
+{"action":"move_right","player_x":372.6,"player_y":278.6,"state":1,"tick":180,"type":"release"}
+{"action":"pause","player_x":372.6,"player_y":278.6,"state":1,"tick":180,"type":"press"}
+{"action":"pause","player_x":372.6,"player_y":278.6,"state":1,"tick":180,"type":"release"}
+{"action":"pause","player_x":372.6,"player_y":278.6,"state":2,"tick":300,"type":"press"}
+{"action":"pause","player_x":372.6,"player_y":278.6,"state":2,"tick":300,"type":"release"}
+{"action":"move_right","player_x":374.8,"player_y":281.5,"state":1,"tick":301,"type":"press"}
+{"action":"jump","player_x":419.9,"player_y":319.9,"state":1,"tick":318,"type":"press"}
+{"action":"jump","player_x":430.6,"player_y":300.2,"state":1,"tick":322,"type":"release"}
+{"action":"jump","player_x":537.2,"player_y":319.9,"state":1,"tick":362,"type":"press"}
+{"action":"jump","player_x":547.9,"player_y":300.2,"state":1,"tick":366,"type":"release"}
+{"action":"move_right","player_x":691.9,"player_y":319.9,"state":1,"tick":420,"type":"release"}
